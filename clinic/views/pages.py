@@ -1,11 +1,12 @@
 from datetime import datetime
 
+from django.core.paginator import Paginator
 from django.db.models import Count, Q
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.http import require_GET, require_http_methods
 
 from clinic.forms import AppointmentForm, increment_rate_limit, is_rate_limited
-from clinic.models import Direction, Doctor, Service, WorkingHours
+from clinic.models import Direction, Doctor, HearingAid, Service, WorkingHours
 from clinic.utils.block_render import get_block_text
 
 
@@ -128,6 +129,10 @@ def price_list(request):
     return redirect('clinic:services')
 
 
+SURDOLOGY_SLUG = 'surdologiya'
+HEARING_AIDS_PER_PAGE = 10
+
+
 def surgical_operations_list(request):
     direction_slug = request.GET.get('direction', '')
     directions = Direction.objects.filter(is_active=True)
@@ -139,6 +144,26 @@ def surgical_operations_list(request):
         'current_direction': current_direction,
         'current_direction_slug': direction_slug,
         'breadcrumbs': [{'title': 'Хірургічні операції'}],
+    })
+
+
+def hearing_aids_list(request):
+    surdology = Direction.objects.filter(slug=SURDOLOGY_SLUG, is_active=True).first()
+    queryset = HearingAid.objects.filter(is_active=True)
+    paginator = Paginator(queryset, HEARING_AIDS_PER_PAGE)
+    page_obj = paginator.get_page(request.GET.get('page'))
+    return render(request, 'pages/hearing_aids/list.html', {
+        'page_obj': page_obj,
+        'has_hearing_aids': paginator.count > 0,
+        'surdology': surdology,
+        'breadcrumbs': [
+            {'title': 'Напрямки', 'url': '/directions/'},
+            *(
+                [{'title': surdology.name, 'url': f'/directions/{surdology.slug}/'}]
+                if surdology else []
+            ),
+            {'title': 'Слухові апарати'},
+        ],
     })
 
 

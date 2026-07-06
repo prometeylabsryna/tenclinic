@@ -1,0 +1,226 @@
+/* Сторінка «Слухові апарати» */
+
+.hearing-aids-page__lead {
+  margin: 0.75rem 0 0;
+  max-width: 36rem;
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  color: var(--color-graphite-muted);
+}
+
+.hearing-aids-grid {
+  list-style: none;
+  margin: 0 0 var(--space-lg);
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 56rem;
+}
+
+.hearing-aid-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--color-white);
+  border: 1px solid rgba(31, 74, 115, 0.1);
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hearing-aid-card__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  max-height: 8.5rem;
+  background: linear-gradient(
+    160deg,
+    rgba(31, 74, 115, 0.04) 0%,
+    rgba(138, 175, 168, 0.1) 100%
+  );
+}
+
+.hearing-aid-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: 0.5rem;
+}
+
+.hearing-aid-card__placeholder {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.75rem;
+}
+
+.hearing-aid-card__placeholder svg {
+  width: 2rem;
+  height: 2rem;
+  opacity: 0.7;
+}
+
+.hearing-aid-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 0.75rem;
+}
+
+.hearing-aid-card__title {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--color-navy);
+}
+
+.hearing-aid-card__text {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--color-graphite-muted);
+}
+
+.hearing-aids-page__empty {
+  padding: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  background: var(--color-white);
+  border: 1px solid rgba(31, 74, 115, 0.1);
+  margin-bottom: var(--space-lg);
+}
+
+.hearing-aids-page__empty-text {
+  margin: 0;
+  max-width: 28rem;
+  margin-inline: auto;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-graphite-muted);
+}
+
+.hearing-aids-page__cta {
+  display: flex;
+  justify-content: center;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.hearing-aids-page__cta-btn {
+  min-height: 2.75rem;
+  min-width: min(100%, 18rem);
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hearing-aids-page .pagination {
+  margin: 0 0 var(--space-lg);
+  max-width: 56rem;
+}
+
+.hearing-aids-page .pagination__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hearing-aids-page .pagination__item {
+  margin: 0;
+}
+
+.hearing-aids-page .pagination__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  padding: 0 0.625rem;
+  border: 1px solid rgba(31, 74, 115, 0.16);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hearing-aids-page .pagination__link--nav {
+  min-width: auto;
+  padding-inline: 0.875rem;
+}
+
+.hearing-aids-page .pagination__link.is-active {
+  background: var(--color-sage);
+  border-color: var(--color-sage);
+  color: var(--color-white);
+}
+
+.hearing-aids-page .pagination__link.is-disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.hearing-aids-page .pagination__meta {
+  margin: 0.75rem 0 0;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--color-graphite-muted);
+}
+
+@media (hover: hover) {
+  .hearing-aids-page .pagination__link:not(.is-active):not(.is-disabled):hover {
+    border-color: var(--color-sage);
+    color: var(--color-navy);
+  }
+}
+
+@media (min-width: 40rem) {
+  .hearing-aids-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.875rem;
+  }
+
+  .hearing-aid-card__media {
+    max-height: 9rem;
+  }
+
+  .hearing-aid-card__title {
+    font-size: 0.9375rem;
+  }
+
+  .hearing-aid-card__text {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .hearing-aids-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .hearing-aid-card__media {
+    max-height: 8rem;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .hearing-aids-page__cta-btn,
+  .hearing-aids-page .pagination__link {
+    min-height: 44px;
+  }
+
+  .hearing-aid-card__image {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}

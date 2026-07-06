@@ -1,7 +1,8 @@
 from unfold.admin import ModelAdmin
 
-from clinic.admin.mixins import DoctorImagePreviewMixin, ImagePreviewMixin, OrderOnCreateMixin
-from clinic.models import Appointment, Direction, Doctor, Service, WorkingHours
+from clinic.admin.hearing_aid_form import HearingAidAdminForm
+from clinic.admin.mixins import DoctorImagePreviewMixin, ImagePreviewMixin, OrderOnCreateMixin, ReadableUnfoldFieldsMixin
+from clinic.models import Appointment, Direction, Doctor, HearingAid, Service, WorkingHours
 
 
 class DirectionAdmin(OrderOnCreateMixin, ImagePreviewMixin, ModelAdmin):
@@ -55,6 +56,44 @@ class DoctorAdmin(OrderOnCreateMixin, DoctorImagePreviewMixin, ModelAdmin):
         return self.get_image_preview(obj)
 
     photo_thumb.short_description = 'Фото'
+
+
+class HearingAidAdmin(OrderOnCreateMixin, ReadableUnfoldFieldsMixin, ImagePreviewMixin, ModelAdmin):
+    form = HearingAidAdminForm
+    ordering_field = 'order'
+    hide_ordering_field = True
+    list_display = ('name', 'image_thumb', 'caption_preview', 'is_active')
+    list_display_links = ('name',)
+    list_editable = ('is_active',)
+    prepopulated_fields = {'slug': ('name',)}
+    search_fields = ('name', 'short_description')
+    readonly_fields = ('get_image_preview',)
+    fieldsets = (
+        (None, {
+            'fields': ('name', 'slug', 'is_active'),
+        }),
+        ('Картка на сайті', {
+            'fields': ('image', 'get_image_preview', 'short_description'),
+            'description': (
+                'Формат фото: JPG або PNG, рекомендований розмір 400×400 px (1:1). '
+                'Фото та підпис відображаються на сторінці «Слухові апарати».'
+            ),
+        }),
+    )
+
+    def image_thumb(self, obj):
+        return self.get_image_preview(obj)
+
+    image_thumb.short_description = 'Фото'
+
+    def caption_preview(self, obj):
+        if not obj.short_description:
+            return '—'
+        if len(obj.short_description) <= 60:
+            return obj.short_description
+        return f'{obj.short_description[:57]}…'
+
+    caption_preview.short_description = 'Підпис'
 
 
 class ServiceAdmin(OrderOnCreateMixin, ModelAdmin):

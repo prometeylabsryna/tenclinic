@@ -62,6 +62,12 @@
               href="{% url 'clinic:surgical_operations' %}?direction={{ direction.slug }}"
               class="btn btn--secondary direction-detail__action-btn"
             >{% block_plain 'direction' 'detail_btn_surgery' 'Хірургічна допомога' %}</a>
+            {% if direction.slug == 'surdologiya' %}
+            <a
+              href="{% url 'clinic:hearing_aids' %}"
+              class="btn btn--secondary direction-detail__action-btn"
+            >{% block_plain 'direction' 'detail_btn_hearing_aids' 'Слухові апарати' %}</a>
+            {% endif %}
           </div>
         </section>
 

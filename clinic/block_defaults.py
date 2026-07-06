@@ -132,12 +132,22 @@ BLOCK_DEFAULTS = {
         'Розділ наповнюється. Незабаром тут зʼявиться каталог хірургічних операцій.'
     ),
     ('surgical', 'placeholder_btn'): 'Записатися на консультацію',
+    ('hearing_aids', 'page_eyebrow'): 'Сурдологія',
+    ('hearing_aids', 'page_title'): 'Слухові апарати',
+    ('hearing_aids', 'page_lead'): (
+        'Сучасні моделі з індивідуальним підбором, налаштуванням та супроводом у TEN clinic.'
+    ),
+    ('hearing_aids', 'empty_text'): (
+        'Каталог наповнюється. Зверніться до адміністратора для консультації щодо доступних моделей.'
+    ),
+    ('hearing_aids', 'cta_btn'): 'Записатися на підбір',
     ('direction', 'detail_eyebrow'): 'Напрямок',
     ('direction', 'detail_desc_heading'): 'Опис',
     ('direction', 'detail_when_heading'): 'Коли варто звернутися?',
     ('direction', 'detail_services_heading'): 'Наші послуги',
     ('direction', 'detail_btn_consultation'): 'Консультативно-діагностичний прийом',
     ('direction', 'detail_btn_surgery'): 'Хірургічна допомога',
+    ('direction', 'detail_btn_hearing_aids'): 'Слухові апарати',
     ('direction', 'detail_doctors_heading'): 'Лікарі напрямку',
     ('direction', 'detail_cta_text'): 'Запишіться на консультацію — підберемо зручний час прийому.',
     ('direction', 'detail_cta_btn'): 'Записатися на прийом',
@@ -237,6 +247,7 @@ BLOCK_FIELD_LABELS = {
     'detail_services_heading': 'Заголовок «Наші послуги»',
     'detail_btn_consultation': 'Кнопка консультації',
     'detail_btn_surgery': 'Кнопка хірургії',
+    'detail_btn_hearing_aids': 'Кнопка «Слухові апарати»',
     'detail_doctors_heading': 'Заголовок «Лікарі напрямку»',
     'detail_cta_text': 'Текст бокового блоку запису',
     'detail_cta_btn': 'Кнопка запису на сторінці напрямку',
@@ -256,7 +267,7 @@ INLINE_KEYS = frozenset({
     'nav_home', 'nav_directions', 'nav_doctors', 'nav_services', 'nav_services_sub',
     'nav_surgery', 'nav_surgery_title', 'nav_contacts', 'nav_cta', 'footer_copyright',
     'page_eyebrow', 'page_title', 'page_hint', 'schedule_title', 'today_label',
-    'map_title', 'route_btn', 'filter_all', 'placeholder_btn',
+    'map_title', 'route_btn', 'filter_all', 'placeholder_btn', 'cta_btn',
     'label_email', 'label_phone',
     'label_messengers', 'label_name', 'label_direction', 'label_service',
     'label_doctor', 'label_date', 'label_time', 'label_comment',
@@ -264,6 +275,7 @@ INLINE_KEYS = frozenset({
     'heading_data', 'heading_purpose', 'heading_storage', 'heading_contact',
     'detail_eyebrow', 'detail_desc_heading', 'detail_when_heading',
     'detail_services_heading', 'detail_btn_consultation', 'detail_btn_surgery',
+    'detail_btn_hearing_aids',
     'detail_doctors_heading', 'detail_cta_btn',
     *(f'principle_{index}_title' for index in PRINCIPLE_DEFAULTS),
 })
@@ -271,7 +283,7 @@ INLINE_KEYS = frozenset({
 MULTILINE_KEYS = frozenset({
     'hero_lead', 'about_text', 'cta_text', 'success_message', 'hero_stat_label',
     'page_lead', 'page_note', 'intro', 'text_data', 'text_purpose', 'text_storage',
-    'text_contact', 'placeholder_text', 'detail_cta_text',
+    'text_contact', 'placeholder_text', 'detail_cta_text', 'empty_text',
     *(f'principle_{index}_text' for index in PRINCIPLE_DEFAULTS),
 })
 

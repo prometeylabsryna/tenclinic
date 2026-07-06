@@ -1,6 +1,6 @@
 from django.db import models
 
-from clinic.image_specs import DIRECTION_IMAGE, DOCTOR_PHOTO
+from clinic.image_specs import DIRECTION_IMAGE, DOCTOR_PHOTO, HEARING_AID_IMAGE
 
 
 class Direction(models.Model):
@@ -78,6 +78,28 @@ class Doctor(models.Model):
 
     def __str__(self):
         return self.full_name
+
+
+class HearingAid(models.Model):
+    name = models.CharField('Назва', max_length=200)
+    slug = models.SlugField(unique=True)
+    image = models.ImageField(
+        'Фото',
+        upload_to='hearing-aids/',
+        blank=True,
+        help_text=HEARING_AID_IMAGE.help_text,
+    )
+    short_description = models.CharField('Підпис', max_length=300, help_text='Короткий текст під фото на картці.')
+    order = models.PositiveIntegerField('Порядок', default=0)
+    is_active = models.BooleanField('Активний', default=True)
+
+    class Meta:
+        ordering = ['order', 'name']
+        verbose_name = 'Слуховий апарат'
+        verbose_name_plural = 'Слухові апарати'
+
+    def __str__(self):
+        return self.name
 
 
 class Service(models.Model):

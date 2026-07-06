@@ -1,0 +1,22 @@
+<article class="hearing-aid-card {% if not aid.image %}hearing-aid-card--placeholder{% endif %}">
+  <div class="hearing-aid-card__media">
+    {% if aid.image %}
+    <img
+      class="hearing-aid-card__image"
+      src="{{ aid.image.url }}"
+      alt="{{ aid.name }}"
+      loading="lazy"
+      width="240"
+      height="180"
+    >
+    {% else %}
+    <div class="hearing-aid-card__placeholder" aria-hidden="true">
+      <svg viewBox="0 0 48 48" fill="none"><path d="M14 28c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="#8AAFA8" stroke-width="2" stroke-linecap="round"/><path d="M10 32c0-8.8 7.2-16 16-16s16 7.2 16 16" stroke="#8AAFA8" stroke-width="2" stroke-linecap="round"/><circle cx="34" cy="18" r="3" fill="#8AAFA8"/></svg>
+    </div>
+    {% endif %}
+  </div>
+  <div class="hearing-aid-card__body">
+    <h2 class="hearing-aid-card__title">{{ aid.name }}</h2>
+    <p class="hearing-aid-card__text">{{ aid.short_description }}</p>
+  </div>
+</article>

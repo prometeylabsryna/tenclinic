@@ -68,6 +68,14 @@ DIRECTION_IMAGE = ImageSpec(
     hint='Мініатюра напрямку в каталозі та на головній.',
 )
 
+HEARING_AID_IMAGE = ImageSpec(
+    label='Фото слухового апарата',
+    width=400,
+    height=400,
+    ratio='1:1',
+    hint='Зображення на картці в каталозі слухових апаратів.',
+)
+
 BLOCK_IMAGE_SPECS = {
     ('home', 'hero_brand_mark'): HERO_BRAND_MARK,
     ('home', 'hero_bg_image'): HERO_BG,
@@ -78,6 +86,7 @@ MODEL_IMAGE_SPECS = {
     'SiteSettings.logo': SITE_LOGO,
     'Direction.image': DIRECTION_IMAGE,
     'Doctor.photo': DOCTOR_PHOTO,
+    'HearingAid.image': HEARING_AID_IMAGE,
 }
 
 

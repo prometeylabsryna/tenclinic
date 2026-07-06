@@ -5,7 +5,7 @@ from django.core.cache import cache
 from django.conf import settings
 
 from clinic.block_defaults import BLOCK_DEFAULTS, BLOCK_FIELD_LABELS, is_visibility_key
-from clinic.models import Direction, Doctor, Service, SiteBlock, SiteSettings, WorkingHours
+from clinic.models import Direction, Doctor, HearingAid, Service, SiteBlock, SiteSettings, WorkingHours
 
 
 class Command(BaseCommand):
@@ -17,6 +17,7 @@ class Command(BaseCommand):
         self._seed_working_hours()
         directions = self._seed_directions()
         self._seed_services(directions)
+        self._seed_hearing_aids()
         self._seed_doctors(directions)
         cache.delete(settings.SITE_BLOCKS_CACHE_KEY)
         self.stdout.write(self.style.SUCCESS('Seed completed.'))
@@ -291,6 +292,40 @@ class Command(BaseCommand):
                     'description': f'{name} — послуга TEN clinic.',
                     'short_description': name,
                     'price': None,
+                    'order': i,
+                    'is_active': True,
+                },
+            )
+
+    def _seed_hearing_aids(self):
+        aids_data = [
+            (
+                'phonak-audeo-sphere',
+                'Phonak Audeo Sphere Infinio',
+                'Преміальна модель із штучним інтелектом для чіткого сприйняття мовлення навіть у шумному середовищі.',
+            ),
+            (
+                'oticon-intent',
+                'Oticon Intent',
+                'Розумний слуховий апарат, який адаптується до ваших наміру та оточення в реальному часі.',
+            ),
+            (
+                'signia-ix',
+                'Signia Integrated Xperience',
+                'Технологія розділення мовлення та шуму для комфортного спілкування в групах і на вулиці.',
+            ),
+            (
+                'widex-moment',
+                'Widex Moment',
+                'Природне звучання без затримки сигналу — зручний вибір для тривалого щоденного носіння.',
+            ),
+        ]
+        for i, (slug, name, short_description) in enumerate(aids_data):
+            HearingAid.objects.update_or_create(
+                slug=slug,
+                defaults={
+                    'name': name,
+                    'short_description': short_description,
                     'order': i,
                     'is_active': True,
                 },

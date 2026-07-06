@@ -102,6 +102,7 @@ class SiteBlock(models.Model):
         BOOKING = 'booking', 'Запис'
         PRIVACY = 'privacy', 'Конфіденційність'
         SURGICAL = 'surgical', 'Хірургія'
+        HEARING_AIDS = 'hearing_aids', 'Слухові апарати'
         DIRECTION = 'direction', 'Сторінка напрямку'
 
     class ContentType(models.TextChoices):

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static site_content %}
+
+{% block title %}{% block_plain 'hearing_aids' 'page_title' 'Слухові апарати' %} — {{ site_settings.site_name|default:'TEN clinic' }}{% endblock %}
+
+{% block page_class %}page--inner{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/hearing-aids-page.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include 'includes/breadcrumbs.html' %}
+
+<section class="section section--alt section--page-top hearing-aids-page">
+  <div class="container">
+    <div class="inner-page-head reveal">
+      <p class="section-eyebrow section-eyebrow--plain">{% block_plain 'hearing_aids' 'page_eyebrow' 'Сурдологія' %}</p>
+      <h1 class="section-heading">{% block_plain 'hearing_aids' 'page_title' 'Слухові апарати' %}</h1>
+      <p class="hearing-aids-page__lead">
+        {% block_plain 'hearing_aids' 'page_lead' 'Сучасні моделі з індивідуальним підбором, налаштуванням та супроводом у TEN clinic.' %}
+      </p>
+    </div>
+
+    {% if has_hearing_aids %}
+    <ul class="hearing-aids-grid reveal">
+      {% for aid in page_obj %}
+      <li class="hearing-aids-grid__item">
+        {% include 'partials/hearing_aid_card.html' with aid=aid %}
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% include 'partials/pagination.html' with page_obj=page_obj %}
+    {% else %}
+    <div class="hearing-aids-page__empty reveal">
+      <p class="hearing-aids-page__empty-text">{% block_plain 'hearing_aids' 'empty_text' 'Каталог наповнюється. Зверніться до адміністратора для консультації щодо доступних моделей.' %}</p>
+    </div>
+    {% endif %}
+
+    <div class="hearing-aids-page__cta reveal">
+      <a
+        href="{% url 'clinic:booking' %}{% if surdology %}?direction={{ surdology.slug }}{% endif %}"
+        class="btn btn--primary hearing-aids-page__cta-btn"
+      >{% block_plain 'hearing_aids' 'cta_btn' 'Записатися на підбір' %}</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
