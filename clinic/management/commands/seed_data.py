@@ -85,6 +85,8 @@ class Command(BaseCommand):
             )
 
     def _seed_working_hours(self, *, force=False):
+        if WorkingHours.objects.exists() and not force:
+            return
         schedule = [
             (0, time(9, 0), time(18, 0), False),
             (1, time(9, 0), time(18, 0), False),
