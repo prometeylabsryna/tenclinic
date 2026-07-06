@@ -35,7 +35,7 @@ class Command(BaseCommand):
             call_command('seed_data')
 
         if force_seed:
-            call_command('seed_data')
+            call_command('seed_data', force=True)
 
     def _ensure_superuser(self):
         user_model = get_user_model()

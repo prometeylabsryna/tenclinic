@@ -9,21 +9,32 @@ from clinic.models import Direction, Doctor, HearingAid, Service, SiteBlock, Sit
 
 
 class Command(BaseCommand):
-    help = 'Seed TEN clinic demo data'
+    help = (
+        'Seed TEN clinic demo data. На production не перезаписує SiteSettings і CMS-блоки, '
+        'якщо вони вже є. Для повного скидання — --force.'
+    )
+
+    def add_arguments(self, parser):
+        parser.add_argument(
+            '--force',
+            action='store_true',
+            help='Перезаписати SiteSettings, CMS-блоки та демо-записи',
+        )
 
     def handle(self, *args, **options):
-        self._seed_settings()
-        self._seed_blocks()
-        self._seed_working_hours()
-        directions = self._seed_directions()
-        self._seed_services(directions)
-        self._seed_hearing_aids()
-        self._seed_doctors(directions)
+        force = options['force']
+        self._seed_settings(force=force)
+        self._seed_blocks(force=force)
+        self._seed_working_hours(force=force)
+        directions = self._seed_directions(force=force)
+        self._seed_services(directions, force=force)
+        self._seed_hearing_aids(force=force)
+        self._seed_doctors(directions, force=force)
         cache.delete(settings.SITE_BLOCKS_CACHE_KEY)
         self.stdout.write(self.style.SUCCESS('Seed completed.'))
 
-    def _seed_settings(self):
-        SiteSettings.objects.update_or_create(pk=1, defaults={
+    def _seed_settings(self, *, force=False):
+        defaults = {
             'site_name': 'TEN clinic',
             'tagline': 'Medicine & Surgery',
             'address': 'м. Київ, вул. Хрещатик, 1',
@@ -37,9 +48,13 @@ class Command(BaseCommand):
             'map_embed_url': (
                 'https://maps.google.com/maps?q=50.447387,30.524876&hl=uk&z=16&output=embed'
             ),
-        })
+        }
+        if SiteSettings.objects.filter(pk=1).exists() and not force:
+            self.stdout.write('SiteSettings already exists — skip (use --force to overwrite).')
+            return
+        SiteSettings.objects.update_or_create(pk=1, defaults=defaults)
 
-    def _seed_blocks(self):
+    def _seed_blocks(self, *, force=False):
         from clinic.block_defaults import BLOCK_CONTENT_TYPES
         from clinic.site_content_registry import all_registry_block_keys
 
@@ -48,20 +63,28 @@ class Command(BaseCommand):
             default = BLOCK_DEFAULTS.get((page, key), '')
             if is_visibility_key(key) and not default:
                 default = '1'
-            SiteBlock.objects.update_or_create(
+            block_defaults = {
+                'label': BLOCK_FIELD_LABELS.get(key, key),
+                'text_html': default,
+                'content_type': BLOCK_CONTENT_TYPES.get(
+                    (page, key),
+                    SiteBlock.ContentType.TEXT,
+                ),
+            }
+            if force:
+                SiteBlock.objects.update_or_create(
+                    page=page,
+                    key=key,
+                    defaults=block_defaults,
+                )
+                continue
+            SiteBlock.objects.get_or_create(
                 page=page,
                 key=key,
-                defaults={
-                    'label': BLOCK_FIELD_LABELS.get(key, key),
-                    'text_html': default,
-                    'content_type': BLOCK_CONTENT_TYPES.get(
-                        (page, key),
-                        SiteBlock.ContentType.TEXT,
-                    ),
-                },
+                defaults=block_defaults,
             )
 
-    def _seed_working_hours(self):
+    def _seed_working_hours(self, *, force=False):
         schedule = [
             (0, time(9, 0), time(18, 0), False),
             (1, time(9, 0), time(18, 0), False),
@@ -77,7 +100,7 @@ class Command(BaseCommand):
                 defaults={'open_time': open_t, 'close_time': close_t, 'is_closed': closed},
             )
 
-    def _seed_directions(self):
+    def _seed_directions(self, *, force=False):
         demo_slugs = [
             'zagalna-hirurgiya',
             'cherevna-hirurgiya',
@@ -239,7 +262,7 @@ class Command(BaseCommand):
             directions.append(obj)
         return directions
 
-    def _seed_services(self, directions):
+    def _seed_services(self, directions, *, force=False):
         demo_slugs = [
             'konsultaciya-hirurga',
             'povtornyj-prijom',
@@ -297,7 +320,7 @@ class Command(BaseCommand):
                 },
             )
 
-    def _seed_hearing_aids(self):
+    def _seed_hearing_aids(self, *, force=False):
         aids_data = [
             (
                 'phonak-audeo-sphere',
@@ -331,7 +354,7 @@ class Command(BaseCommand):
                 },
             )
 
-    def _seed_doctors(self, directions):
+    def _seed_doctors(self, directions, *, force=False):
         demo_slugs = [
             'ivanenko-olena',
             'petrenko-andriy',
