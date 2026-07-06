@@ -1,8 +1,7 @@
-from urllib.parse import quote
-
 from django.db import models
 
 from clinic.image_specs import SITE_LOGO
+from clinic.utils.map_embed import normalize_map_embed, resolve_map_embed_src
 
 
 class SiteSettings(models.Model):
@@ -49,7 +48,14 @@ class SiteSettings(models.Model):
 
     map_lat = models.DecimalField('Широта', max_digits=9, decimal_places=6, null=True, blank=True)
     map_lng = models.DecimalField('Довгота', max_digits=9, decimal_places=6, null=True, blank=True)
-    map_embed_url = models.URLField('URL карти (embed)', blank=True)
+    map_embed_url = models.TextField(
+        'Карта Google Maps',
+        blank=True,
+        help_text=(
+            'Вставте повний код <iframe> з Google Maps («Поділитися → Вбудувати карту») '
+            'або лише посилання з src. Якщо поле порожнє — карта будується з широти та довготи.'
+        ),
+    )
     directions_text = models.TextField('Як доїхати', blank=True)
 
     notification_email = models.EmailField('Email для заявок', blank=True)
@@ -66,6 +72,8 @@ class SiteSettings(models.Model):
 
     def save(self, *args, **kwargs):
         self.pk = 1
+        if self.map_embed_url:
+            self.map_embed_url = normalize_map_embed(self.map_embed_url)
         super().save(*args, **kwargs)
 
     @classmethod
@@ -75,19 +83,12 @@ class SiteSettings(models.Model):
 
     @property
     def map_embed_src(self):
-        if self.map_embed_url:
-            return self.map_embed_url
-        if self.map_lat is not None and self.map_lng is not None:
-            return (
-                f'https://maps.google.com/maps?q={self.map_lat},{self.map_lng}'
-                f'&hl=uk&z=16&output=embed'
-            )
-        if self.address:
-            return (
-                f'https://maps.google.com/maps?q={quote(self.address)}'
-                f'&hl=uk&z=16&output=embed'
-            )
-        return ''
+        return resolve_map_embed_src(
+            self.map_embed_url,
+            lat=self.map_lat,
+            lng=self.map_lng,
+            address=self.address,
+        )
 
 
 class SiteBlock(models.Model):

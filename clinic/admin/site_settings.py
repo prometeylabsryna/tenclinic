@@ -1,10 +1,12 @@
 from unfold.admin import ModelAdmin
 
 from clinic.admin.mixins import ImagePreviewMixin, ReadableUnfoldFieldsMixin, SingletonModelAdminMixin
+from clinic.admin.site_settings_form import SiteSettingsAdminForm
 from clinic.models import SiteSettings
 
 
 class SiteSettingsAdmin(ReadableUnfoldFieldsMixin, ImagePreviewMixin, SingletonModelAdminMixin, ModelAdmin):
+    form = SiteSettingsAdminForm
     readonly_fields = ('logo_preview',)
     image_preview_field = 'logo'
 
@@ -24,7 +26,9 @@ class SiteSettingsAdmin(ReadableUnfoldFieldsMixin, ImagePreviewMixin, SingletonM
             ),
             'description': (
                 'Єдине місце для адреси, телефонів і карти. Зміни відображаються на головній, '
-                'сторінці «Контакти», у підвалі та в блоці запису.'
+                'сторінці «Контакти», у підвалі та в блоці запису. '
+                'Для карти найпростіший спосіб — широта + довгота. '
+                'Або вставте повний код <iframe> з Google Maps у поле «Карта Google Maps».'
             ),
         }),
         ('Сповіщення про заявки', {
