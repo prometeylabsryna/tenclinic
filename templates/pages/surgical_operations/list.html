@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static site_content %}
+
+{% block title %}{% block_plain 'surgical' 'page_title' 'Хірургічні операції' %} — {{ site_settings.site_name|default:'TEN clinic' }}{% endblock %}
+
+{% block page_class %}page--inner{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/surgical-operations-page.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include 'includes/breadcrumbs.html' %}
+
+<section class="section section--alt section--page-top surgical-page">
+  <div class="container">
+    <div class="inner-page-head reveal">
+      <p class="section-eyebrow section-eyebrow--plain">{% block_plain 'surgical' 'page_eyebrow' 'Хірургія' %}</p>
+      <h1 class="section-heading">{% block_plain 'surgical' 'page_title' 'Хірургічні операції' %}</h1>
+      <p class="surgical-page__lead">
+        {% block_plain 'surgical' 'page_lead' 'Амбулаторні та планові втручання з повним перед- та післяопераційним супроводом.' %}
+      </p>
+    </div>
+
+    <div class="filter-bar surgical-page__filters reveal">
+      <a href="{% url 'clinic:surgical_operations' %}"
+         class="filter-chip {% if not current_direction_slug %}is-active{% endif %}">{% block_plain 'surgical' 'filter_all' 'Усі напрямки' %}</a>
+      {% for direction in directions %}
+      <a href="{% url 'clinic:surgical_operations' %}?direction={{ direction.slug }}"
+         class="filter-chip {% if current_direction_slug == direction.slug %}is-active{% endif %}">{{ direction.name }}</a>
+      {% endfor %}
+    </div>
+
+    <div class="surgical-page__placeholder reveal">
+      {% if current_direction %}
+      <p class="surgical-page__placeholder-title">{{ current_direction.name }}</p>
+      {% endif %}
+      <p class="surgical-page__placeholder-text">{% block_plain 'surgical' 'placeholder_text' 'Розділ наповнюється. Незабаром тут зʼявиться каталог хірургічних операцій.' %}</p>
+      <a href="{% url 'clinic:booking' %}{% if current_direction %}?direction={{ current_direction.slug }}{% endif %}" class="btn btn--primary">{% block_plain 'surgical' 'placeholder_btn' 'Записатися на консультацію' %}</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

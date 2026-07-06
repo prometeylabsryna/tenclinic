@@ -1,0 +1,65 @@
+{% load static site_content %}
+<footer class="site-footer">
+  <div class="site-footer__accent" aria-hidden="true"></div>
+
+  <div class="container site-footer__body">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <a href="{% url 'clinic:home' %}" class="site-footer__brand-link brand-logo-link"
+          aria-label="{{ site_settings.site_name|default:'TEN clinic' }} — на головну">
+          <span class="brand-logo-shell brand-logo-shell--footer">
+            <img src="{% site_logo_url %}" alt="" width="613" height="410" loading="lazy"
+              class="brand-logo" decoding="async">
+          </span>
+        </a>
+        {% if site_settings.tagline %}
+        <p class="site-footer__tagline">{{ site_settings.tagline }}</p>
+        {% endif %}
+      </div>
+
+      <div class="site-footer__panels">
+        <nav class="site-footer__panel site-footer__panel--nav" aria-label="Навігація сайту">
+          <p class="site-footer__label">Навігація</p>
+          <ul class="site-footer__links">
+            <li><a href="{% url 'clinic:home' %}">{% block_plain 'site' 'nav_home' 'Головна' %}</a></li>
+            <li><a href="{% url 'clinic:directions' %}">{% block_plain 'site' 'nav_directions' 'Напрямки' %}</a></li>
+            <li><a href="{% url 'clinic:doctors' %}">{% block_plain 'site' 'nav_doctors' 'Лікарі' %}</a></li>
+            <li><a href="{% url 'clinic:services' %}">{% block_plain 'site' 'nav_services' 'Послуги' %} {% block_plain 'site' 'nav_services_sub' 'та ціни' %}</a></li>
+            <li><a href="{% url 'clinic:surgical_operations' %}">{% block_plain 'site' 'nav_surgery_title' 'Хірургічні операції' %}</a></li>
+            <li><a href="{% url 'clinic:contacts' %}">{% block_plain 'site' 'nav_contacts' 'Контакти' %}</a></li>
+          </ul>
+        </nav>
+
+        <div class="site-footer__panel site-footer__panel--contact">
+          <p class="site-footer__label">Контакти</p>
+          <ul class="site-footer__contact-list">
+            {% if site_settings.address %}
+            <li class="site-footer__contact-item">{{ site_settings.address }}</li>
+            {% endif %}
+            {% if site_settings.phone_primary %}
+            <li class="site-footer__contact-item">
+              <a href="tel:{{ site_settings.phone_primary }}" class="site-footer__phone">{{ site_settings.phone_primary }}</a>
+            </li>
+            {% endif %}
+            {% if footer_hours %}
+            <li class="site-footer__contact-item site-footer__contact-item--hours">{{ footer_hours }}</li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p class="site-footer__bottom-note">
+        <span class="site-footer__copy">© {% now "Y" %} {% block_plain 'site' 'footer_copyright' 'TEN clinic' %}</span>
+        <span class="site-footer__bottom-sep" aria-hidden="true">·</span>
+        <span class="site-footer__credit">
+          розроблено командою
+          <a href="https://www.prometeylabs.com/" class="site-footer__credit-link" target="_blank"
+            rel="noopener noreferrer">PrometeyLabs</a>
+        </span>
+      </p>
+      <a href="{% url 'clinic:privacy' %}" class="site-footer__legal">Політика конфіденційності</a>
+    </div>
+  </div>
+</footer>

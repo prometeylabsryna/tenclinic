@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static site_content %}
+
+{% block title %}{% block_plain 'directions' 'page_title' 'Напрямки' %} — {{ site_settings.site_name|default:'TEN clinic' }}{% endblock %}
+
+{% block page_class %}page--inner{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/directions-page.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="section section--page-top directions-page">
+  <div class="container">
+    <div class="directions-page__head reveal">
+      <div class="inner-page-head">
+        <p class="section-eyebrow section-eyebrow--plain">{% block_plain 'directions' 'page_eyebrow' 'Напрямки' %}</p>
+        <h1 class="section-heading">{% block_plain 'directions' 'page_title' 'Оберіть напрямок лікування' %}</h1>
+      </div>
+      <p class="directions-page__lead">
+        {% block_plain 'directions' 'page_lead' 'Діагностика та лікування вуха, горла, носа та слуху для дітей і дорослих' %}
+      </p>
+    </div>
+
+    <ol class="directions-index">
+      {% for direction in directions %}
+      <li class="directions-index__item">
+        {% include 'partials/direction_catalog_row.html' with direction=direction index=forloop.counter %}
+      </li>
+      {% empty %}
+      <li class="directions-index__empty">Напрямки тимчасово недоступні.</li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+{% endblock %}

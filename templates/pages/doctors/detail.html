@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ doctor.full_name }} — TEN clinic{% endblock %}
+
+{% block page_class %}page--inner{% endblock %}
+
+{% block content %}
+<section class="section section--alt section--page-top">
+  <div class="container">
+    <div class="detail-layout reveal">
+      <div class="doctor-intro">
+        <div class="card card--doctor doctor-intro__photo {% if not doctor.photo %}card--placeholder{% endif %}">
+          <div class="card__image">
+            {% if doctor.photo %}
+            <img src="{{ doctor.photo.url }}" alt="{{ doctor.full_name }}" loading="lazy">
+            {% else %}
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="18" r="8" stroke="#8AAFA8" stroke-width="2"/><path d="M8 42c0-8.8 7.2-16 16-16s16 7.2 16 16" stroke="#8AAFA8" stroke-width="2"/></svg>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div>
+        <h1>{{ doctor.full_name }}</h1>
+        <p class="section__lead">{{ doctor.specialization }} · {{ doctor.direction.name }} · {{ doctor.experience_years }} років досвіду</p>
+        <div>{{ doctor.bio|linebreaks }}</div>
+        {% if doctor.education %}
+        <h2>Освіта</h2>
+        <div>{{ doctor.education|linebreaks }}</div>
+        {% endif %}
+        {% if services %}
+        <h2>Послуги</h2>
+        <ul>
+          {% for service in services %}
+          <li><a href="{% url 'clinic:service_detail' service.slug %}">{{ service.name }}</a></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="sticky-cta">
+          <a href="{% url 'clinic:booking' %}?doctor={{ doctor.slug }}" class="btn btn--primary">Записатися до лікаря</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,18 @@
+.form-input--invalid {
+  border-color: #9f2f2d;
+}
+
+.form-input--invalid:focus {
+  border-color: #9f2f2d;
+}
+
+.custom-select__trigger.form-input--invalid,
+.date-field__trigger.form-input--invalid {
+  border-color: #9f2f2d;
+}
+
+.custom-select__trigger.form-input--invalid:focus-visible,
+.date-field__trigger.form-input--invalid:focus-visible {
+  border-color: #9f2f2d;
+  box-shadow: 0 0 0 3px rgba(159, 47, 45, 0.18);
+}

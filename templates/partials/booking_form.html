@@ -1,0 +1,85 @@
+{% load site_content %}
+<form method="post"
+      novalidate
+      action="{% url 'clinic:booking' %}"
+      hx-post="{% url 'clinic:booking' %}"
+      hx-target="#booking-form-wrapper"
+      hx-swap="innerHTML show:window:top">
+  {% csrf_token %}
+
+  {% if form.non_field_errors %}
+  <div class="form-errors">{{ form.non_field_errors }}</div>
+  {% endif %}
+
+  <div class="form-honeypot" aria-hidden="true">
+    {{ form.website }}
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" for="id_name">{% block_plain 'booking' 'label_name' 'ПІБ' %} *</label>
+    {{ form.name }}
+    {% if form.name.errors %}<p class="form-error">{{ form.name.errors.0 }}</p>{% endif %}
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" for="id_phone">{% block_plain 'booking' 'label_phone' 'Телефон' %} *</label>
+    {{ form.phone }}
+    {% if form.phone.errors %}<p class="form-error">{{ form.phone.errors.0 }}</p>{% endif %}
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" for="id_email">{% block_plain 'booking' 'label_email' 'Email' %}</label>
+    {{ form.email }}
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" for="id_direction">{% block_plain 'booking' 'label_direction' 'Напрямок' %} *</label>
+    <select name="direction" id="id_direction" class="form-select"
+            data-services-url="{% url 'clinic:booking_services' %}"
+            data-doctors-url="{% url 'clinic:booking_doctors' %}">
+      <option value="">{% block_plain 'booking' 'placeholder_direction' 'Оберіть напрямок' %}</option>
+      {% for choice in form.direction.field.queryset %}
+      <option value="{{ choice.pk }}" {% if form.direction.value|stringformat:'s' == choice.pk|stringformat:'s' %}selected{% endif %}>{{ choice.name }}</option>
+      {% endfor %}
+    </select>
+    {% if form.direction.errors %}<p class="form-error">{{ form.direction.errors.0 }}</p>{% endif %}
+  </div>
+
+  <div class="form-group" id="service-field">
+    <label class="form-label" for="id_service">{% block_plain 'booking' 'label_service' 'Послуга' %} *</label>
+    <div id="service-select-wrapper">
+      {% include 'partials/service_options.html' with services=form.fields.service.queryset selected=form.service.value %}
+    </div>
+  </div>
+
+  <div class="form-group" id="doctor-field">
+    <label class="form-label" for="id_doctor">{% block_plain 'booking' 'label_doctor' 'Лікар' %}</label>
+    <div id="doctor-select-wrapper">
+      {% include 'partials/doctor_options.html' with doctors=form.fields.doctor.queryset selected=form.doctor.value %}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" for="id_preferred_date">{% block_plain 'booking' 'label_date' 'Бажана дата' %} *</label>
+    {{ form.preferred_date }}
+    {% if form.preferred_date.errors %}<p class="form-error">{{ form.preferred_date.errors.0 }}</p>{% endif %}
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" for="id_preferred_time">{% block_plain 'booking' 'label_time' 'Бажаний час' %}</label>
+    {{ form.preferred_time }}
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" for="id_comment">{% block_plain 'booking' 'label_comment' 'Коментар' %}</label>
+    {{ form.comment }}
+  </div>
+
+  <div class="form-group form-checkbox">
+    {{ form.consent }}
+    <label for="id_consent">Я погоджуюсь на <a href="{% url 'clinic:privacy' %}">обробку персональних даних</a> *</label>
+  </div>
+  {% if form.consent.errors %}<p class="form-error">{{ form.consent.errors.0 }}</p>{% endif %}
+
+  <button type="submit" class="btn btn--primary btn--block">{% block_plain 'booking' 'btn_submit' 'Надіслати заявку' %}</button>
+</form>

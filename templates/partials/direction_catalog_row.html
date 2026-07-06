@@ -1,0 +1,30 @@
+<a href="{% url 'clinic:direction_detail' direction.slug %}" class="direction-index-item reveal{% if index|divisibleby:2 %} direction-index-item--reverse{% endif %}">
+  <span class="direction-index-item__marker" aria-hidden="true"></span>
+  <span class="direction-index-item__num" aria-hidden="true">{{ index|stringformat:"02d" }}</span>
+
+  <div class="direction-index-item__content">
+    <h2 class="direction-index-item__title">{{ direction.name }}</h2>
+    <p class="direction-index-item__text">
+      {{ direction.short_description|default:direction.description|truncatechars:110 }}
+    </p>
+    <span class="direction-index-item__meta">
+      {{ direction.services_count }} послуг · {{ direction.doctors_count }} лікарів
+    </span>
+  </div>
+
+  <div class="direction-index-item__aside">
+    {% if direction.image %}
+    <img
+      class="direction-index-item__photo"
+      src="{{ direction.image.url }}"
+      alt=""
+      loading="lazy"
+      width="160"
+      height="200"
+    >
+    {% else %}
+    <span class="direction-index-item__glyph" aria-hidden="true"></span>
+    {% endif %}
+    <span class="direction-index-item__arrow" aria-hidden="true">→</span>
+  </div>
+</a>

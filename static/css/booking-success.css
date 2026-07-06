@@ -1,0 +1,39 @@
+.booking-success {
+  padding: clamp(1.25rem, 4vw, 2rem);
+  text-align: center;
+  background: var(--color-white);
+  border: 1px solid rgba(52, 101, 56, 0.18);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 32px rgba(31, 74, 115, 0.08);
+}
+
+.booking-success__eyebrow {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-sage-dark);
+}
+
+.booking-success__title {
+  margin: 0 0 var(--space-md);
+  font-size: clamp(1.375rem, 5vw, 1.75rem);
+  line-height: 1.2;
+  color: var(--color-navy);
+}
+
+.booking-success__message {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  .booking-success {
+    margin-top: var(--space-sm);
+    padding:
+      calc(var(--space-lg) + env(safe-area-inset-top, 0px))
+      var(--space-md)
+      calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
+  }
+}

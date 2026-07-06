@@ -1,0 +1,49 @@
+{% load static site_content %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{% block title %}{{ site_settings.site_name|default:'TEN clinic' }}{% if site_settings.tagline %} — {{ site_settings.tagline }}{% else %} — Medicine & Surgery{% endif %}{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{{ site_settings.meta_description|default:'TEN clinic — новий стандарт медичної допомоги. Medicine & Surgery.' }}{% endblock %}">
+  <link rel="icon" href="{% static 'images/favicon.svg' %}" type="image/svg+xml">
+  <link rel="stylesheet" href="{% static 'css/variables.css' %}">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+  <link rel="stylesheet" href="{% static 'css/hero.css' %}">
+  <link rel="stylesheet" href="{% static 'css/sections.css' %}">
+  <link rel="stylesheet" href="{% static 'css/inner-pages.css' %}">
+  <link rel="stylesheet" href="{% static 'css/services-page.css' %}">
+  <link rel="stylesheet" href="{% static 'css/price-page.css' %}">
+  <link rel="stylesheet" href="{% static 'css/contacts-page.css' %}">
+  <link rel="stylesheet" href="{% static 'css/components.css' %}">
+  <link rel="stylesheet" href="{% static 'css/design-section.css' %}">
+  <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+  <link rel="stylesheet" href="{% static 'css/logo-surface.css' %}">
+  <link rel="stylesheet" href="{% static 'css/trust-strip.css' %}">
+  <link rel="stylesheet" href="{% static 'css/about-section.css' %}">
+  <link rel="stylesheet" href="{% static 'css/directions-section.css' %}">
+  <link rel="stylesheet" href="{% static 'css/doctors-section.css' %}">
+  <link rel="stylesheet" href="{% static 'css/cta-section.css' %}">
+  <link rel="stylesheet" href="{% static 'css/contacts-section.css' %}">
+  <link rel="stylesheet" href="{% static 'css/phone-input.css' %}">
+  <link rel="stylesheet" href="{% static 'css/custom-select.css' %}">
+  <link rel="stylesheet" href="{% static 'css/date-input.css' %}">
+  {% block extra_css %}{% endblock %}
+  <script src="https://unpkg.com/htmx.org@2.0.4" defer></script>
+  <script type="module" src="{% static 'js/main.js' %}?v=20260706i"></script>
+</head>
+<body>
+  {% include 'includes/header.html' %}
+  {% include 'includes/mobile_nav.html' %}
+
+  <main class="page {% block page_class %}{% endblock %}">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include 'includes/footer.html' %}
+  {% include 'includes/bottom_cta.html' %}
+</body>
+</html>

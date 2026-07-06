@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load site_content %}
+
+{% block title %}{% block_plain 'privacy' 'page_title' 'Політика конфіденційності' %} — {{ site_settings.site_name|default:'TEN clinic' }}{% endblock %}
+
+{% block page_class %}page--inner page--no-bottom-cta{% endblock %}
+
+{% block content %}
+<section class="section section--page-top">
+  <div class="container container--narrow reveal">
+    <h1>{% block_plain 'privacy' 'page_title' 'Політика конфіденційності' %}</h1>
+    <p>{% block_plain 'privacy' 'intro' 'TEN clinic поважає вашу конфіденційність і обробляє персональні дані відповідно до чинного законодавства України.' %}</p>
+    <h2>{% block_plain 'privacy' 'heading_data' 'Які дані ми збираємо' %}</h2>
+    <p>{% block_plain 'privacy' 'text_data' 'Під час запису на прийом ми можемо отримати ваше імʼя, номер телефону, email та інформацію про бажану послугу.' %}</p>
+    <h2>{% block_plain 'privacy' 'heading_purpose' 'Мета обробки' %}</h2>
+    <p>{% block_plain 'privacy' 'text_purpose' 'Дані використовуються для організації запису, звʼязку з вами та надання медичних послуг.' %}</p>
+    <h2>{% block_plain 'privacy' 'heading_storage' 'Зберігання та захист' %}</h2>
+    <p>{% block_plain 'privacy' 'text_storage' 'Ми застосовуємо організаційні та технічні заходи для захисту ваших персональних даних від несанкціонованого доступу.' %}</p>
+    <h2>{% block_plain 'privacy' 'heading_contact' 'Контакти' %}</h2>
+    <p>{% block_plain 'privacy' 'text_contact' 'З питань обробки персональних даних звертайтеся:' %} {{ site_settings.email|default:"info@tenclinic.ua" }}.</p>
+  </div>
+</section>
+{% endblock %}

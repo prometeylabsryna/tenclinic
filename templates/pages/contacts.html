@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load site_content %}
+
+{% block title %}{% block_plain 'contacts' 'page_title' 'Контакти' %} — {{ site_settings.site_name|default:'TEN clinic' }}{% endblock %}
+
+{% block page_class %}page--inner{% endblock %}
+
+{% block content %}
+<section class="section section--page-top contacts-page">
+  <div class="container">
+    <div class="inner-page-head reveal">
+      <p class="section-eyebrow section-eyebrow--plain">{% block_plain 'contacts' 'page_eyebrow' 'Контакти' %}</p>
+      <h1 class="section-heading">{% block_plain 'contacts' 'page_title' 'Контакти' %}</h1>
+    </div>
+
+    <div class="contacts-page__layout reveal">
+      <div class="contacts-page__info">
+        <div class="contact-rows">
+          <div class="contact-row">
+            <div class="contact-row__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 17.5s-4.5-3-4.5-6.5a4.5 4.5 0 119 0c0 3.5-4.5 6.5-4.5 6.5z" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="11" r="1.6" fill="currentColor"/></svg>
+            </div>
+            <div>
+              <p class="contact-row__label">{% block_plain 'contacts' 'label_address' 'Адреса' %}</p>
+              <p class="contact-row__value">{{ site_settings.address|default:"м. Київ, вул. …" }}</p>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6.5 3.5h2l1 3-2 1.2a9 9 0 004.8 4.8L13.5 11l3 1v2a1.5 1.5 0 01-1.4 1.5C9.2 16.8 3.2 10.8 3.5 5.9A1.5 1.5 0 015 4.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <p class="contact-row__label">{% block_plain 'contacts' 'label_phone' 'Телефон' %}</p>
+              <p class="contact-row__value"><a href="tel:{{ site_settings.phone_primary }}">{{ site_settings.phone_primary|default:"+38 (0XX) XXX-XX-XX" }}</a></p>
+            </div>
+          </div>
+          {% if site_settings.phone_secondary %}
+          <div class="contact-row">
+            <div class="contact-row__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6.5 3.5h2l1 3-2 1.2a9 9 0 004.8 4.8L13.5 11l3 1v2a1.5 1.5 0 01-1.4 1.5C9.2 16.8 3.2 10.8 3.5 5.9A1.5 1.5 0 015 4.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <p class="contact-row__label">{% block_plain 'contacts' 'label_phone_secondary' 'Додатковий телефон' %}</p>
+              <p class="contact-row__value"><a href="tel:{{ site_settings.phone_secondary }}">{{ site_settings.phone_secondary }}</a></p>
+            </div>
+          </div>
+          {% endif %}
+          <div class="contact-row">
+            <div class="contact-row__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 7l7 5 7-5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <div>
+              <p class="contact-row__label">{% block_plain 'contacts' 'label_email' 'Email' %}</p>
+              <p class="contact-row__value"><a href="mailto:{{ site_settings.email }}">{{ site_settings.email|default:"info@tenclinic.ua" }}</a></p>
+            </div>
+          </div>
+          {% if site_settings.telegram_url or site_settings.viber_url %}
+          <div class="contact-row">
+            <div class="contact-row__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10a6 6 0 1012 0A6 6 0 004 10z" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <div>
+              <p class="contact-row__label">{% block_plain 'contacts' 'label_messengers' 'Месенджери' %}</p>
+              <p class="contact-row__value">
+                {% if site_settings.telegram_url %}<a href="{{ site_settings.telegram_url }}">Telegram</a>{% endif %}
+                {% if site_settings.viber_url %}{% if site_settings.telegram_url %} · {% endif %}<a href="{{ site_settings.viber_url }}">Viber</a>{% endif %}
+              </p>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="contacts-page__schedule">
+        <h2 class="contacts-page__schedule-title">{% block_plain 'contacts' 'schedule_title' 'Графік роботи' %}</h2>
+        {% if today_hours %}
+        <p class="contacts-page__today">
+          {% block_plain 'contacts' 'today_label' 'Сьогодні:' %}
+          {% if today_hours.is_closed %}не працюємо{% else %}{{ today_hours.open_time|time:"H:i" }}–{{ today_hours.close_time|time:"H:i" }}{% endif %}
+        </p>
+        {% endif %}
+        <table class="hours-table contacts-page__hours">
+          <tbody>
+            {% for row in hours %}
+            <tr class="{% if row.day_of_week == today_weekday %}is-today{% endif %}">
+              <td>{{ row.get_day_of_week_display }}</td>
+              <td>{% if row.is_closed %}Вихідний{% else %}{{ row.open_time|time:"H:i" }} – {{ row.close_time|time:"H:i" }}{% endif %}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="contacts-page__map reveal">
+      <h2 class="contacts-page__map-title">{% block_plain 'contacts' 'map_title' 'Схема проїзду' %}</h2>
+      {% if site_settings.directions_text %}
+      <div class="contacts-page__directions">{{ site_settings.directions_text|linebreaks }}</div>
+      {% endif %}
+      {% include 'partials/map_embed.html' %}
+      {% if site_settings.map_lat and site_settings.map_lng %}
+      <p class="section__actions section__actions--left">
+        <a href="https://www.google.com/maps/dir/?api=1&destination={{ site_settings.map_lat }},{{ site_settings.map_lng }}" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">{% block_plain 'contacts' 'route_btn' 'Прокласти маршрут' %}</a>
+      </p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ service.name }} — TEN clinic{% endblock %}
+
+{% block page_class %}page--inner{% endblock %}
+
+{% block content %}
+<section class="section section--page-top">
+  <div class="container reveal">
+    <p class="card__meta">{{ service.direction.name }}</p>
+    <h1>{{ service.name }}</h1>
+    <p class="section__lead">{{ service.price_display }}{% if service.duration_minutes %} · {{ service.duration_minutes }} хв{% endif %}</p>
+    {{ service.description|linebreaks }}
+
+    {% if doctors %}
+    <h2>Лікарі</h2>
+    <div class="grid grid--3">
+      {% for doctor in doctors %}
+      {% include 'partials/doctor_card.html' with doctor=doctor %}
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="sticky-cta">
+      <a href="{% url 'clinic:booking' %}?service={{ service.slug }}" class="btn btn--primary btn--block">Записатися</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

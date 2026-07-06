@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Прайс — TEN clinic{% endblock %}
+
+{% block page_class %}page--inner{% endblock %}
+
+{% block content %}
+<section class="section section--alt section--page-top price-page">
+  <div class="container">
+    <div class="inner-page-head reveal">
+      <p class="section-eyebrow section-eyebrow--plain">Прайс</p>
+      <p class="price-page__updated">Ціни актуальні на {% now "d.m.Y" %}</p>
+    </div>
+
+    {% for direction in directions %}
+    <details class="price-accordion reveal">
+      <summary class="price-accordion__summary">{{ direction.name }}</summary>
+      <div class="price-table" role="table" aria-label="Прайс — {{ direction.name }}">
+        <div class="price-table__head" role="row">
+          <span class="price-table__cell price-table__cell--name" role="columnheader">Послуга</span>
+          <span class="price-table__cell price-table__cell--duration" role="columnheader">Тривалість</span>
+          <span class="price-table__cell price-table__cell--price" role="columnheader">Ціна</span>
+        </div>
+
+        {% for service in direction.services.all %}
+        {% if service.is_active %}
+        <div class="price-line" role="row">
+          <span class="price-line__name price-table__cell price-table__cell--name" role="cell">{{ service.name }}</span>
+          <span class="price-line__duration price-table__cell price-table__cell--duration" role="cell">
+            {% if service.duration_minutes %}{{ service.duration_minutes }} хв{% else %}—{% endif %}
+          </span>
+          <span class="price-line__price price-table__cell price-table__cell--price" role="cell">{{ service.price_display }}</span>
+        </div>
+        {% endif %}
+        {% empty %}
+        <p class="price-direction__empty">Послуги у цьому напрямку ще не додані.</p>
+        {% endfor %}
+      </div>
+    </details>
+    {% empty %}
+    <p class="price-page__empty">Прайс ще не заповнений.</p>
+    {% endfor %}
+
+    <p class="section__actions price-page__actions reveal">
+      <a href="{% url 'clinic:booking' %}" class="btn btn--primary">Записатися</a>
+    </p>
+  </div>
+</section>
+{% endblock %}

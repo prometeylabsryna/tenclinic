@@ -1,0 +1,287 @@
+{% extends 'base.html' %}
+{% load static site_content %}
+
+
+{% block content %}
+{% section_visible 'home' 'hero_section_visible' as show_hero %}
+{% if show_hero %}
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__content reveal">
+      <p class="section-eyebrow">{% block_plain 'home' 'hero_eyebrow' 'Приватна клініка · Київ' %}</p>
+      <h1 class="hero__title">
+        <span class="hero__title-brand">
+          <img
+            src="{% block_image_url 'home' 'hero_brand_mark' 'images/ten-brand-mark.png' %}"
+            alt=""
+            class="hero__title-mark"
+            width="655"
+            height="215"
+            decoding="async"
+            aria-hidden="true"
+          >
+          <span class="hero__title-clinic">{% hero_title_clinic %}</span>
+        </span>
+        <span class="hero__title-text">{% hero_title_rest %}</span>
+      </h1>
+      <p class="hero__lead">{% block_plain 'home' 'hero_lead' 'Доказова медицина, точна діагностика та турбота без компромісів — усе для того, щоб ви почувалися впевнено на кожному етапі лікування.' %}</p>
+      <div class="hero__actions">
+        <a href="{% url 'clinic:booking' %}" class="btn btn--primary btn--hero">{% block_plain 'home' 'hero_btn_primary' 'Записатися' %}</a>
+        <a href="{% url 'clinic:directions' %}" class="btn btn--secondary btn--hero">{% block_plain 'home' 'hero_btn_secondary' 'Напрямки лікування' %}</a>
+      </div>
+    </div>
+    <div class="hero__visual reveal">
+      <figure class="hero__media">
+        <img class="hero__image" src="{% block_image_url 'home' 'hero_bg_image' 'images/hero-bg.jpg' %}" alt="" width="1920" height="1280" loading="eager" fetchpriority="high" decoding="async">
+      </figure>
+      <div class="hero__stat">
+        <div class="hero__stat-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.6"/></svg>
+        </div>
+        <p class="hero__stat-label">{% block_plain 'home' 'hero_stat_label' 'Занесення медичних висновків в ЕСОЗ' %}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip" aria-label="Ключові показники клініки">
+  <div class="container trust-strip__inner">
+    <div class="trust-strip__item reveal">
+      <div class="trust-strip__value">{{ trust_stats.directions }}+</div>
+      <div class="trust-strip__label">{% block_plain 'home' 'trust_directions_label' 'медичних напрямків' %}</div>
+    </div>
+    <div class="trust-strip__item reveal">
+      <div class="trust-strip__value">{{ trust_stats.doctors }}</div>
+      <div class="trust-strip__label">{% block_plain 'home' 'trust_doctors_label' 'лікарів-експертів' %}</div>
+    </div>
+    <div class="trust-strip__item reveal">
+      <div class="trust-strip__value">{% block_plain 'home' 'trust_visits_value' '12k' %}</div>
+      <div class="trust-strip__label">{% block_plain 'home' 'trust_visits_label' 'візитів на рік' %}</div>
+    </div>
+    <div class="trust-strip__item reveal">
+      <div class="trust-strip__value">{% block_plain 'home' 'trust_days_value' '7' %}</div>
+      <div class="trust-strip__label">{% block_plain 'home' 'trust_days_label' 'днів на тиждень' %}</div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% section_visible 'home' 'about_section_visible' as show_about %}
+{% if show_about %}
+<section class="about-section section-shell">
+  <div class="container about-section__grid">
+    <div class="about-section__intro reveal">
+      <p class="section-eyebrow section-eyebrow--plain">{% block_plain 'home' 'about_eyebrow' 'Про клініку' %}</p>
+      <h2 class="section-heading section-heading--light">{% block_plain 'home' 'about_title' 'Медицина, якій довіряють' %}</h2>
+      <p class="section-lead section-lead--light">{% block_plain 'home' 'about_text' 'Ми поєднуємо міжнародні протоколи лікування з уважним, людяним підходом до кожного пацієнта.' %}</p>
+      <div class="about-section__brand">
+        <img
+          src="{% block_image_url 'home' 'about_brand_mark' 'images/ten-brand-mark-about.png' %}"
+          alt=""
+          class="about-section__brand-mark"
+          width="649"
+          height="214"
+          loading="lazy"
+          decoding="async"
+          aria-hidden="true"
+        >
+        <span class="about-section__brand-note">{% block_plain 'home' 'about_brand_note' 'десять принципів, на яких тримається наша якість' %}</span>
+      </div>
+    </div>
+    <div class="about-section__principles reveal">
+      <h3 class="about-section__principles-title">{% block_plain 'home' 'principles_title' '10 принципів TEN clinic' %}</h3>
+      <ol class="about-section__list">
+        <li class="about-section__item">
+          <span class="about-section__num">01</span>
+          <div>
+            <h4 class="about-section__item-title">{% block_plain 'home' 'principle_1_title' 'Точність' %}</h4>
+            <p class="about-section__item-text">{% block_plain 'home' 'principle_1_text' 'Кожне рішення ґрунтується на знаннях, досвіді та деталях.' %}</p>
+          </div>
+        </li>
+        <li class="about-section__item">
+          <span class="about-section__num">02</span>
+          <div>
+            <h4 class="about-section__item-title">{% block_plain 'home' 'principle_2_title' 'Безпека' %}</h4>
+            <p class="about-section__item-text">{% block_plain 'home' 'principle_2_text' 'Безпека пацієнта є нашим безумовним пріоритетом.' %}</p>
+          </div>
+        </li>
+        <li class="about-section__item">
+          <span class="about-section__num">03</span>
+          <div>
+            <h4 class="about-section__item-title">{% block_plain 'home' 'principle_3_title' 'Доказовість' %}</h4>
+            <p class="about-section__item-text">{% block_plain 'home' 'principle_3_text' 'Ми використовуємо лише сучасні міжнародні стандарти та протоколи.' %}</p>
+          </div>
+        </li>
+        <li class="about-section__item">
+          <span class="about-section__num">04</span>
+          <div>
+            <h4 class="about-section__item-title">{% block_plain 'home' 'principle_4_title' 'Партнерство' %}</h4>
+            <p class="about-section__item-text">{% block_plain 'home' 'principle_4_text' 'Лікар і пацієнт приймають рішення разом.' %}</p>
+          </div>
+        </li>
+        <li class="about-section__item">
+          <span class="about-section__num">05</span>
+          <div>
+            <h4 class="about-section__item-title">{% block_plain 'home' 'principle_5_title' 'Індивідуальність' %}</h4>
+            <p class="about-section__item-text">{% block_plain 'home' 'principle_5_text' 'Кожен пацієнт потребує персоналізованого підходу.' %}</p>
+          </div>
+        </li>
+        <li class="about-section__item">
+          <span class="about-section__num">06</span>
+          <div>
+            <h4 class="about-section__item-title">{% block_plain 'home' 'principle_6_title' 'Інновації' %}</h4>
+            <p class="about-section__item-text">{% block_plain 'home' 'principle_6_text' 'Ми впроваджуємо новітні медичні та хірургічні технології.' %}</p>
+          </div>
+        </li>
+        <li class="about-section__item">
+          <span class="about-section__num">07</span>
+          <div>
+            <h4 class="about-section__item-title">{% block_plain 'home' 'principle_7_title' 'Турбота' %}</h4>
+            <p class="about-section__item-text">{% block_plain 'home' 'principle_7_text' 'Повага, емпатія та людяність є невід\'ємною частиною лікування.' %}</p>
+          </div>
+        </li>
+        <li class="about-section__item">
+          <span class="about-section__num">08</span>
+          <div>
+            <h4 class="about-section__item-title">{% block_plain 'home' 'principle_8_title' 'Безперервний супровід' %}</h4>
+            <p class="about-section__item-text">{% block_plain 'home' 'principle_8_text' 'Ми поруч із пацієнтом на кожному етапі лікування та відновлення.' %}</p>
+          </div>
+        </li>
+        <li class="about-section__item">
+          <span class="about-section__num">09</span>
+          <div>
+            <h4 class="about-section__item-title">{% block_plain 'home' 'principle_9_title' 'Досконалість' %}</h4>
+            <p class="about-section__item-text">{% block_plain 'home' 'principle_9_text' 'Ми прагнемо найкращого функціонального та естетичного результату.' %}</p>
+          </div>
+        </li>
+        <li class="about-section__item">
+          <span class="about-section__num">10</span>
+          <div>
+            <h4 class="about-section__item-title">{% block_plain 'home' 'principle_10_title' 'Результат' %}</h4>
+            <p class="about-section__item-text">{% block_plain 'home' 'principle_10_text' 'Якість лікування оцінюється результатом і якістю життя пацієнта.' %}</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% section_visible 'home' 'directions_section_visible' as show_directions %}
+{% if show_directions and directions %}
+<section id="directions" class="directions-section section-shell">
+  <div class="container">
+    <div class="directions-section__head reveal">
+      <div>
+        <p class="section-eyebrow section-eyebrow--plain">{% block_plain 'home' 'directions_eyebrow' 'Напрямки' %}</p>
+        <h2 class="section-heading">{% block_plain 'home' 'directions_title' 'Від діагностики до хірургії' %}</h2>
+      </div>
+      <a href="{% url 'clinic:directions' %}" class="link-pill">{% block_plain 'home' 'directions_all_link' 'Усі напрямки →' %}</a>
+    </div>
+    <div class="directions-rail-wrap reveal">
+      <div class="directions-rail" role="region" aria-label="Напрямки клініки" tabindex="0">
+        {% for direction in directions %}
+        {% include 'partials/direction_rail_card.html' with direction=direction index=forloop.counter %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% section_visible 'home' 'doctors_section_visible' as show_doctors %}
+{% if show_doctors and doctors %}
+<section id="doctors" class="doctors-section section-shell">
+  <div class="container">
+    <div class="doctors-section__head reveal">
+      <p class="section-eyebrow section-eyebrow--plain">{% block_plain 'home' 'doctors_eyebrow' 'Лікарі' %}</p>
+      <h2 class="section-heading">{% block_plain 'home' 'doctors_title' 'Команда, якій ви довіряєте здоровʼя' %}</h2>
+    </div>
+    <div class="doctors-grid">
+      {% for doctor in doctors %}
+      {% include 'partials/doctor_card_preview.html' with doctor=doctor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% section_visible 'home' 'cta_section_visible' as show_cta %}
+{% if show_cta %}
+<section class="cta-section">
+  <div class="cta-section__glow" aria-hidden="true"></div>
+  <div class="cta-section__inner reveal">
+    <p class="cta-section__eyebrow">{% block_plain 'home' 'cta_eyebrow' 'Запис на консультацію' %}</p>
+    <h2 class="cta-section__title">{% block_plain 'home' 'cta_title' 'Потрібна консультація?' %}</h2>
+    <p class="cta-section__text">{% block_plain 'home' 'cta_text' 'Оберіть зручний час — і наш адміністратор підтвердить запис протягом кількох хвилин.' %}</p>
+    <div class="cta-section__actions">
+      <a href="{% url 'clinic:booking' %}" class="cta-section__btn-primary">{% block_plain 'home' 'cta_btn_primary' 'Записатися онлайн' %}</a>
+      {% if site_settings.phone_primary %}
+      <a href="tel:{{ site_settings.phone_primary }}" class="cta-section__btn-phone">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M6.5 3.5h2l1 3-2 1.2a9 9 0 004.8 4.8L13.5 11l3 1v2a1.5 1.5 0 01-1.4 1.5C9.2 16.8 3.2 10.8 3.5 5.9A1.5 1.5 0 015 4.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+        </svg>
+        {{ site_settings.phone_primary }}
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% section_visible 'home' 'contacts_section_visible' as show_contacts %}
+{% if show_contacts %}
+<section id="contacts" class="contacts-section">
+  <div class="container contacts-layout reveal">
+    <div class="contacts-layout__content">
+      <div class="contacts-section__header">
+        <p class="section-eyebrow section-eyebrow--plain">{% block_plain 'home' 'contacts_eyebrow' 'Контакти' %}</p>
+        <h2 class="section-heading">{% block_plain 'home' 'contacts_title' 'Контакти' %}</h2>
+      </div>
+
+      <div class="contact-rows">
+        <div class="contact-row">
+          <div class="contact-row__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 17.5s-4.5-3-4.5-6.5a4.5 4.5 0 119 0c0 3.5-4.5 6.5-4.5 6.5z" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="11" r="1.6" fill="currentColor"/></svg>
+          </div>
+          <div>
+            <p class="contact-row__label">Адреса</p>
+            <p class="contact-row__value">{{ site_settings.address|default:"м. Київ, вул. …" }}</p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-row__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6.5 3.5h2l1 3-2 1.2a9 9 0 004.8 4.8L13.5 11l3 1v2a1.5 1.5 0 01-1.4 1.5C9.2 16.8 3.2 10.8 3.5 5.9A1.5 1.5 0 015 4.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <p class="contact-row__label">Телефон</p>
+            <p class="contact-row__value"><a href="tel:{{ site_settings.phone_primary }}">{{ site_settings.phone_primary|default:"+38 (0XX) XXX-XX-XX" }}</a></p>
+          </div>
+        </div>
+        {% if today_hours %}
+        <div class="contact-row">
+          <div class="contact-row__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l2.5 2" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div>
+            <p class="contact-row__label">Сьогодні</p>
+            <p class="contact-row__value">
+              {% if today_hours.is_closed %}Не працюємо{% else %}{{ today_hours.open_time|time:"H:i" }} – {{ today_hours.close_time|time:"H:i" }}{% endif %}
+            </p>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+
+      <p class="contacts-section__more">
+        <a href="{% url 'clinic:contacts' %}" class="text-arrow-link">Усі контакти та схема проїзду</a>
+      </p>
+    </div>
+
+    <div class="contacts-layout__map">
+      {% include 'partials/map_embed.html' %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

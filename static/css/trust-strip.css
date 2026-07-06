@@ -1,0 +1,79 @@
+/* Trust strip — sage band зі статистикою */
+
+.trust-strip {
+  background: var(--color-trust-strip-bg);
+  border-top: 1px solid rgba(138, 175, 168, 0.24);
+  border-bottom: 1px solid rgba(138, 175, 168, 0.24);
+}
+
+.trust-strip__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  padding: clamp(1.75rem, 3.5vw, 2.5rem) var(--section-pad-x);
+}
+
+.trust-strip__item {
+  text-align: center;
+}
+
+.trust-strip__item:nth-child(odd) {
+  border-right: 1px solid rgba(138, 175, 168, 0.4);
+  padding-right: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+.trust-strip__item:nth-child(even) {
+  padding-left: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+.trust-strip__value {
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--color-navy);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.trust-strip__label {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-graphite-muted);
+  line-height: 1.35;
+}
+
+@media (min-width: 640px) {
+  .trust-strip__inner {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .trust-strip__item {
+    border-right: 1px solid rgba(138, 175, 168, 0.4);
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .trust-strip__item:nth-child(odd) {
+    border-right: 1px solid rgba(138, 175, 168, 0.4);
+    padding-right: 0;
+  }
+
+  .trust-strip__item:nth-child(even) {
+    padding-left: 0;
+  }
+
+  .trust-strip__item:last-child {
+    border-right: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .trust-strip__item + .trust-strip__item {
+    border-left: 1px solid rgba(138, 175, 168, 0.4);
+    border-right: none;
+  }
+
+  .trust-strip__item:first-child {
+    border-left: none;
+  }
+}

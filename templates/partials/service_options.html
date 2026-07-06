@@ -1,0 +1,7 @@
+<select name="service" id="id_service" class="form-select"
+        data-doctors-url="{% url 'clinic:booking_doctors' %}">
+  <option value="">Оберіть послугу</option>
+  {% for service in services %}
+  <option value="{{ service.pk }}" {% if selected|stringformat:'s' == service.pk|stringformat:'s' %}selected{% endif %}>{{ service.name }}</option>
+  {% endfor %}
+</select>

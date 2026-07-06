@@ -1,0 +1,44 @@
+{% regroup services by direction as direction_groups %}
+{% if direction_groups %}
+{% for group in direction_groups %}
+<section class="services-group">
+  <h2 class="services-group__title">{{ group.grouper.name }}</h2>
+  <div class="services-catalog-head" aria-hidden="true">
+    <span class="services-catalog-head__service">Послуга</span>
+    <span class="services-catalog-head__duration">Тривалість</span>
+    <span class="services-catalog-head__price">Ціна</span>
+    <span class="services-catalog-head__action"></span>
+  </div>
+  <ul class="services-catalog-list">
+    {% for service in group.list %}
+    <li class="services-catalog-item">
+      <div class="services-catalog-item__service">
+        <div class="services-catalog-item__title-row">
+          <a href="{% url 'clinic:service_detail' service.slug %}" class="services-catalog-item__name">{{ service.name }}</a>
+          <span class="services-catalog-item__price services-catalog-item__price--inline">{{ service.price_display }}</span>
+        </div>
+        {% if service.short_description and service.short_description|lower != service.name|lower %}
+        <p class="services-catalog-item__desc">{{ service.short_description|truncatechars:80 }}</p>
+        {% endif %}
+      </div>
+      <div class="services-catalog-item__duration">
+        {% if service.duration_minutes %}
+        <span>{{ service.duration_minutes }} хв</span>
+        {% else %}
+        <span class="services-catalog-item__duration--empty" aria-hidden="true">—</span>
+        {% endif %}
+      </div>
+      <div class="services-catalog-item__price services-catalog-item__price--col">
+        {{ service.price_display }}
+      </div>
+      <div class="services-catalog-item__action">
+        <a href="{% url 'clinic:service_detail' service.slug %}" class="services-catalog-item__link">Детальніше →</a>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}
+{% else %}
+<p class="services-catalog__empty">Послуг у цьому напрямку не знайдено.</p>
+{% endif %}

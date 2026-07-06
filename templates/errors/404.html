@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Сторінку не знайдено — TEN clinic{% endblock %}
+{% block page_class %}page--no-bottom-cta{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="container container--narrow section__header--center reveal">
+    <h1>404</h1>
+    <p class="section__lead section__lead--center">Сторінку не знайдено.</p>
+    <p class="section__actions">
+      <a href="{% url 'clinic:home' %}" class="btn btn--primary">На головну</a>
+    </p>
+  </div>
+</section>
+{% endblock %}

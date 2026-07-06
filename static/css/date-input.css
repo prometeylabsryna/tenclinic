@@ -1,0 +1,211 @@
+.date-field {
+  position: relative;
+  width: 100%;
+}
+
+.date-field__native {
+  display: none;
+}
+
+.date-field__trigger {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.date-field__trigger.is-placeholder {
+  color: var(--color-graphite-muted);
+}
+
+.date-field__trigger:focus-visible {
+  border-color: var(--color-sage);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(138, 175, 168, 0.22);
+}
+
+.date-field__backdrop {
+  display: none;
+}
+
+.date-field__sheet {
+  display: none;
+}
+
+.date-field__backdrop[hidden],
+.date-field__sheet[hidden] {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .date-field__backdrop:not([hidden]) {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 122;
+    background: rgba(31, 74, 115, 0.28);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity var(--duration-modal) var(--ease-out),
+      visibility var(--duration-modal) var(--ease-out);
+  }
+
+  .date-field__backdrop:not([hidden]).is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .date-field__sheet:not([hidden]) {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 123;
+    max-height: min(78vh, 560px);
+    padding:
+      var(--space-md)
+      var(--space-md)
+      calc(var(--space-md) + env(safe-area-inset-bottom, 0px));
+    background: var(--color-white);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    box-shadow: 0 -12px 40px rgba(31, 74, 115, 0.18);
+    transform: translateY(100%);
+    transition: transform var(--duration-modal) var(--ease-drawer);
+  }
+
+  .date-field__sheet:not([hidden]).is-active {
+    transform: translateY(0);
+  }
+
+  .date-field__title {
+    margin: 0 0 var(--space-sm);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
+  .date-field__sheet-head {
+    display: grid;
+    grid-template-columns: 40px 1fr 40px 40px;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-sm);
+  }
+
+  .date-field__month {
+    margin: 0;
+    text-align: center;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
+  .date-field__nav,
+  .date-field__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    color: var(--color-navy);
+    background: var(--color-bg-accent);
+    border: 0;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .date-field__nav {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .date-field__weekdays,
+  .date-field__grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 0.25rem;
+  }
+
+  .date-field__weekdays {
+    margin-bottom: var(--space-xs);
+  }
+
+  .date-field__weekdays span {
+    text-align: center;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-graphite-muted);
+  }
+
+  .date-field__day {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0;
+    font-size: 16px;
+    color: var(--color-graphite);
+    background: transparent;
+    border: 0;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .date-field__day:not(.is-empty):not(.is-disabled):hover,
+  .date-field__day:not(.is-empty):not(.is-disabled):focus-visible {
+    background: var(--color-bg-accent);
+    color: var(--color-navy);
+    outline: none;
+  }
+
+  .date-field__day.is-selected {
+    background: var(--color-sage-pastel);
+    color: var(--color-navy);
+    font-weight: 600;
+  }
+
+  .date-field__day.is-disabled {
+    color: rgba(63, 73, 84, 0.35);
+    cursor: default;
+  }
+
+  .date-field__day.is-empty {
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .date-field__native {
+    display: block;
+    width: 100%;
+  }
+}
+
+html.date-field-open {
+  overflow: hidden;
+}
+
+html.date-field-open body {
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
+}
+
+#booking-form-wrapper.reveal,
+#booking-form-wrapper.reveal.is-visible,
+.page--inner .section--page-top,
+.page--inner .container--narrow {
+  overflow: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .date-field__sheet,
+  .date-field__backdrop {
+    transition: none;
+  }
+}

@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static site_content %}
+
+{% block title %}{{ direction.name }} — {{ site_settings.site_name|default:'TEN clinic' }}{% endblock %}
+
+{% block page_class %}page--inner{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/direction-detail-page.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include 'includes/breadcrumbs.html' %}
+
+<section class="section section--page-top direction-detail">
+  <div class="container direction-detail__container">
+    <header class="direction-detail__head reveal">
+      <p class="section-eyebrow section-eyebrow--plain">{% block_plain 'direction' 'detail_eyebrow' 'Напрямок' %}</p>
+      <h1 class="direction-detail__title">{{ direction.name }}</h1>
+      {% if direction.short_description %}
+      <p class="direction-detail__lead">{{ direction.short_description }}</p>
+      {% endif %}
+    </header>
+
+    <div class="direction-detail__layout">
+      <div class="direction-detail__main">
+        {% if direction.description %}
+        <section class="direction-detail__section reveal" aria-labelledby="direction-desc-heading">
+          <h2 id="direction-desc-heading" class="direction-detail__section-title">{% block_plain 'direction' 'detail_desc_heading' 'Опис' %}</h2>
+          <div class="direction-detail__prose">
+            {{ direction.description|linebreaks }}
+          </div>
+        </section>
+        {% endif %}
+
+        {% if direction.when_to_visit_items %}
+        <section class="direction-detail__section reveal" aria-labelledby="direction-when-heading">
+          <h2 id="direction-when-heading" class="direction-detail__section-title">{% block_plain 'direction' 'detail_when_heading' 'Коли варто звернутися?' %}</h2>
+          <ul class="direction-detail__list">
+            {% for item in direction.when_to_visit_items %}
+            <li class="direction-detail__list-item">{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+
+        <section class="direction-detail__section reveal" aria-labelledby="direction-services-heading">
+          <h2 id="direction-services-heading" class="direction-detail__section-title">{% block_plain 'direction' 'detail_services_heading' 'Наші послуги' %}</h2>
+          {% if direction.services_overview_items %}
+          <ul class="direction-detail__list">
+            {% for item in direction.services_overview_items %}
+            <li class="direction-detail__list-item">{{ item }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          <div class="direction-detail__actions">
+            <a
+              href="{% url 'clinic:services' %}?direction={{ direction.slug }}"
+              class="btn btn--primary direction-detail__action-btn"
+            >{% block_plain 'direction' 'detail_btn_consultation' 'Консультативно-діагностичний прийом' %}</a>
+            <a
+              href="{% url 'clinic:surgical_operations' %}?direction={{ direction.slug }}"
+              class="btn btn--secondary direction-detail__action-btn"
+            >{% block_plain 'direction' 'detail_btn_surgery' 'Хірургічна допомога' %}</a>
+          </div>
+        </section>
+
+        {% if doctors %}
+        <section class="direction-detail__section reveal" aria-labelledby="direction-doctors-heading">
+          <h2 id="direction-doctors-heading" class="direction-detail__section-title">{% block_plain 'direction' 'detail_doctors_heading' 'Лікарі напрямку' %}</h2>
+          <div class="grid grid--3">
+            {% for doctor in doctors %}
+            {% include 'partials/doctor_card.html' with doctor=doctor %}
+            {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+      </div>
+
+      <aside class="direction-detail__aside reveal">
+        <div class="direction-detail__cta">
+          <p class="direction-detail__cta-text">{% block_plain 'direction' 'detail_cta_text' 'Запишіться на консультацію — підберемо зручний час прийому.' %}</p>
+          <a
+            href="{% url 'clinic:booking' %}?direction={{ direction.slug }}"
+            class="btn btn--primary btn--block direction-detail__cta-btn"
+          >{% block_plain 'direction' 'detail_cta_btn' 'Записатися на прийом' %}</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+{% endblock %}

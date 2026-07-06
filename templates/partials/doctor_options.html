@@ -1,0 +1,6 @@
+<select name="doctor" id="id_doctor" class="form-select">
+  <option value="">Будь-який лікар</option>
+  {% for doctor in doctors %}
+  <option value="{{ doctor.pk }}" {% if selected|stringformat:'s' == doctor.pk|stringformat:'s' %}selected{% endif %}>{{ doctor.full_name }}</option>
+  {% endfor %}
+</select>

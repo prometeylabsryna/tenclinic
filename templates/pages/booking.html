@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load site_content static %}
+
+{% block title %}{% block_plain 'booking' 'page_title' 'Запис на прийом' %} — {{ site_settings.site_name|default:'TEN clinic' }}{% endblock %}
+
+{% block page_class %}page--inner page--no-bottom-cta{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/booking-success.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="section section--page-top">
+  <div class="container container--narrow">
+    <div class="inner-page-head reveal">
+      <h1 class="section-heading">{% block_plain 'booking' 'page_title' 'Запис на прийом' %}</h1>
+      <p class="section-lead">{% block_plain 'booking' 'page_lead' 'Заповніть форму — адміністратор підтвердить запис найближчим часом.' %}</p>
+    </div>
+    <div id="booking-form-wrapper" class="reveal">
+      {% if success %}
+      {% include 'partials/booking_success.html' %}
+      {% else %}
+      {% include 'partials/booking_form.html' %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}

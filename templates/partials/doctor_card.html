@@ -1,0 +1,12 @@
+<article class="card card--doctor {% if not doctor.photo %}card--placeholder{% endif %} reveal">
+  <div class="card__image">
+    {% if doctor.photo %}
+    <img src="{{ doctor.photo.url }}" alt="{{ doctor.full_name }}" loading="lazy">
+    {% else %}
+    <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="18" r="8" stroke="#8AAFA8" stroke-width="2"/><path d="M8 42c0-8.8 7.2-16 16-16s16 7.2 16 16" stroke="#8AAFA8" stroke-width="2"/></svg>
+    {% endif %}
+  </div>
+  <h3 class="card__title">{{ doctor.full_name }}</h3>
+  <p class="card__meta">{{ doctor.specialization }} · {{ doctor.experience_years }} років досвіду</p>
+  <a href="{% url 'clinic:doctor_detail' doctor.slug %}" class="card__link text-link">Профіль лікаря</a>
+</article>

@@ -1,0 +1,34 @@
+{% load static site_content %}
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <a href="{% url 'clinic:home' %}" class="site-header__logo brand-logo-link" aria-label="{{ site_settings.site_name|default:'TEN clinic' }} — на головну">
+      <span class="brand-logo-shell brand-logo-shell--header">
+        <img src="{% site_logo_url %}" alt="{{ site_settings.site_name|default:'TEN clinic' }}{% if site_settings.tagline %} — {{ site_settings.tagline }}{% endif %}" width="613" height="410" class="brand-logo" decoding="async">
+      </span>
+    </a>
+
+    <div class="site-nav-panel">
+      <nav class="site-nav" aria-label="Головна навігація">
+        <a href="{% url 'clinic:home' %}" class="site-nav__link {% if request.resolver_match.url_name == 'home' %}is-active{% endif %}">{% block_plain 'site' 'nav_home' 'Головна' %}</a>
+        <a href="{% url 'clinic:directions' %}" class="site-nav__link {% if 'direction' in request.resolver_match.url_name %}is-active{% endif %}">{% block_plain 'site' 'nav_directions' 'Напрямки' %}</a>
+        <a href="{% url 'clinic:doctors' %}" class="site-nav__link {% if 'doctor' in request.resolver_match.url_name %}is-active{% endif %}">{% block_plain 'site' 'nav_doctors' 'Лікарі' %}</a>
+        <a href="{% url 'clinic:services' %}" class="site-nav__link site-nav__link--stacked {% if 'service' in request.resolver_match.url_name or request.resolver_match.url_name == 'price' %}is-active{% endif %}">
+          <span class="site-nav__stack">
+            <span class="site-nav__stack-main">{% block_plain 'site' 'nav_services' 'Послуги' %}</span>
+            <span class="site-nav__stack-sub">{% block_plain 'site' 'nav_services_sub' 'та ціни' %}</span>
+          </span>
+        </a>
+        <a href="{% url 'clinic:surgical_operations' %}" class="site-nav__link {% if request.resolver_match.url_name == 'surgical_operations' %}is-active{% endif %}" title="{% block_plain 'site' 'nav_surgery_title' 'Хірургічні операції' %}">{% block_plain 'site' 'nav_surgery' 'Хірургія' %}</a>
+        <a href="{% url 'clinic:contacts' %}" class="site-nav__link {% if request.resolver_match.url_name == 'contacts' %}is-active{% endif %}">{% block_plain 'site' 'nav_contacts' 'Контакти' %}</a>
+      </nav>
+    </div>
+
+    <a href="{% url 'clinic:booking' %}" class="btn btn--cta btn--sm site-header__cta">{% block_plain 'site' 'nav_cta' 'Записатися' %}</a>
+
+    <button class="burger" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobile-nav">
+      <span class="burger__line"></span>
+      <span class="burger__line"></span>
+      <span class="burger__line"></span>
+    </button>
+  </div>
+</header>

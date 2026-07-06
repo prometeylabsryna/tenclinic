@@ -1,0 +1,158 @@
+/* Сторінка «Контакти» — icon rows + графік + карта */
+
+.contacts-page {
+  background: var(--color-bg-page);
+}
+
+.contacts-page .container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.contacts-page__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.contacts-page__info {
+  min-width: 0;
+}
+
+.contacts-page .contact-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contacts-page .contact-row__value a {
+  color: inherit;
+  text-decoration: none;
+  text-decoration-thickness: 0;
+  transition: color var(--duration-ui) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .contacts-page .contact-row__value a:hover {
+    color: var(--color-navy-dark);
+  }
+}
+
+.contacts-page__schedule {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+}
+
+.contacts-page__schedule-title {
+  margin: 0 0 var(--space-sm);
+  font-size: clamp(1.0625rem, 2vw, 1.25rem);
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.contacts-page__today {
+  margin: 0 0 var(--space-md);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-sage-dark);
+}
+
+.contacts-page__hours {
+  width: 100%;
+}
+
+.contacts-page__hours td {
+  padding: 0.45rem 0;
+  font-size: var(--font-size-sm);
+}
+
+.contacts-page__hours tr.is-today td {
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+}
+
+.contacts-page__map {
+  margin: 0;
+  padding: 0;
+}
+
+.contacts-page__map-title {
+  margin: 0 0 var(--space-md);
+  font-size: clamp(1.0625rem, 2vw, 1.25rem);
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.contacts-page__directions {
+  margin-bottom: var(--space-md);
+  font-size: var(--font-size-sm);
+  line-height: 1.55;
+  color: var(--color-graphite-muted);
+}
+
+.contacts-page__map .map-preview {
+  min-height: 16rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(138, 175, 168, 0.28);
+  overflow: hidden;
+  background: var(--color-bg-accent);
+}
+
+.contacts-page__map .map-preview iframe {
+  height: 16rem;
+  width: 100%;
+  display: block;
+  border: 0;
+}
+
+.contacts-page__map .map-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 16rem;
+  padding: var(--space-lg);
+  text-align: center;
+  color: var(--color-sage-dark);
+}
+
+.contacts-page__map .map-placeholder p {
+  margin: 0.75rem 0 0;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .contacts-page__layout {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .contacts-page__schedule {
+    position: sticky;
+    top: calc(var(--header-height-desktop) + var(--space-md) + env(safe-area-inset-top, 0px));
+  }
+
+  .contacts-page__map .map-preview,
+  .contacts-page__map .map-preview iframe,
+  .contacts-page__map .map-placeholder {
+    min-height: 20rem;
+  }
+
+  .contacts-page__map .map-preview iframe {
+    height: 20rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contacts-page .contact-row__value a {
+    transition: none;
+  }
+}

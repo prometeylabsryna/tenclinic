@@ -1,0 +1,12 @@
+{% load site_content %}
+<nav id="mobile-nav" class="mobile-nav" aria-label="Мобільна навігація">
+  <ul class="mobile-nav__list">
+    <li class="mobile-nav__item"><a href="{% url 'clinic:home' %}" class="mobile-nav__link">{% block_plain 'site' 'nav_home' 'Головна' %}</a></li>
+    <li class="mobile-nav__item"><a href="{% url 'clinic:directions' %}" class="mobile-nav__link">{% block_plain 'site' 'nav_directions' 'Напрямки' %}</a></li>
+    <li class="mobile-nav__item"><a href="{% url 'clinic:doctors' %}" class="mobile-nav__link">{% block_plain 'site' 'nav_doctors' 'Лікарі' %}</a></li>
+    <li class="mobile-nav__item"><a href="{% url 'clinic:services' %}" class="mobile-nav__link">{% block_plain 'site' 'nav_services' 'Послуги' %} {% block_plain 'site' 'nav_services_sub' 'та ціни' %}</a></li>
+    <li class="mobile-nav__item"><a href="{% url 'clinic:surgical_operations' %}" class="mobile-nav__link">{% block_plain 'site' 'nav_surgery_title' 'Хірургічні операції' %}</a></li>
+    <li class="mobile-nav__item"><a href="{% url 'clinic:contacts' %}" class="mobile-nav__link">{% block_plain 'site' 'nav_contacts' 'Контакти' %}</a></li>
+    <li class="mobile-nav__item"><a href="{% url 'clinic:booking' %}" class="mobile-nav__link mobile-nav__link--cta">{% block_plain 'site' 'nav_cta' 'Записатися' %}</a></li>
+  </ul>
+</nav>

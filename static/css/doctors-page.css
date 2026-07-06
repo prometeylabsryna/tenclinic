@@ -1,0 +1,279 @@
+/* Сторінка «Лікарі» — горизонтальна premium-стрічка */
+
+.doctors-page {
+  --doctor-rail-card-w: 12.9rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.doctors-page__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.doctors-page__head .inner-page-head {
+  margin-bottom: 0;
+  flex: 1;
+  min-width: 0;
+}
+
+.doctors-page__hint {
+  margin: 0;
+  flex-shrink: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-sage-dark);
+  white-space: nowrap;
+  padding-bottom: 0.2rem;
+}
+
+.doctors-page__filters {
+  margin-bottom: var(--space-md);
+}
+
+.doctors-page__filter-bar {
+  margin-bottom: 0;
+  position: sticky;
+  top: calc(var(--header-height) + env(safe-area-inset-top, 0px));
+  z-index: 20;
+  padding: var(--space-xs) 0;
+  background: linear-gradient(
+    180deg,
+    var(--color-bg-page) 72%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.doctors-page__rail-wrap {
+  position: relative;
+  margin-inline: calc(-1 * max(var(--space-sm), env(safe-area-inset-left, 0px)));
+  padding-inline: max(var(--space-sm), env(safe-area-inset-left, 0px));
+}
+
+.doctors-page__rail-wrap::before,
+.doctors-page__rail-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1.75rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.doctors-page__rail-wrap::before {
+  left: max(var(--space-sm), env(safe-area-inset-left, 0px));
+  background: linear-gradient(90deg, var(--color-bg-page) 15%, rgba(255, 255, 255, 0));
+}
+
+.doctors-page__rail-wrap::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--color-bg-page) 15%, rgba(255, 255, 255, 0));
+}
+
+.doctors-page__rail {
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: max(var(--space-md), env(safe-area-inset-left, 0px));
+  scrollbar-width: thin;
+  scrollbar-color: rgba(138, 175, 168, 0.45) transparent;
+  padding-bottom: var(--space-xs);
+}
+
+.doctors-page__rail:focus {
+  outline: none;
+}
+
+.doctors-page__rail:focus-visible {
+  outline: 2px solid var(--color-sage);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.doctors-page__rail::-webkit-scrollbar {
+  height: 4px;
+}
+
+.doctors-page__rail::-webkit-scrollbar-thumb {
+  background: rgba(138, 175, 168, 0.45);
+  border-radius: var(--radius-pill);
+}
+
+.doctors-page__track {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: var(--space-md);
+  width: max-content;
+  min-width: 100%;
+  padding: var(--space-xs) max(var(--space-md), env(safe-area-inset-right, 0px))
+    var(--space-sm) max(var(--space-xs), env(safe-area-inset-left, 0px));
+}
+
+.doctors-page__empty {
+  flex: 1 1 100%;
+  margin: 0;
+  padding: var(--space-xl) var(--space-md);
+  text-align: center;
+  color: var(--color-graphite-muted);
+  font-size: var(--font-size-sm);
+  background: var(--color-bg-muted);
+  border: 1px dashed rgba(31, 74, 115, 0.14);
+  border-radius: var(--radius-lg);
+}
+
+/* Компактна картка в стрічці */
+.doctor-card--rail {
+  position: relative;
+  flex: 0 0 var(--doctor-rail-card-w);
+  width: var(--doctor-rail-card-w);
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 16px rgba(31, 74, 115, 0.07);
+}
+
+.doctor-card--rail:nth-child(even) .doctor-card__visual {
+  --doctor-gradient: linear-gradient(160deg, #4a7ba6 0%, #1F4A73 100%);
+}
+
+.doctor-card--rail .doctor-card__surface {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  text-decoration-thickness: 0;
+}
+
+.doctor-card--rail .doctor-card__visual {
+  aspect-ratio: 3 / 2.85;
+}
+
+.doctor-card--rail .doctor-card__initials {
+  top: 0.625rem;
+  left: 0.625rem;
+  font-size: 1.375rem;
+}
+
+.doctor-card--rail .doctor-card__silhouette {
+  width: 3.6rem;
+  height: 3.6rem;
+}
+
+.doctor-card--rail .doctor-card__body {
+  padding: 0.75rem 0.875rem 0.875rem;
+}
+
+.doctor-card--rail .doctor-card__name {
+  font-size: 0.8125rem;
+  line-height: 1.35;
+}
+
+.doctor-card--rail .doctor-card__role {
+  margin-top: 0.25rem;
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.doctor-card--rail .doctor-card__link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .doctor-card--rail:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(31, 74, 115, 0.12);
+    border-color: rgba(138, 175, 168, 0.28);
+  }
+
+  .doctor-card--rail:hover .doctor-card__link {
+    color: var(--color-navy);
+  }
+}
+
+@media (min-width: 640px) {
+  .doctors-page {
+    --doctor-rail-card-w: 14.1rem;
+  }
+
+  .doctors-page__track {
+    gap: var(--space-lg);
+  }
+}
+
+@media (min-width: 768px) {
+  .doctors-page {
+    --doctor-rail-card-w: 15rem;
+  }
+
+  .doctors-page__head {
+    margin-bottom: var(--space-lg);
+  }
+
+  .doctors-page__filters {
+    margin-bottom: var(--space-lg);
+  }
+
+  .doctors-page__filter-bar {
+    top: calc(var(--header-height-desktop) + env(safe-area-inset-top, 0px));
+  }
+
+  .doctors-page__hint {
+    font-size: 0.875rem;
+  }
+
+  .doctor-card--rail .doctor-card__body {
+    padding: 0.875rem 1rem 1rem;
+  }
+
+  .doctor-card--rail .doctor-card__name {
+    font-size: 0.875rem;
+  }
+
+  .doctor-card--rail .doctor-card__role {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .doctors-page {
+    --doctor-rail-card-w: 15.6rem;
+  }
+
+  .doctors-page__rail-wrap {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
+  .doctors-page__rail-wrap::before {
+    left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .doctor-card--rail:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .doctors-page__head .section-heading {
+    font-size: clamp(1.5rem, 5vw, 1.9rem);
+  }
+}

@@ -1,0 +1,151 @@
+/* CTA — full-bleed gradient band (макет zip) */
+
+.cta-section {
+  background: var(--color-cta-gradient);
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.cta-section__glow {
+  position: absolute;
+  bottom: -7.5rem;
+  left: -3.75rem;
+  width: 21.25rem;
+  height: 21.25rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.cta-section__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 62.5rem;
+  margin-inline: auto;
+  padding: clamp(3.5rem, 7vw, 5.75rem) var(--section-pad-x);
+  text-align: center;
+}
+
+.cta-section__eyebrow {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #cfe0dc;
+}
+
+.cta-section__title {
+  margin: 1.125rem 0 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  text-wrap: balance;
+  color: var(--color-white);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cta-section__text {
+  margin: 1.25rem auto 0;
+  max-width: 34rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-section__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2.25rem;
+}
+
+.cta-section__btn-primary {
+  padding: 1rem 2.125rem;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  color: var(--color-navy);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+  transition:
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-ui) var(--ease-out),
+    background-color var(--duration-ui) var(--ease-out);
+}
+
+.cta-section__btn-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 1rem 1.75rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  color: var(--color-white);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color var(--duration-ui) var(--ease-out),
+    border-color var(--duration-ui) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cta-section__btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+    color: var(--color-navy-dark);
+  }
+
+  .cta-section__btn-phone:hover {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.48);
+    transform: translateY(-1px);
+    color: var(--color-white);
+  }
+}
+
+.cta-section__btn-primary:active,
+.cta-section__btn-phone:active {
+  transform: scale(0.98);
+}
+
+.cta-section__btn-primary:focus-visible,
+.cta-section__btn-phone:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 3px;
+}
+
+@media (max-width: 479px) {
+  .cta-section__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-section__btn-primary,
+  .cta-section__btn-phone {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-section__btn-primary,
+  .cta-section__btn-phone {
+    transition: none;
+  }
+
+  .cta-section__btn-primary:hover,
+  .cta-section__btn-phone:hover,
+  .cta-section__btn-primary:active,
+  .cta-section__btn-phone:active {
+    transform: none;
+  }
+}

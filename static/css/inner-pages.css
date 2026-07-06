@@ -1,0 +1,144 @@
+/* Внутрішні вкладки — повна ширина, фон до футера */
+
+body:has(main.page--inner) {
+  min-height: auto;
+}
+
+.page--inner {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(
+    100dvh - var(--header-height) - var(--bottom-cta-height)
+    - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)
+  );
+  box-sizing: border-box;
+}
+
+.page--inner.page--no-bottom-cta {
+  min-height: calc(
+    100dvh - var(--header-height)
+    - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)
+  );
+}
+
+.page--inner > section {
+  flex: 1;
+  width: 100%;
+}
+
+.page--inner > .section {
+  padding-inline: 0;
+}
+
+.page--inner .section--page-top {
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-lg);
+}
+
+.page--inner .section--page-top > .container {
+  width: min(100% - 2rem, var(--container-max));
+  margin-inline: auto;
+  padding-inline: max(var(--space-sm), env(safe-area-inset-left, 0px))
+    max(var(--space-sm), env(safe-area-inset-right, 0px));
+}
+
+.page--inner .grid {
+  gap: var(--space-md);
+}
+
+.page--inner .card {
+  padding: var(--space-md);
+}
+
+.page--inner .card__image {
+  aspect-ratio: 16 / 9;
+  margin-bottom: var(--space-sm);
+}
+
+.page--inner .card__title {
+  font-size: var(--font-size-base);
+  margin-bottom: 0.35rem;
+}
+
+.page--inner .card__text {
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  margin-bottom: var(--space-sm);
+}
+
+.page--inner .filter-bar {
+  margin-bottom: var(--space-md);
+}
+
+.page--inner .section__header {
+  margin-bottom: var(--space-md);
+}
+
+.page--inner .section__lead {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--space-md);
+}
+
+.page--inner h1 {
+  font-size: clamp(1.375rem, 3vw, 1.875rem);
+  margin-bottom: var(--space-sm);
+}
+
+.page--inner h2 {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.inner-page-head {
+  margin-bottom: var(--space-lg);
+}
+
+.inner-page-head .section-heading,
+.inner-page-head h1.section-heading {
+  margin-top: 0.875rem;
+  margin-bottom: 0;
+}
+
+.inner-page-head .section-eyebrow {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .page--inner {
+    min-height: calc(
+      100dvh - var(--header-height-desktop)
+      - env(safe-area-inset-top, 0px)
+    );
+  }
+
+  .page--inner.page--no-bottom-cta {
+    min-height: calc(
+      100dvh - var(--header-height-desktop)
+      - env(safe-area-inset-top, 0px)
+    );
+  }
+
+  .page--inner .section--page-top {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-xl);
+  }
+
+  .page--inner .section--page-top > .container {
+    width: min(100% - 2.5rem, var(--container-max));
+    padding-inline: max(var(--space-md), env(safe-area-inset-left, 0px))
+      max(var(--space-md), env(safe-area-inset-right, 0px));
+  }
+
+  .page--inner .grid {
+    gap: var(--space-lg);
+  }
+
+  .page--inner .card {
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .page--inner .card__title {
+    font-size: var(--font-size-lg);
+  }
+}

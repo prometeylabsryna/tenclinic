@@ -1,0 +1,64 @@
+/* Сторінка «Хірургічні операції» */
+
+.surgical-page__lead {
+  margin: 0.75rem 0 0;
+  max-width: 36rem;
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  color: var(--color-graphite-muted);
+}
+
+.surgical-page__filters {
+  margin-bottom: var(--space-lg);
+  position: sticky;
+  top: calc(var(--header-height) + env(safe-area-inset-top, 0px));
+  z-index: 20;
+  padding: var(--space-sm) 0;
+  background: linear-gradient(
+    180deg,
+    var(--color-bg-muted) 75%,
+    rgba(246, 248, 249, 0) 100%
+  );
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.surgical-page__placeholder {
+  padding: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  background: var(--color-white);
+  border: 1px solid rgba(31, 74, 115, 0.1);
+}
+
+.surgical-page__placeholder-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.surgical-page__placeholder-text {
+  margin: 0 0 var(--space-md);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-graphite-muted);
+  max-width: 28rem;
+  margin-inline: auto;
+}
+
+.surgical-page__placeholder .btn {
+  min-height: 2.75rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 768px) {
+  .surgical-page__filters {
+    top: calc(var(--header-height-desktop) + env(safe-area-inset-top, 0px));
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .surgical-page__placeholder .btn {
+    min-height: 44px;
+  }
+}

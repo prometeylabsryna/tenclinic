@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static site_content %}
+
+{% block title %}{% block_plain 'doctors' 'page_title' 'Лікарі' %} — {{ site_settings.site_name|default:'TEN clinic' }}{% endblock %}
+
+{% block page_class %}page--inner{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/doctors-page.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="section section--page-top doctors-page">
+  <div class="container">
+    <div class="doctors-page__head reveal">
+      <div class="inner-page-head">
+        <p class="section-eyebrow section-eyebrow--plain">{% block_plain 'doctors' 'page_eyebrow' 'Лікарі' %}</p>
+        <h1 class="section-heading">{% block_plain 'doctors' 'page_title' 'Команда, якій ви довіряєте здоровʼя' %}</h1>
+      </div>
+      <p class="doctors-page__hint" aria-hidden="true">{% block_plain 'doctors' 'page_hint' 'Гортайте →' %}</p>
+    </div>
+
+    <div class="doctors-page__filters reveal">
+      <div class="filter-bar doctors-page__filter-bar">
+        <a href="{% url 'clinic:doctors' %}"
+           class="filter-chip {% if not current_direction %}is-active{% endif %}"
+           hx-get="{% url 'clinic:doctors' %}"
+           hx-target="#doctors-grid"
+           hx-swap="innerHTML"
+           hx-push-url="true">Усі напрямки</a>
+        {% for direction in directions %}
+        <a href="{% url 'clinic:doctors' %}?direction={{ direction.slug }}"
+           class="filter-chip {% if current_direction == direction.slug %}is-active{% endif %}"
+           hx-get="{% url 'clinic:doctors' %}?direction={{ direction.slug }}"
+           hx-target="#doctors-grid"
+           hx-swap="innerHTML"
+           hx-push-url="true">{{ direction.name }}</a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="doctors-page__rail-wrap reveal">
+      <div class="doctors-page__rail" role="region" aria-label="Лікарі клініки" tabindex="0">
+        <div class="doctors-page__track" id="doctors-grid">
+          {% include 'partials/doctors_grid.html' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

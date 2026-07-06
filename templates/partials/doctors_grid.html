@@ -1,0 +1,5 @@
+{% for doctor in doctors %}
+{% include 'partials/doctor_card_rail.html' with doctor=doctor %}
+{% empty %}
+<p class="doctors-page__empty">Лікарів не знайдено.</p>
+{% endfor %}

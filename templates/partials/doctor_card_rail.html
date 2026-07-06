@@ -1,0 +1,21 @@
+{% load site_content %}
+<article class="doctor-card doctor-card--rail">
+  <a href="{% url 'clinic:doctor_detail' doctor.slug %}" class="doctor-card__surface">
+    <div class="doctor-card__visual">
+      {% if doctor.photo %}
+      <img class="doctor-card__photo" src="{{ doctor.photo.url }}" alt="" loading="lazy" width="240" height="272">
+      {% else %}
+      <span class="doctor-card__initials" aria-hidden="true">{{ doctor.full_name|initials }}</span>
+      <svg class="doctor-card__silhouette" width="52" height="52" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.3"/>
+        <path d="M4 21c0-4 3.6-6 8-6s8 2 8 6" stroke="currentColor" stroke-width="1.3"/>
+      </svg>
+      {% endif %}
+    </div>
+    <div class="doctor-card__body">
+      <h3 class="doctor-card__name">{{ doctor.full_name }}</h3>
+      <p class="doctor-card__role">{{ doctor.specialization }}{% if doctor.experience_years %} · {{ doctor.experience_years }} р.{% endif %}</p>
+      <span class="doctor-card__link">Профіль →</span>
+    </div>
+  </a>
+</article>
