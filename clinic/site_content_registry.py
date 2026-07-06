@@ -253,14 +253,11 @@ CONTENT_SECTIONS: tuple[ContentSection, ...] = (
         sidebar_title='Сторінка контактів',
         sidebar_icon='call',
         preview_url='/contacts/',
-        description='Тексти сторінки. Адреса, телефон, карта — в «Налаштування → Сайт».',
+        description='Заголовки та підписи сторінки. Адреса, телефони, email і карта — лише в «Налаштування → Сайт».',
         admin_model_name='contactspagesettings',
         field_groups=(
             FieldGroup('Заголовки', ('page_eyebrow', 'page_title')),
-            FieldGroup('Підписи полів', (
-                'label_address', 'label_phone', 'label_phone_secondary',
-                'label_email', 'label_messengers',
-            )),
+            FieldGroup('Підписи полів', ('label_email', 'label_messengers')),
             FieldGroup('Графік і карта', (
                 'schedule_title', 'today_label', 'map_title', 'route_btn',
             )),
@@ -268,9 +265,6 @@ CONTENT_SECTIONS: tuple[ContentSection, ...] = (
         blocks=(
             ('contacts', 'page_eyebrow'),
             ('contacts', 'page_title'),
-            ('contacts', 'label_address'),
-            ('contacts', 'label_phone'),
-            ('contacts', 'label_phone_secondary'),
             ('contacts', 'label_email'),
             ('contacts', 'label_messengers'),
             ('contacts', 'schedule_title'),

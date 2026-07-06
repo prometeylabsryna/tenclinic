@@ -25,9 +25,24 @@ class SiteSettings(models.Model):
         help_text='Застаріле поле. Основний текст — у «Контент → Про клініку».',
     )
 
-    address = models.CharField('Адреса', max_length=500, blank=True)
-    phone_primary = models.CharField('Телефон', max_length=20, blank=True)
-    phone_secondary = models.CharField('Додатковий телефон', max_length=20, blank=True)
+    address = models.CharField(
+        'Адреса',
+        max_length=500,
+        blank=True,
+        help_text='Відображається на головній, сторінці «Контакти» та в підвалі.',
+    )
+    phone_primary = models.CharField(
+        'Телефон',
+        max_length=20,
+        blank=True,
+        help_text='Основний номер для дзвінків на всьому сайті.',
+    )
+    phone_secondary = models.CharField(
+        'Додатковий телефон',
+        max_length=20,
+        blank=True,
+        help_text='Необовʼязковий другий номер на сторінці «Контакти».',
+    )
     email = models.EmailField('Email', blank=True)
     telegram_url = models.URLField('Telegram', blank=True)
     viber_url = models.URLField('Viber', blank=True)

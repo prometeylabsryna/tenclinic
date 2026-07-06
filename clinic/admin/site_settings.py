@@ -16,16 +16,16 @@ class SiteSettingsAdmin(ReadableUnfoldFieldsMixin, ImagePreviewMixin, SingletonM
                 'Тексти секцій головної — у розділі «Контент сторінок».'
             ),
         }),
-        ('Контакти', {
+        ('Контакти та карта', {
             'fields': (
                 'address', 'phone_primary', 'phone_secondary', 'email',
                 'telegram_url', 'viber_url',
+                'map_lat', 'map_lng', 'map_embed_url', 'directions_text',
             ),
-            'description': 'Адреса, телефони та месенджери на сторінці контактів і в підвалі.',
-        }),
-        ('Карта', {
-            'fields': ('map_lat', 'map_lng', 'map_embed_url', 'directions_text'),
-            'description': 'Координати або embed-посилання для Google Maps.',
+            'description': (
+                'Єдине місце для адреси, телефонів і карти. Зміни відображаються на головній, '
+                'сторінці «Контакти», у підвалі та в блоці запису.'
+            ),
         }),
         ('Сповіщення про заявки', {
             'fields': ('notification_email', 'telegram_bot_token', 'telegram_chat_id'),
