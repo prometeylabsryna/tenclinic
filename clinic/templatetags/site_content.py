@@ -2,6 +2,7 @@ from django import template
 from django.templatetags.static import static
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
+import re
 
 from clinic.utils.block_render import get_block_image_url, get_block_text, is_section_visible
 
@@ -16,6 +17,28 @@ def initials(value):
     if len(parts) >= 2:
         return f'{parts[0][:1]}{parts[1][:1]}'.upper()
     return parts[0][:1].upper() if parts[0] else ''
+
+
+@register.filter
+def lines(value):
+    if not value:
+        return []
+    return [line.strip() for line in str(value).splitlines() if line.strip()]
+
+
+@register.filter
+def first_sentences(value, count=2):
+    if not value:
+        return ''
+    text = str(value).strip()
+    sentences = [part.strip() for part in re.split(r'(?<=[.!?…])\s+', text) if part.strip()]
+    if not sentences:
+        return text
+    try:
+        limit = int(count)
+    except (TypeError, ValueError):
+        limit = 2
+    return ' '.join(sentences[:limit])
 
 
 @register.filter

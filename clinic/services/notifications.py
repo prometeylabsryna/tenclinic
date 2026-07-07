@@ -7,16 +7,19 @@ from django.core.mail import send_mail
 
 
 def notify_new_appointment(appointment):
+    if appointment.is_direction_undecided:
+        direction_label = 'Не можу визначитися'
+    else:
+        direction_label = str(appointment.direction) if appointment.direction else '—'
+
     subject = f'[TEN clinic] Нова заявка на запис — {appointment.name}'
     body = (
         f'ПІБ: {appointment.name}\n'
         f'Телефон: {appointment.phone}\n'
         f'Email: {appointment.email or "—"}\n'
-        f'Напрямок: {appointment.direction}\n'
-        f'Послуга: {appointment.service}\n'
+        f'Напрямок: {direction_label}\n'
         f'Лікар: {appointment.doctor or "—"}\n'
-        f'Дата: {appointment.preferred_date}\n'
-        f'Час: {appointment.preferred_time or "—"}\n'
+        f'Спосіб звʼязку: {appointment.get_contact_method_display() or "—"}\n'
         f'Коментар: {appointment.comment or "—"}\n'
     )
     recipient = settings.NOTIFICATION_EMAIL

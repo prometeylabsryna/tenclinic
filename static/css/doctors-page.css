@@ -1,7 +1,11 @@
 /* Сторінка «Лікарі» — горизонтальна premium-стрічка */
 
-.doctors-page {
+.doctors-page,
+.direction-detail {
   --doctor-rail-card-w: 12.9rem;
+}
+
+.doctors-page {
   display: flex;
   flex-direction: column;
   min-height: 0;
@@ -55,27 +59,6 @@
   position: relative;
   margin-inline: calc(-1 * max(var(--space-sm), env(safe-area-inset-left, 0px)));
   padding-inline: max(var(--space-sm), env(safe-area-inset-left, 0px));
-}
-
-.doctors-page__rail-wrap::before,
-.doctors-page__rail-wrap::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 1.75rem;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.doctors-page__rail-wrap::before {
-  left: max(var(--space-sm), env(safe-area-inset-left, 0px));
-  background: linear-gradient(90deg, var(--color-bg-page) 15%, rgba(255, 255, 255, 0));
-}
-
-.doctors-page__rail-wrap::after {
-  right: 0;
-  background: linear-gradient(270deg, var(--color-bg-page) 15%, rgba(255, 255, 255, 0));
 }
 
 .doctors-page__rail {
@@ -208,7 +191,8 @@
 }
 
 @media (min-width: 640px) {
-  .doctors-page {
+  .doctors-page,
+  .direction-detail {
     --doctor-rail-card-w: 14.1rem;
   }
 
@@ -218,7 +202,8 @@
 }
 
 @media (min-width: 768px) {
-  .doctors-page {
+  .doctors-page,
+  .direction-detail {
     --doctor-rail-card-w: 15rem;
   }
 
@@ -252,17 +237,14 @@
 }
 
 @media (min-width: 1024px) {
-  .doctors-page {
+  .doctors-page,
+  .direction-detail {
     --doctor-rail-card-w: 15.6rem;
   }
 
   .doctors-page__rail-wrap {
     margin-inline: 0;
     padding-inline: 0;
-  }
-
-  .doctors-page__rail-wrap::before {
-    left: 0;
   }
 }
 

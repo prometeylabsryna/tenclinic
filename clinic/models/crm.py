@@ -58,11 +58,10 @@ class Doctor(models.Model):
         help_text=DOCTOR_PHOTO.help_text,
     )
     specialization = models.CharField('Спеціалізація', max_length=200)
-    direction = models.ForeignKey(
+    directions = models.ManyToManyField(
         Direction,
-        on_delete=models.CASCADE,
         related_name='doctors',
-        verbose_name='Напрямок',
+        verbose_name='Напрямки',
     )
     bio = models.TextField('Біографія')
     education = models.TextField('Освіта', blank=True)
@@ -78,6 +77,10 @@ class Doctor(models.Model):
 
     def __str__(self):
         return self.full_name
+
+    @property
+    def primary_direction(self):
+        return self.directions.order_by('order', 'name').first()
 
 
 class HearingAid(models.Model):
@@ -169,6 +172,13 @@ class Appointment(models.Model):
         ('confirmed', 'Підтверджена'),
         ('rejected', 'Відхилена'),
     ]
+    CONTACT_METHOD_CHOICES = [
+        ('call', 'Дзвінок'),
+        ('sms', 'SMS'),
+        ('viber', 'Viber'),
+        ('telegram', 'Telegram'),
+        ('whatsapp', 'WhatsApp'),
+    ]
     name = models.CharField('ПІБ', max_length=200)
     phone = models.CharField('Телефон', max_length=20)
     email = models.EmailField('Email', blank=True)
@@ -176,9 +186,11 @@ class Appointment(models.Model):
         Direction,
         on_delete=models.SET_NULL,
         null=True,
+        blank=True,
         related_name='appointments',
         verbose_name='Напрямок',
     )
+    is_direction_undecided = models.BooleanField('Напрямок не визначено', default=False)
     service = models.ForeignKey(
         Service,
         on_delete=models.SET_NULL,
@@ -194,8 +206,14 @@ class Appointment(models.Model):
         related_name='appointments',
         verbose_name='Лікар',
     )
-    preferred_date = models.DateField('Бажана дата')
+    preferred_date = models.DateField('Бажана дата', null=True, blank=True)
     preferred_time = models.CharField('Бажаний час', max_length=50, blank=True)
+    contact_method = models.CharField(
+        'Спосіб звʼязку',
+        max_length=20,
+        choices=CONTACT_METHOD_CHOICES,
+        blank=True,
+    )
     comment = models.TextField('Коментар', blank=True)
     status = models.CharField('Статус', max_length=20, choices=STATUS_CHOICES, default='new')
     created_at = models.DateTimeField('Створено', auto_now_add=True)

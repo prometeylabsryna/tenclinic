@@ -7,6 +7,6 @@
     {% endif %}
   </div>
   <h3 class="card__title">{{ doctor.full_name }}</h3>
-  <p class="card__meta">{{ doctor.specialization }} · {{ doctor.experience_years }} років досвіду</p>
+  <p class="card__meta">{{ doctor.specialization }}{% if doctor.experience_years %} · {{ doctor.experience_years }} років досвіду{% endif %}</p>
   <a href="{% url 'clinic:doctor_detail' doctor.slug %}" class="card__link text-link">Профіль лікаря</a>
 </article>

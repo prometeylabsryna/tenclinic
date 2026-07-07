@@ -1,14 +1,11 @@
 import { isValidUaPhone } from './phone-input.js?v=20260706i';
 
 const INVALID_CLASS = 'form-input--invalid';
+const RADIO_INVALID_CLASS = 'form-radio-list--invalid';
 
 function getVisibleControl(control) {
   if (control instanceof HTMLSelectElement && control.classList.contains('custom-select__native')) {
     return control.closest('.custom-select')?.querySelector('.custom-select__trigger') || control;
-  }
-
-  if (control.matches('.date-field__native')) {
-    return control.closest('.date-field')?.querySelector('.date-field__trigger') || control;
   }
 
   return control;
@@ -44,6 +41,19 @@ function setFieldError(control, message) {
   }
 }
 
+function setContactMethodError(form, message) {
+  const group = form.querySelector('.form-radio-list')?.closest('.form-group');
+  if (!group) {
+    return;
+  }
+
+  const list = group.querySelector('.form-radio-list');
+  const errorNode = getOrCreateErrorNode(group);
+  list?.classList.add(RADIO_INVALID_CLASS);
+  errorNode.textContent = message;
+  errorNode.hidden = false;
+}
+
 export function clearBookingClientErrors(form) {
   form.querySelectorAll('.js-client-error').forEach((node) => {
     node.hidden = true;
@@ -53,6 +63,10 @@ export function clearBookingClientErrors(form) {
   form.querySelectorAll(`.${INVALID_CLASS}`).forEach((node) => {
     node.classList.remove(INVALID_CLASS);
     node.removeAttribute('aria-invalid');
+  });
+
+  form.querySelectorAll(`.${RADIO_INVALID_CLASS}`).forEach((node) => {
+    node.classList.remove(RADIO_INVALID_CLASS);
   });
 
   form.querySelectorAll('[aria-invalid="true"]').forEach((node) => {
@@ -66,7 +80,7 @@ function focusFirstInvalid(form) {
     const group = clientError.closest('.form-group');
     group?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     const focusTarget = group?.querySelector(
-      '.custom-select__trigger, .date-field__trigger, input:not([type="hidden"]), textarea, select, button[type="button"]',
+      '.custom-select__trigger, input:not([type="hidden"]), textarea, select, button[type="button"], .form-radio__input',
     );
     focusTarget?.focus({ preventScroll: true });
     return;
@@ -78,12 +92,14 @@ function focusFirstInvalid(form) {
     return;
   }
 
-  const invalid = form.querySelector(`.${INVALID_CLASS}, input[aria-invalid="true"], select[aria-invalid="true"], textarea[aria-invalid="true"]`);
+  const invalid = form.querySelector(`.${INVALID_CLASS}, .${RADIO_INVALID_CLASS}, input[aria-invalid="true"], select[aria-invalid="true"], textarea[aria-invalid="true"]`);
   if (!invalid) {
     return;
   }
 
-  const target = invalid.matches('input[type="checkbox"]') ? invalid : getVisibleControl(invalid);
+  const target = invalid.matches('input[type="checkbox"], .form-radio__input')
+    ? invalid
+    : getVisibleControl(invalid);
   target.scrollIntoView({ behavior: 'smooth', block: 'center' });
   target.focus({ preventScroll: true });
 }
@@ -99,20 +115,26 @@ export function validateBookingForm(form) {
     }
   });
 
-  const dateInput = form.querySelector('input[type="date"][data-date-input], #id_preferred_date');
-  if (dateInput?.required && !dateInput.value) {
-    setFieldError(dateInput, 'Оберіть бажану дату');
-    isValid = false;
-  }
-
   const phoneInput = form.querySelector('[data-phone-input], #id_phone');
   if (phoneInput?.required && !isValidUaPhone(phoneInput.value)) {
     setFieldError(phoneInput, 'Введіть коректний номер телефону у форматі +38 (0XX) XXX-XX-XX');
     isValid = false;
   }
 
-  form.querySelectorAll('input:not([type="hidden"]):not(.date-field__native):not(.form-honeypot), textarea, select:not(.custom-select__native)').forEach((control) => {
-    if (control === phoneInput || control.id === 'id_consent') {
+  const directionSelect = form.querySelector('#id_direction');
+  if (directionSelect?.required && !directionSelect.value) {
+    setFieldError(directionSelect, 'Оберіть напрямок');
+    isValid = false;
+  }
+
+  const contactMethod = form.querySelector('input[name="contact_method"]:checked');
+  if (!contactMethod) {
+    setContactMethodError(form, 'Оберіть зручний спосіб звʼязку');
+    isValid = false;
+  }
+
+  form.querySelectorAll('input:not([type="hidden"]):not(.form-honeypot):not(.form-radio__input), textarea, select:not(.custom-select__native)').forEach((control) => {
+    if (control === phoneInput || control.id === 'id_consent' || control.id === 'id_direction') {
       return;
     }
 
@@ -181,6 +203,7 @@ export function initBookingValidation() {
     group.querySelector('.js-client-error')?.remove();
     getVisibleControl(control).classList.remove(INVALID_CLASS);
     control.removeAttribute('aria-invalid');
+    group.querySelector('.form-radio-list')?.classList.remove(RADIO_INVALID_CLASS);
   });
 
   document.body.addEventListener('change', (event) => {
@@ -200,10 +223,10 @@ export function initBookingValidation() {
       getVisibleControl(control).classList.remove(INVALID_CLASS);
     }
 
-    if (control.matches('.date-field__native') && control.value) {
+    if (control.matches('.form-radio__input') && control instanceof HTMLInputElement && control.checked) {
       const group = control.closest('.form-group');
       group?.querySelector('.js-client-error')?.remove();
-      getVisibleControl(control).classList.remove(INVALID_CLASS);
+      group?.querySelector('.form-radio-list')?.classList.remove(RADIO_INVALID_CLASS);
     }
 
     if (control.id === 'id_consent' && control instanceof HTMLInputElement && control.checked) {

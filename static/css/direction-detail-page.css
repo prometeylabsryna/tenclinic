@@ -10,9 +10,111 @@
 }
 
 .direction-detail__head {
-  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
-  padding-bottom: var(--space-md);
-  border-bottom: 1px solid rgba(31, 74, 115, 0.1);
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+  padding-bottom: clamp(1.25rem, 3vw, 1.75rem);
+  border-bottom: 1px solid rgba(31, 74, 115, 0.08);
+}
+
+.direction-detail__head-actions {
+  margin-top: clamp(1rem, 3vw, 1.25rem);
+  max-width: 22rem;
+}
+
+.direction-detail__book-btn {
+  width: 100%;
+  min-height: 2.75rem;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.direction-detail__content {
+  display: grid;
+  gap: 0;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.direction-detail__section {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.direction-detail__doctors {
+  min-width: 0;
+  overflow-x: clip;
+}
+
+.direction-detail__doctors-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.direction-detail__section-title--inline {
+  margin-bottom: 0;
+  flex: 1;
+  min-width: 0;
+}
+
+.direction-detail__doctors-hint {
+  margin: 0;
+  flex-shrink: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-sage-dark);
+  white-space: nowrap;
+  padding-bottom: 0.15rem;
+}
+
+.direction-detail__rail-wrap {
+  min-width: 0;
+  max-width: 100%;
+  margin-inline: calc(-1 * max(var(--space-sm), env(safe-area-inset-left, 0px)));
+  padding-inline: max(var(--space-sm), env(safe-area-inset-left, 0px));
+}
+
+.direction-detail__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: clamp(1rem, 3vw, 1.5rem);
+}
+
+.direction-detail__action-btn {
+  min-height: 2.75rem;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.direction-detail__action-btn--surgery {
+  color: var(--color-white);
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(138, 175, 168, 0.35);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .direction-detail__action-btn--surgery:hover {
+    background: var(--color-sage-dark);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(138, 175, 168, 0.45);
+  }
+}
+
+.direction-detail__action-btn--surgery:active {
+  background: var(--color-sage-deep);
+  color: var(--color-white);
+}
+
+@media (min-width: 1024px) {
+  .direction-detail__rail-wrap {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
 }
 
 .direction-detail__title {
@@ -22,20 +124,18 @@
   line-height: 1.1;
   letter-spacing: -0.03em;
   color: var(--color-navy);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .direction-detail__lead {
   margin: 0.875rem 0 0;
-  max-width: 40rem;
+  max-width: 42rem;
   font-size: clamp(0.9375rem, 2.2vw, 1.0625rem);
   line-height: 1.6;
   color: var(--color-graphite-muted);
-}
-
-.direction-detail__layout {
-  display: grid;
-  gap: var(--space-lg);
-  align-items: start;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .direction-detail__section + .direction-detail__section {
@@ -50,6 +150,8 @@
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--color-navy);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .direction-detail__prose {
@@ -57,6 +159,8 @@
   font-size: 0.9375rem;
   line-height: 1.65;
   color: var(--color-graphite);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .direction-detail__prose p {
@@ -74,6 +178,7 @@
   display: grid;
   gap: 0.625rem;
   max-width: 44rem;
+  min-width: 0;
 }
 
 .direction-detail__list-item {
@@ -82,6 +187,8 @@
   font-size: 0.875rem;
   line-height: 1.55;
   color: var(--color-graphite);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .direction-detail__list-item::before {
@@ -103,51 +210,6 @@
   top: 0.65em;
 }
 
-.direction-detail__cards {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.direction-detail__actions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  max-width: 28rem;
-}
-
-.direction-detail__action-btn {
-  min-height: 2.75rem;
-  text-align: center;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.direction-detail__aside {
-  min-width: 0;
-}
-
-.direction-detail__cta {
-  padding: var(--space-md);
-  background: linear-gradient(
-    160deg,
-    rgba(31, 74, 115, 0.04) 0%,
-    rgba(138, 175, 168, 0.12) 100%
-  );
-  border: 1px solid rgba(31, 74, 115, 0.1);
-}
-
-.direction-detail__cta-text {
-  margin: 0 0 var(--space-md);
-  font-size: 0.875rem;
-  line-height: 1.55;
-  color: var(--color-graphite-muted);
-}
-
-.direction-detail__cta-btn {
-  min-height: 2.75rem;
-  -webkit-tap-highlight-color: transparent;
-}
-
 @media (min-width: 40rem) {
   .direction-detail__list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -155,25 +217,23 @@
   }
 }
 
-@media (min-width: 64rem) {
-  .direction-detail__layout {
-    grid-template-columns: minmax(0, 1fr) minmax(14rem, 18rem);
-    gap: clamp(2rem, 5vw, 3.5rem);
+@media (min-width: 48rem) {
+  .direction-detail__doctors-hint {
+    font-size: 0.875rem;
   }
 
-  .direction-detail__aside {
-    position: sticky;
-    top: calc(var(--header-height, 4rem) + var(--space-md));
-    align-self: start;
+  .direction-detail__head-actions {
+    max-width: none;
   }
 
-  .direction-detail__cta {
-    padding: var(--space-lg) var(--space-md);
+  .direction-detail__book-btn {
+    width: auto;
+    min-width: 16rem;
   }
 }
 
 @supports (-webkit-touch-callout: none) {
-  .direction-detail__cta-btn,
+  .direction-detail__book-btn,
   .direction-detail__action-btn {
     min-height: 44px;
   }

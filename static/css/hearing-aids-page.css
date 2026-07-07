@@ -143,12 +143,12 @@
   min-width: 2.5rem;
   min-height: 2.5rem;
   padding: 0 0.625rem;
-  border: 1px solid rgba(31, 74, 115, 0.16);
+  border: 1px solid var(--color-sage);
   border-radius: var(--radius-sm);
-  background: var(--color-white);
+  background: var(--color-sage);
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--color-navy);
+  color: var(--color-white);
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
 }
@@ -159,8 +159,8 @@
 }
 
 .hearing-aids-page .pagination__link.is-active {
-  background: var(--color-sage);
-  border-color: var(--color-sage);
+  background: var(--color-sage-dark);
+  border-color: var(--color-sage-dark);
   color: var(--color-white);
 }
 
@@ -177,9 +177,18 @@
 }
 
 @media (hover: hover) {
-  .hearing-aids-page .pagination__link:not(.is-active):not(.is-disabled):hover {
-    border-color: var(--color-sage);
-    color: var(--color-navy);
+  .hearing-aids-page .pagination__link:not(.is-active):not(.is-disabled):hover,
+  .hearing-aids-page .pagination__link:not(.is-active):not(.is-disabled):active {
+    background: var(--color-sage-dark);
+    border-color: var(--color-sage-dark);
+    color: var(--color-white);
+  }
+
+  .hearing-aids-page .pagination__link.is-active:hover,
+  .hearing-aids-page .pagination__link.is-active:active {
+    background: var(--color-sage-deep);
+    border-color: var(--color-sage-deep);
+    color: var(--color-white);
   }
 }
 

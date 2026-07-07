@@ -5,6 +5,7 @@
   --color-navy-dark: #183a5c;
   --color-sage: #8AAFA8;
   --color-sage-dark: #739890;
+  --color-sage-deep: #5a7870;
   --color-graphite: #3F4954;
   --color-graphite-muted: #5a6570;
   --color-white: #ffffff;
@@ -79,6 +80,10 @@
 
   --shadow-btn-navy: 0 6px 18px rgba(31, 74, 115, 0.24);
   --shadow-btn-navy-hover: 0 10px 26px rgba(31, 74, 115, 0.32);
+  --shadow-btn-sage: 0 4px 14px rgba(138, 175, 168, 0.35);
+  --shadow-btn-sage-hover: 0 8px 20px rgba(138, 175, 168, 0.45);
+  --color-nav-link-hover-bg: rgba(138, 175, 168, 0.2);
+  --color-nav-link-active-bg: var(--color-sage);
 
   --header-height: 60px;
   --header-height-desktop: 72px;

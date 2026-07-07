@@ -67,8 +67,8 @@
 .cta-section__btn-primary {
   padding: 1rem 2.125rem;
   border-radius: var(--radius-md);
-  background: var(--color-white);
-  color: var(--color-navy);
+  background: var(--color-sage);
+  color: var(--color-white);
   font-size: 1.05rem;
   font-weight: 700;
   text-decoration: none;
@@ -85,31 +85,47 @@
   gap: 0.625rem;
   padding: 1rem 1.75rem;
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: var(--color-sage);
+  border: 1px solid transparent;
   color: var(--color-white);
   font-size: 1.05rem;
   font-weight: 600;
   text-decoration: none;
+  box-shadow: var(--shadow-btn-sage);
   transition:
     background-color var(--duration-ui) var(--ease-out),
     border-color var(--duration-ui) var(--ease-out),
-    transform var(--duration-fast) var(--ease-out);
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-ui) var(--ease-out);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .cta-section__btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
-    color: var(--color-navy-dark);
-  }
-
-  .cta-section__btn-phone:hover {
-    background: rgba(255, 255, 255, 0.16);
-    border-color: rgba(255, 255, 255, 0.48);
-    transform: translateY(-1px);
+    background: var(--color-sage-dark);
     color: var(--color-white);
   }
+}
+
+.cta-section__btn-primary:active {
+  background: var(--color-sage-deep);
+  color: var(--color-white);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cta-section__btn-phone:hover {
+    background: var(--color-sage-dark);
+    border-color: transparent;
+    transform: translateY(-1px);
+    color: var(--color-white);
+    box-shadow: var(--shadow-btn-sage-hover);
+  }
+}
+
+.cta-section__btn-phone:active {
+  background: var(--color-sage-deep);
+  color: var(--color-white);
 }
 
 .cta-section__btn-primary:active,

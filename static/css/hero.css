@@ -83,6 +83,27 @@
   border-radius: var(--radius-md);
 }
 
+.hero .btn--secondary.btn--hero {
+  background: var(--color-sage);
+  color: var(--color-white);
+  border-color: transparent;
+  box-shadow: var(--shadow-btn-sage);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero .btn--secondary.btn--hero:hover {
+    background: var(--color-sage-dark);
+    color: var(--color-white);
+    border-color: transparent;
+    box-shadow: var(--shadow-btn-sage-hover);
+  }
+}
+
+.hero .btn--secondary.btn--hero:active {
+  background: var(--color-sage-deep);
+  color: var(--color-white);
+}
+
 .hero__visual {
   position: relative;
 }

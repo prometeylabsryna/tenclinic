@@ -1,6 +1,7 @@
+{% load site_content %}
 <a href="{% url 'clinic:direction_detail' direction.slug %}" class="direction-rail-card">
   <span class="direction-rail-card__num" aria-hidden="true">{{ index|stringformat:"02d" }}</span>
   <h3 class="direction-rail-card__title">{{ direction.name }}</h3>
-  <p class="direction-rail-card__text">{{ direction.short_description|default:direction.description|truncatechars:120 }}</p>
+  <p class="direction-rail-card__text">{{ direction.short_description|default:direction.description|first_sentences:2 }}</p>
   <span class="direction-rail-card__link">Детальніше →</span>
 </a>

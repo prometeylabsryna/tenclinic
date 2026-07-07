@@ -1,44 +1,121 @@
 {% extends 'base.html' %}
+{% load static site_content %}
 
 {% block title %}{{ doctor.full_name }} — TEN clinic{% endblock %}
 
-{% block page_class %}page--inner{% endblock %}
+{% block page_class %}page--inner page--no-bottom-cta page--doctor-detail{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/doctor-detail-page.css' %}?v=20260707c">
+{% endblock %}
 
 {% block content %}
-<section class="section section--alt section--page-top">
-  <div class="container">
-    <div class="detail-layout reveal">
-      <div class="doctor-intro">
-        <div class="card card--doctor doctor-intro__photo {% if not doctor.photo %}card--placeholder{% endif %}">
-          <div class="card__image">
-            {% if doctor.photo %}
-            <img src="{{ doctor.photo.url }}" alt="{{ doctor.full_name }}" loading="lazy">
-            {% else %}
-            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="18" r="8" stroke="#8AAFA8" stroke-width="2"/><path d="M8 42c0-8.8 7.2-16 16-16s16 7.2 16 16" stroke="#8AAFA8" stroke-width="2"/></svg>
+{% include 'includes/breadcrumbs.html' %}
+
+<section class="section section--page-top doctor-detail">
+  <div class="container doctor-detail__container">
+    <div class="doctor-detail__layout">
+      <aside class="doctor-detail__aside reveal" aria-label="Профіль лікаря">
+        <div class="doctor-detail__portrait {% if not doctor.photo %}doctor-detail__portrait--placeholder{% endif %}">
+          {% if doctor.photo %}
+          <img
+            class="doctor-detail__photo"
+            src="{{ doctor.photo.url }}"
+            alt="{{ doctor.full_name }}"
+            width="360"
+            height="408"
+            loading="eager"
+            decoding="async"
+          >
+          {% else %}
+          <span class="doctor-detail__initials" aria-hidden="true">{{ doctor.full_name|initials }}</span>
+          <svg class="doctor-detail__silhouette" width="72" height="72" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M4 21c0-4 3.6-6 8-6s8 2 8 6" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+          {% endif %}
+        </div>
+
+        <div class="doctor-detail__cta doctor-detail__cta--desktop">
+          <p class="doctor-detail__cta-text">Запишіться на прийом — підберемо зручний час.</p>
+          <a
+            href="{% url 'clinic:booking' %}?doctor={{ doctor.slug }}"
+            class="btn btn--primary btn--block doctor-detail__cta-btn"
+          >Записатися до лікаря</a>
+        </div>
+      </aside>
+
+      <div class="doctor-detail__main">
+        <header class="doctor-detail__head reveal">
+          <p class="section-eyebrow section-eyebrow--plain">Лікар</p>
+          <h1 class="doctor-detail__title">{{ doctor.full_name }}</h1>
+          <p class="doctor-detail__specialization">{{ doctor.specialization }}</p>
+          <ul class="doctor-detail__meta">
+            {% for direction in doctor.directions.all %}
+            <li class="doctor-detail__meta-item">
+              <a href="{% url 'clinic:direction_detail' direction.slug %}" class="doctor-detail__meta-link">
+                {{ direction.name }}
+              </a>
+            </li>
+            {% endfor %}
+            {% if doctor.experience_years %}
+            <li class="doctor-detail__meta-item">{{ doctor.experience_years }} років досвіду</li>
             {% endif %}
+          </ul>
+        </header>
+
+        {% if doctor.bio and doctor.bio != 'Текст буде додано.' %}
+        <section class="doctor-detail__section reveal" aria-labelledby="doctor-bio-heading">
+          <h2 id="doctor-bio-heading" class="doctor-detail__section-title">Про лікаря</h2>
+          <div class="doctor-detail__prose">
+            {% for paragraph in doctor.bio|lines %}
+            <p>{{ paragraph }}</p>
+            {% endfor %}
           </div>
-        </div>
-      </div>
-      <div>
-        <h1>{{ doctor.full_name }}</h1>
-        <p class="section__lead">{{ doctor.specialization }} · {{ doctor.direction.name }} · {{ doctor.experience_years }} років досвіду</p>
-        <div>{{ doctor.bio|linebreaks }}</div>
+        </section>
+        {% elif doctor.bio == 'Текст буде додано.' %}
+        <section class="doctor-detail__section reveal" aria-labelledby="doctor-bio-heading">
+          <h2 id="doctor-bio-heading" class="doctor-detail__section-title">Про лікаря</h2>
+          <p class="doctor-detail__placeholder">Інформацію про лікаря буде додано найближчим часом.</p>
+        </section>
+        {% endif %}
+
         {% if doctor.education %}
-        <h2>Освіта</h2>
-        <div>{{ doctor.education|linebreaks }}</div>
+        <section class="doctor-detail__section reveal" aria-labelledby="doctor-edu-heading">
+          <h2 id="doctor-edu-heading" class="doctor-detail__section-title">Освіта та кваліфікація</h2>
+          <ul class="doctor-detail__list">
+            {% for item in doctor.education|lines %}
+            <li class="doctor-detail__list-item">{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </section>
         {% endif %}
+
         {% if services %}
-        <h2>Послуги</h2>
-        <ul>
-          {% for service in services %}
-          <li><a href="{% url 'clinic:service_detail' service.slug %}">{{ service.name }}</a></li>
-          {% endfor %}
-        </ul>
+        <section class="doctor-detail__section reveal" aria-labelledby="doctor-services-heading">
+          <h2 id="doctor-services-heading" class="doctor-detail__section-title">Послуги</h2>
+          <ul class="doctor-detail__services">
+            {% for service in services %}
+            <li>
+              <a href="{% url 'clinic:service_detail' service.slug %}" class="doctor-detail__service-link">
+                <span class="doctor-detail__service-name">{{ service.name }}</span>
+                <span class="doctor-detail__service-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </section>
         {% endif %}
-        <div class="sticky-cta">
-          <a href="{% url 'clinic:booking' %}?doctor={{ doctor.slug }}" class="btn btn--primary">Записатися до лікаря</a>
-        </div>
       </div>
+    </div>
+  </div>
+
+  <div class="doctor-detail__cta-bar" aria-hidden="false">
+    <div class="container doctor-detail__cta-bar-inner">
+      <a
+        href="{% url 'clinic:booking' %}?doctor={{ doctor.slug }}"
+        class="btn btn--primary btn--block doctor-detail__cta-btn"
+      >Записатися до лікаря</a>
     </div>
   </div>
 </section>

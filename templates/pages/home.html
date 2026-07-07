@@ -43,24 +43,25 @@
     </div>
   </div>
 </section>
+{% endif %}
 
-<section class="trust-strip" aria-label="Ключові показники клініки">
-  <div class="container trust-strip__inner">
-    <div class="trust-strip__item reveal">
-      <div class="trust-strip__value">{{ trust_stats.directions }}+</div>
-      <div class="trust-strip__label">{% block_plain 'home' 'trust_directions_label' 'медичних напрямків' %}</div>
+{% section_visible 'home' 'directions_section_visible' as show_directions %}
+{% if show_directions and directions %}
+<section id="directions" class="directions-section section-shell">
+  <div class="container">
+    <div class="directions-section__head reveal">
+      <div>
+        <p class="section-eyebrow section-eyebrow--plain">{% block_plain 'home' 'directions_eyebrow' 'Напрямки' %}</p>
+        <h2 class="section-heading">{% block_plain 'home' 'directions_title' 'Від діагностики до хірургії' %}</h2>
+      </div>
+      <a href="{% url 'clinic:directions' %}" class="link-pill">{% block_plain 'home' 'directions_all_link' 'Усі напрямки →' %}</a>
     </div>
-    <div class="trust-strip__item reveal">
-      <div class="trust-strip__value">{{ trust_stats.doctors }}</div>
-      <div class="trust-strip__label">{% block_plain 'home' 'trust_doctors_label' 'лікарів-експертів' %}</div>
-    </div>
-    <div class="trust-strip__item reveal">
-      <div class="trust-strip__value">{% block_plain 'home' 'trust_visits_value' '12k' %}</div>
-      <div class="trust-strip__label">{% block_plain 'home' 'trust_visits_label' 'візитів на рік' %}</div>
-    </div>
-    <div class="trust-strip__item reveal">
-      <div class="trust-strip__value">{% block_plain 'home' 'trust_days_value' '7' %}</div>
-      <div class="trust-strip__label">{% block_plain 'home' 'trust_days_label' 'днів на тиждень' %}</div>
+    <div class="directions-rail-wrap reveal">
+      <div class="directions-rail" role="region" aria-label="Напрямки клініки" tabindex="0">
+        {% for direction in directions %}
+        {% include 'partials/direction_rail_card.html' with direction=direction index=forloop.counter %}
+        {% endfor %}
+      </div>
     </div>
   </div>
 </section>
@@ -162,28 +163,6 @@
           </div>
         </li>
       </ol>
-    </div>
-  </div>
-</section>
-{% endif %}
-
-{% section_visible 'home' 'directions_section_visible' as show_directions %}
-{% if show_directions and directions %}
-<section id="directions" class="directions-section section-shell">
-  <div class="container">
-    <div class="directions-section__head reveal">
-      <div>
-        <p class="section-eyebrow section-eyebrow--plain">{% block_plain 'home' 'directions_eyebrow' 'Напрямки' %}</p>
-        <h2 class="section-heading">{% block_plain 'home' 'directions_title' 'Від діагностики до хірургії' %}</h2>
-      </div>
-      <a href="{% url 'clinic:directions' %}" class="link-pill">{% block_plain 'home' 'directions_all_link' 'Усі напрямки →' %}</a>
-    </div>
-    <div class="directions-rail-wrap reveal">
-      <div class="directions-rail" role="region" aria-label="Напрямки клініки" tabindex="0">
-        {% for direction in directions %}
-        {% include 'partials/direction_rail_card.html' with direction=direction index=forloop.counter %}
-        {% endfor %}
-      </div>
     </div>
   </div>
 </section>

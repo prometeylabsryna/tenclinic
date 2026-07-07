@@ -28,7 +28,7 @@ export function observeReveal(root = document) {
         }
       });
     },
-    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' },
+    { threshold: 0.08, rootMargin: '0px 0px -8px 0px' },
   );
 
   items.forEach((el) => {

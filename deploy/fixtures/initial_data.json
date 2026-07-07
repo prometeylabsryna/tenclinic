@@ -1,2878 +1,3016 @@
 [
-{
-  "model": "clinic.direction",
-  "pk": 1,
-  "fields": {
-    "name": "Загальна хірургія",
-    "slug": "zagalna-hirurgiya",
-    "description": "Ведемо пацієнтів від першої консультації до післяопераційного спостереження.",
-    "short_description": "Оперативне лікування гриж, новоутворень шкіри, мʼяких тканин.",
-    "when_to_visit": "",
-    "services_overview": "",
-    "image": "",
-    "order": 0,
-    "is_active": false
+  {
+    "model": "clinic.direction",
+    "pk": 1,
+    "fields": {
+      "name": "Загальна хірургія",
+      "slug": "zagalna-hirurgiya",
+      "description": "Ведемо пацієнтів від першої консультації до післяопераційного спостереження.",
+      "short_description": "Оперативне лікування гриж, новоутворень шкіри, мʼяких тканин.",
+      "when_to_visit": "",
+      "services_overview": "",
+      "image": "",
+      "order": 0,
+      "is_active": false
+    }
+  },
+  {
+    "model": "clinic.direction",
+    "pk": 2,
+    "fields": {
+      "name": "Черевна хірургія",
+      "slug": "cherevna-hirurgiya",
+      "description": "Сучасні малоінвазивні та відкриті операції з дотриманням протоколів безпеки.",
+      "short_description": "Лапароскопічні та відкриті операції на органах черевної порожнини.",
+      "when_to_visit": "",
+      "services_overview": "",
+      "image": "",
+      "order": 1,
+      "is_active": false
+    }
+  },
+  {
+    "model": "clinic.direction",
+    "pk": 3,
+    "fields": {
+      "name": "Терапія",
+      "slug": "terapiya",
+      "description": "Комплексний підхід до діагностики та лікування дорослих пацієнтів.",
+      "short_description": "Первинний прийом, ведення хронічних захворювань, направлення на обстеження.",
+      "when_to_visit": "",
+      "services_overview": "",
+      "image": "",
+      "order": 2,
+      "is_active": false
+    }
+  },
+  {
+    "model": "clinic.direction",
+    "pk": 4,
+    "fields": {
+      "name": "Діагностика",
+      "slug": "diagnostyka",
+      "description": "Точна діагностика на сучасному обладнанні.",
+      "short_description": "УЗД, лабораторні аналізи, інструментальні обстеження за призначенням лікаря.",
+      "when_to_visit": "",
+      "services_overview": "",
+      "image": "",
+      "order": 3,
+      "is_active": false
+    }
+  },
+  {
+    "model": "clinic.direction",
+    "pk": 5,
+    "fields": {
+      "name": "Пластична хірургія",
+      "slug": "plastychna-hirurgiya",
+      "description": "Естетичні та реконструктивні втручання після детальної консультації.",
+      "short_description": "Корекція рубців, невеликі естетичні втручання після консультації.",
+      "when_to_visit": "",
+      "services_overview": "",
+      "image": "",
+      "order": 4,
+      "is_active": false
+    }
+  },
+  {
+    "model": "clinic.direction",
+    "pk": 6,
+    "fields": {
+      "name": "Профілактика",
+      "slug": "profilaktyka",
+      "description": "Профілактичні огляди та чек-ап програми.",
+      "short_description": "Чек-ап, щорічні огляди, вакцинація за календарем.",
+      "when_to_visit": "",
+      "services_overview": "",
+      "image": "",
+      "order": 5,
+      "is_active": false
+    }
+  },
+  {
+    "model": "clinic.direction",
+    "pk": 7,
+    "fields": {
+      "name": "Дитяча отоларингологія",
+      "slug": "dytacha-otolaryngologiya",
+      "description": "Дитяча отоларингологія — це напрямок медицини, який займається діагностикою, лікуванням і профілактикою захворювань вуха, горла, носа та суміжних органів у дітей від народження до 18 років. ЛОР-захворювання в дитячому віці мають свої особливості, тому потребують своєчасної діагностики та лікування з урахуванням віку дитини.",
+      "short_description": "Діагностика, лікування та профілактика захворювань вуха, горла й носа у дітей від народження до 18 років. Делікатний підхід, сучасні методи обстеження та лікування з урахуванням вікових особливостей дитини.",
+      "when_to_visit": "утруднене носове дихання\nтривалий або частий нежить\nчасті отити\nбіль у вусі\nвиділення з вуха\nзниження слуху або підозра на його погіршення\nбіль у горлі\nчасті ангіни\nхропіння або зупинки дихання під час сну\nзбільшені аденоїди чи піднебінні мигдалики\nсторонні тіла вуха, носа або глотки\nносові кровотечі\nосиплість голосу",
+      "services_overview": "консультація дитячого лікаря-отоларинголога\nвідеоендоскопія ЛОР-органів\nтимпанометрія\nвидалення сірчаних пробок\nвидалення сторонніх тіл із вуха, носа та глотки\nпромивання лакун піднебінних мигдаликів\nпромивання порожнини носа методом переміщення\nлікувальні маніпуляції при захворюваннях ЛОР-органів\nспостереження дітей із частими ЛОР-захворюваннями\nпередопераційний та післяопераційний супровід",
+      "image": "",
+      "order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.direction",
+    "pk": 8,
+    "fields": {
+      "name": "Отоларингологія",
+      "slug": "otolaryngologiya",
+      "description": "Здоровʼя ЛОР-органів впливає на те, як ми дихаємо, чуємо, спимо, розмовляємо та почуваємося щодня. Саме тому важливо не лише усунути симптоми, а й зрозуміти їхню причину.\n\nМи поєднуємо сучасну діагностику, доказову медицину та уважне ставлення до кожного пацієнта.",
+      "short_description": "Діагностика, лікування та профілактика захворювань вуха, горла й носа на основі сучасних медичних стандартів.",
+      "when_to_visit": "утруднене носове дихання або тривала закладеність носа\nнежить, який не минає або часто повторюється\nбіль чи дискомфорт у горлі\nутруднене або болісне ковтання\nзахриплість голосу\nбіль у вусі\nвиділення з вуха\nзниження слуху\nшум або дзвін у вухах\nзапаморочення\nчасті синусити чи отити\nносові кровотечі\nхропіння та інші порушення дихання під час сну",
+      "services_overview": "консультація лікаря-отоларинголога\nвідеоендоскопія ЛОР-органів\nтимпанометрія\nаудіометрія\nвидалення сірчаних пробок\nвидалення сторонніх тіл із вуха, носа та глотки\nпромивання лакун піднебінних мигдаликів\nпромивання порожнини носа методом переміщення\nлікувальні маніпуляції при захворюваннях ЛОР-органів\nмалоінвазивні амбулаторні процедури\nпередопераційний огляд та післяопераційний супровід",
+      "image": "",
+      "order": 1,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.direction",
+    "pk": 9,
+    "fields": {
+      "name": "Сурдологія",
+      "slug": "surdologiya",
+      "description": "Сурдологія — це напрямок медицини, який займається діагностикою, лікуванням і реабілітацією порушень слуху у дітей і дорослих.\n\nМи проводимо комплексне обстеження слухової системи із застосуванням сучасного діагностичного обладнання дорослим та дітям з першого дня життя. За результатами обстеження лікар пояснює причину порушень, визначає подальшу тактику лікування або реабілітації та, за потреби, рекомендує слухопротезування новітніми слуховими апаратами.",
+      "short_description": "Повна діагностика, лікування та реабілітація порушень слуху у дітей і дорослих. Комплексне обстеження слухової системи із застосуванням сучасних методів діагностики та підбір слухових апаратів.",
+      "when_to_visit": "зниження слуху\nшум або дзвін у вухах\nутруднене розуміння мовлення, особливо в шумному середовищі\nвідчуття закладеності у вухах\nзапаморочення або порушення рівноваги\nпідозра на втрату слуху після перенесених захворювань чи травм\nконтроль слуху після лікування\nпідбір та налаштування слухових апаратів\nпрофілактична перевірка слуху у дітей і дорослих\nзатримка розвитку мовлення у дітей\nвідсутність реакції на звук у дитини",
+      "services_overview": "консультація лікаря-сурдолога\nкомплексна діагностика слуху\nтональна порогова аудіометрія\nімпедансометрія (тимпанометрія та дослідження акустичних рефлексів)\nотоакустична емісія (ОАЕ)\nслухові викликані потенціали (КСВП/ABR)\nскринінг слуху новонароджених\nпідбір, налаштування та супровід користувачів слухових апаратів\nконсультації щодо слухової реабілітації",
+      "image": "",
+      "order": 2,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.direction",
+    "pk": 10,
+    "fields": {
+      "name": "Щелепно-лицева хірургія",
+      "slug": "shchelepno-lytseva-hirurgiya",
+      "description": "Лікування злоякісних та доброякісних пухлин, травм, вроджених вад і захворювань обличчя, щелеп та шиї. Ми відновлюємо функцію й естетику, використовуючи сучасні хірургічні методики.",
+      "short_description": "Лікування злоякісних та доброякісних пухлин, травм, вроджених вад і захворювань обличчя, щелеп та шиї. Ми відновлюємо функцію й естетику, використовуючи сучасні хірургічні методики.",
+      "when_to_visit": "",
+      "services_overview": "",
+      "image": "",
+      "order": 3,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.direction",
+    "pk": 11,
+    "fields": {
+      "name": "Анестезіологія",
+      "slug": "anesteziologiya",
+      "description": "Безпека пацієнта є нашим головним пріоритетом. Анестезіологічний супровід у TEN clinic — це індивідуальний підбір анестезії, безперервний моніторинг життєво важливих показників і сучасні підходи, що забезпечують максимальний комфорт та безпеку на всіх етапах оперативного лікування.",
+      "short_description": "Безпека пацієнта є нашим головним пріоритетом. Індивідуальний підбір анестезії, моніторинг життєво важливих показників і сучасні підходи для комфорту та безпеки на всіх етапах оперативного лікування.",
+      "when_to_visit": "",
+      "services_overview": "",
+      "image": "",
+      "order": 4,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.doctor",
+    "pk": 1,
+    "fields": {
+      "full_name": "Іваненко Олена Петрівна",
+      "slug": "ivanenko-olena",
+      "photo": "",
+      "specialization": "Хірург",
+      "bio": "Іваненко Олена Петрівна — лікар з 15-річним досвідом роботи в TEN clinic.",
+      "education": "Національний медичний університет",
+      "experience_years": 15,
+      "order": 0,
+      "is_active": false,
+      "services": [
+        1
+      ],
+      "directions": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "clinic.doctor",
+    "pk": 2,
+    "fields": {
+      "full_name": "Петренко Андрій Іванович",
+      "slug": "petrenko-andriy",
+      "photo": "",
+      "specialization": "Черевний хірург",
+      "bio": "Петренко Андрій Іванович — лікар з 12-річним досвідом роботи в TEN clinic.",
+      "education": "Національний медичний університет",
+      "experience_years": 12,
+      "order": 1,
+      "is_active": false,
+      "services": [
+        5
+      ],
+      "directions": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "clinic.doctor",
+    "pk": 3,
+    "fields": {
+      "full_name": "Коваленко Марія Сергіївна",
+      "slug": "kovalenko-maria",
+      "photo": "",
+      "specialization": "Терапевт",
+      "bio": "Коваленко Марія Сергіївна — лікар з 10-річним досвідом роботи в TEN clinic.",
+      "education": "Національний медичний університет",
+      "experience_years": 10,
+      "order": 2,
+      "is_active": false,
+      "services": [
+        2
+      ],
+      "directions": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "clinic.doctor",
+    "pk": 4,
+    "fields": {
+      "full_name": "Сидоренко Ігор Васильович",
+      "slug": "sydorenko-igor",
+      "photo": "",
+      "specialization": "Лікар УЗД",
+      "bio": "Сидоренко Ігор Васильович — лікар з 8-річним досвідом роботи в TEN clinic.",
+      "education": "Національний медичний університет",
+      "experience_years": 8,
+      "order": 3,
+      "is_active": false,
+      "services": [
+        3
+      ],
+      "directions": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "clinic.doctor",
+    "pk": 5,
+    "fields": {
+      "full_name": "Мельник Оксана Петрівна",
+      "slug": "melnyk-oksana",
+      "photo": "",
+      "specialization": "Пластичний хірург",
+      "bio": "Мельник Оксана Петрівна — лікар з 11-річним досвідом роботи в TEN clinic.",
+      "education": "Національний медичний університет",
+      "experience_years": 11,
+      "order": 4,
+      "is_active": false,
+      "services": [
+        6
+      ],
+      "directions": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "clinic.doctor",
+    "pk": 6,
+    "fields": {
+      "full_name": "Некрасова Яна Петрівна",
+      "slug": "nekrasova-yana",
+      "photo": "",
+      "specialization": "Отоларинголог, отоларинголог дитячий, сурдолог",
+      "bio": "Працювала у Міській клінічній лікарні № 8 — 2013–2019 рр.\nМіська багатопрофільна клінічна лікарня матері та дитини ім. проф. Руднєва — з 2019 року по теперішній час.",
+      "education": "Закінчила Дніпропетровську державну медичну академію у 2010 році.\nІнтернатура по дитячій отоларингології — 2011–2012 роки.\nСпеціалізація: сурдологія.\nСпеціалізація: отоларингологія.",
+      "experience_years": 16,
+      "order": 0,
+      "is_active": true,
+      "services": [],
+      "directions": [
+        7,
+        8,
+        9
+      ]
+    }
+  },
+  {
+    "model": "clinic.doctor",
+    "pk": 7,
+    "fields": {
+      "full_name": "Терешков Денис Юрійович",
+      "slug": "tereshkov-denys",
+      "photo": "",
+      "specialization": "Щелепно-лицьовий хірург",
+      "bio": "Професійну діяльність розпочав у 2012 році.\nЛікар щелепно-лицевий хірург у Дніпропетровській обласній клінічній лікарні імені І. І. Мечникова — 2012–2020 роки; одночасно — у відділенні дитячої щелепно-лицевої хірургії Міської клінічної лікарні № 8 — 2012–2019 роки.\nВідділення щелепно-лицевої хірургії для дорослих і дітей у Міській багатопрофільній лікарні матері та дитини ім. Руднєва — 2019–2024 роки.\nЗ 2024 року очолює відділення щелепно-лицевої хірургії для дорослих і дітей Регіонального медичного центру родинного здоровʼя.\nСпеціалізується на реконструктивній, онкологічній та дитячій щелепно-лицевій хірургії, впроваджуючи сучасні методики лікування відповідно до міжнародних стандартів.",
+      "education": "У 2010 році закінчив Дніпропетровську державну медичну академію.\nІнтернатура за спеціальністю «Стоматологія» — 2010–2012 роки.\nМагістратура на базі Обласної лікарні імені І. І. Мечникова.\nСпеціалізація з хірургічної стоматології — Запорізька медична академія післядипломної освіти.\nСпеціалізація зі щелепно-лицевої хірургії — Харківський національний університет імені В. Н. Каразіна.",
+      "experience_years": 14,
+      "order": 1,
+      "is_active": true,
+      "services": [],
+      "directions": [
+        10
+      ]
+    }
+  },
+  {
+    "model": "clinic.doctor",
+    "pk": 8,
+    "fields": {
+      "full_name": "Новіков Ярослав Костянтинович",
+      "slug": "novikov-yaroslav",
+      "photo": "",
+      "specialization": "Отоларинголог, отоларинголог дитячий",
+      "bio": "Текст буде додано.",
+      "education": "",
+      "experience_years": 0,
+      "order": 2,
+      "is_active": true,
+      "services": [],
+      "directions": [
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "clinic.doctor",
+    "pk": 9,
+    "fields": {
+      "full_name": "Єгоров Сергій Валерійович",
+      "slug": "yehorov-sergij",
+      "photo": "",
+      "specialization": "Лікар-анестезіолог, лікар-анестезіолог дитячий вищої категорії, заслужений лікар України, завідувач відділенням реанімації",
+      "bio": "Забезпечує кваліфіковане проведення анестезіологічного забезпечення та інтенсивної терапії при різних патологічних процесах.\nПриймає активну участь у поширенні медичних знань про невідкладні стани у дітей.",
+      "education": "",
+      "experience_years": 22,
+      "order": 3,
+      "is_active": true,
+      "services": [],
+      "directions": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "clinic.doctor",
+    "pk": 10,
+    "fields": {
+      "full_name": "Єгорова Ольга Олександрівна",
+      "slug": "yehorova-olha",
+      "photo": "",
+      "specialization": "Лікар-анестезіолог, лікар-анестезіолог дитячий",
+      "bio": "Багаторічний досвід роботи у дитячій та дорослій реанімації; транспортування пацієнтів у критичному стані; проведення різних видів анестезії у пацієнтів офтальмологічного, щелепно-лицевого, стоматологічного, ЛОР та інших профілів.",
+      "education": "",
+      "experience_years": 17,
+      "order": 4,
+      "is_active": true,
+      "services": [],
+      "directions": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 1,
+    "fields": {
+      "name": "Первинна консультація хірурга",
+      "slug": "konsultaciya-hirurga",
+      "direction": 1,
+      "description": "Первинна консультація хірурга — детальний опис процедури в TEN clinic.",
+      "short_description": "Первинна консультація хірурга",
+      "duration_minutes": null,
+      "price": "800.00",
+      "price_note": "",
+      "order": 0,
+      "is_active": false
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 2,
+    "fields": {
+      "name": "Повторний прийом",
+      "slug": "povtornyj-prijom",
+      "direction": 3,
+      "description": "Повторний прийом — детальний опис процедури в TEN clinic.",
+      "short_description": "Повторний прийом",
+      "duration_minutes": null,
+      "price": "600.00",
+      "price_note": "",
+      "order": 1,
+      "is_active": false
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 3,
+    "fields": {
+      "name": "УЗД органів черевної порожнини",
+      "slug": "uzd-organiv-cherevnoi",
+      "direction": 4,
+      "description": "УЗД органів черевної порожнини — детальний опис процедури в TEN clinic.",
+      "short_description": "УЗД органів черевної порожнини",
+      "duration_minutes": null,
+      "price": "950.00",
+      "price_note": "",
+      "order": 2,
+      "is_active": false
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 4,
+    "fields": {
+      "name": "Чек-ап базовий",
+      "slug": "check-up",
+      "direction": 6,
+      "description": "Чек-ап базовий — детальний опис процедури в TEN clinic.",
+      "short_description": "Чек-ап базовий",
+      "duration_minutes": null,
+      "price": "3500.00",
+      "price_note": "",
+      "order": 3,
+      "is_active": false
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 5,
+    "fields": {
+      "name": "Лапароскопічне обстеження",
+      "slug": "laparoskopiya",
+      "direction": 2,
+      "description": "Лапароскопічне обстеження — детальний опис процедури в TEN clinic.",
+      "short_description": "Лапароскопічне обстеження",
+      "duration_minutes": null,
+      "price": "4200.00",
+      "price_note": "",
+      "order": 4,
+      "is_active": false
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 6,
+    "fields": {
+      "name": "Корекція рубців",
+      "slug": "korekciya-rubciv",
+      "direction": 5,
+      "description": "Корекція рубців — детальний опис процедури в TEN clinic.",
+      "short_description": "Корекція рубців",
+      "duration_minutes": null,
+      "price": "2500.00",
+      "price_note": "",
+      "order": 5,
+      "is_active": false
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 7,
+    "fields": {
+      "name": "консультація дитячого лікаря-отоларинголога",
+      "slug": "dytacha-konsultaciya-lor",
+      "direction": 7,
+      "description": "консультація дитячого лікаря-отоларинголога — послуга TEN clinic.",
+      "short_description": "консультація дитячого лікаря-отоларинголога",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 8,
+    "fields": {
+      "name": "відеоендоскопія ЛОР-органів",
+      "slug": "dytacha-videoendoskopiya",
+      "direction": 7,
+      "description": "відеоендоскопія ЛОР-органів — послуга TEN clinic.",
+      "short_description": "відеоендоскопія ЛОР-органів",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 1,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 9,
+    "fields": {
+      "name": "тимпанометрія",
+      "slug": "dytacha-timpanometriya",
+      "direction": 7,
+      "description": "тимпанометрія — послуга TEN clinic.",
+      "short_description": "тимпанометрія",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 2,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 10,
+    "fields": {
+      "name": "видалення сірчаних пробок",
+      "slug": "dytacha-vydalennya-probok",
+      "direction": 7,
+      "description": "видалення сірчаних пробок — послуга TEN clinic.",
+      "short_description": "видалення сірчаних пробок",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 3,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 11,
+    "fields": {
+      "name": "видалення сторонніх тіл із вуха, носа та глотки",
+      "slug": "dytacha-vydalennya-til",
+      "direction": 7,
+      "description": "видалення сторонніх тіл із вуха, носа та глотки — послуга TEN clinic.",
+      "short_description": "видалення сторонніх тіл із вуха, носа та глотки",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 4,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 12,
+    "fields": {
+      "name": "промивання лакун піднебінних мигдаликів",
+      "slug": "dytacha-promyvannya-migdalikiv",
+      "direction": 7,
+      "description": "промивання лакун піднебінних мигдаликів — послуга TEN clinic.",
+      "short_description": "промивання лакун піднебінних мигдаликів",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 5,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 13,
+    "fields": {
+      "name": "промивання порожнини носа методом переміщення",
+      "slug": "dytacha-promyvannya-nosa",
+      "direction": 7,
+      "description": "промивання порожнини носа методом переміщення — послуга TEN clinic.",
+      "short_description": "промивання порожнини носа методом переміщення",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 6,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 14,
+    "fields": {
+      "name": "лікувальні маніпуляції при захворюваннях ЛОР-органів",
+      "slug": "dytacha-likuvalni-manipulyaciyi",
+      "direction": 7,
+      "description": "лікувальні маніпуляції при захворюваннях ЛОР-органів — послуга TEN clinic.",
+      "short_description": "лікувальні маніпуляції при захворюваннях ЛОР-органів",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 7,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 15,
+    "fields": {
+      "name": "спостереження дітей із частими ЛОР-захворюваннями",
+      "slug": "dytacha-sposterezhennya",
+      "direction": 7,
+      "description": "спостереження дітей із частими ЛОР-захворюваннями — послуга TEN clinic.",
+      "short_description": "спостереження дітей із частими ЛОР-захворюваннями",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 8,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 16,
+    "fields": {
+      "name": "передопераційний та післяопераційний супровід",
+      "slug": "dytacha-operacijnyj-suprovid",
+      "direction": 7,
+      "description": "передопераційний та післяопераційний супровід — послуга TEN clinic.",
+      "short_description": "передопераційний та післяопераційний супровід",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 9,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 17,
+    "fields": {
+      "name": "консультація лікаря-отоларинголога",
+      "slug": "lor-konsultaciya",
+      "direction": 8,
+      "description": "консультація лікаря-отоларинголога — послуга TEN clinic.",
+      "short_description": "консультація лікаря-отоларинголога",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 10,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 18,
+    "fields": {
+      "name": "відеоендоскопія ЛОР-органів",
+      "slug": "lor-videoendoskopiya",
+      "direction": 8,
+      "description": "відеоендоскопія ЛОР-органів — послуга TEN clinic.",
+      "short_description": "відеоендоскопія ЛОР-органів",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 11,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 19,
+    "fields": {
+      "name": "тимпанометрія",
+      "slug": "lor-timpanometriya",
+      "direction": 8,
+      "description": "тимпанометрія — послуга TEN clinic.",
+      "short_description": "тимпанометрія",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 12,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 20,
+    "fields": {
+      "name": "аудіометрія",
+      "slug": "lor-audiometriya",
+      "direction": 8,
+      "description": "аудіометрія — послуга TEN clinic.",
+      "short_description": "аудіометрія",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 13,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 21,
+    "fields": {
+      "name": "видалення сірчаних пробок",
+      "slug": "lor-vydalennya-probok",
+      "direction": 8,
+      "description": "видалення сірчаних пробок — послуга TEN clinic.",
+      "short_description": "видалення сірчаних пробок",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 14,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 22,
+    "fields": {
+      "name": "видалення сторонніх тіл із вуха, носа та глотки",
+      "slug": "lor-vydalennya-til",
+      "direction": 8,
+      "description": "видалення сторонніх тіл із вуха, носа та глотки — послуга TEN clinic.",
+      "short_description": "видалення сторонніх тіл із вуха, носа та глотки",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 15,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 23,
+    "fields": {
+      "name": "промивання лакун піднебінних мигдаликів",
+      "slug": "lor-promyvannya-migdalikiv",
+      "direction": 8,
+      "description": "промивання лакун піднебінних мигдаликів — послуга TEN clinic.",
+      "short_description": "промивання лакун піднебінних мигдаликів",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 16,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 24,
+    "fields": {
+      "name": "промивання порожнини носа методом переміщення",
+      "slug": "lor-promyvannya-nosa",
+      "direction": 8,
+      "description": "промивання порожнини носа методом переміщення — послуга TEN clinic.",
+      "short_description": "промивання порожнини носа методом переміщення",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 17,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 25,
+    "fields": {
+      "name": "лікувальні маніпуляції при захворюваннях ЛОР-органів",
+      "slug": "lor-likuvalni-manipulyaciyi",
+      "direction": 8,
+      "description": "лікувальні маніпуляції при захворюваннях ЛОР-органів — послуга TEN clinic.",
+      "short_description": "лікувальні маніпуляції при захворюваннях ЛОР-органів",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 18,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 26,
+    "fields": {
+      "name": "малоінвазивні амбулаторні процедури",
+      "slug": "lor-malo-invazyvni",
+      "direction": 8,
+      "description": "малоінвазивні амбулаторні процедури — послуга TEN clinic.",
+      "short_description": "малоінвазивні амбулаторні процедури",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 19,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 27,
+    "fields": {
+      "name": "передопераційний огляд та післяопераційний супровід",
+      "slug": "lor-operacijnyj-suprovid",
+      "direction": 8,
+      "description": "передопераційний огляд та післяопераційний супровід — послуга TEN clinic.",
+      "short_description": "передопераційний огляд та післяопераційний супровід",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 20,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 28,
+    "fields": {
+      "name": "консультація лікаря-сурдолога",
+      "slug": "surdolog-konsultaciya",
+      "direction": 9,
+      "description": "консультація лікаря-сурдолога — послуга TEN clinic.",
+      "short_description": "консультація лікаря-сурдолога",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 21,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 29,
+    "fields": {
+      "name": "комплексна діагностика слуху",
+      "slug": "surdolog-diahnostyka",
+      "direction": 9,
+      "description": "комплексна діагностика слуху — послуга TEN clinic.",
+      "short_description": "комплексна діагностика слуху",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 22,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 30,
+    "fields": {
+      "name": "тональна порогова аудіометрія",
+      "slug": "surdolog-tonalna-audiometriya",
+      "direction": 9,
+      "description": "тональна порогова аудіометрія — послуга TEN clinic.",
+      "short_description": "тональна порогова аудіометрія",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 23,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 31,
+    "fields": {
+      "name": "імпедансометрія (тимпанометрія та дослідження акустичних рефлексів)",
+      "slug": "surdolog-impedansometriya",
+      "direction": 9,
+      "description": "імпедансометрія (тимпанометрія та дослідження акустичних рефлексів) — послуга TEN clinic.",
+      "short_description": "імпедансометрія (тимпанометрія та дослідження акустичних рефлексів)",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 24,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 32,
+    "fields": {
+      "name": "отоакустична емісія (ОАЕ)",
+      "slug": "surdolog-oae",
+      "direction": 9,
+      "description": "отоакустична емісія (ОАЕ) — послуга TEN clinic.",
+      "short_description": "отоакустична емісія (ОАЕ)",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 25,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 33,
+    "fields": {
+      "name": "слухові викликані потенціали (КСВП/ABR)",
+      "slug": "surdolog-ksvp",
+      "direction": 9,
+      "description": "слухові викликані потенціали (КСВП/ABR) — послуга TEN clinic.",
+      "short_description": "слухові викликані потенціали (КСВП/ABR)",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 26,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 34,
+    "fields": {
+      "name": "скринінг слуху новонароджених",
+      "slug": "surdolog-skrining",
+      "direction": 9,
+      "description": "скринінг слуху новонароджених — послуга TEN clinic.",
+      "short_description": "скринінг слуху новонароджених",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 27,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 35,
+    "fields": {
+      "name": "підбір, налаштування та супровід користувачів слухових апаратів",
+      "slug": "surdolog-aparaty",
+      "direction": 9,
+      "description": "підбір, налаштування та супровід користувачів слухових апаратів — послуга TEN clinic.",
+      "short_description": "підбір, налаштування та супровід користувачів слухових апаратів",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 28,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.service",
+    "pk": 36,
+    "fields": {
+      "name": "консультації щодо слухової реабілітації",
+      "slug": "surdolog-reabilitaciya",
+      "direction": 9,
+      "description": "консультації щодо слухової реабілітації — послуга TEN clinic.",
+      "short_description": "консультації щодо слухової реабілітації",
+      "duration_minutes": null,
+      "price": null,
+      "price_note": "",
+      "order": 29,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.workinghours",
+    "pk": 1,
+    "fields": {
+      "day_of_week": 0,
+      "open_time": "09:00:00",
+      "close_time": "18:00:00",
+      "is_closed": false
+    }
+  },
+  {
+    "model": "clinic.workinghours",
+    "pk": 2,
+    "fields": {
+      "day_of_week": 1,
+      "open_time": "09:00:00",
+      "close_time": "18:00:00",
+      "is_closed": false
+    }
+  },
+  {
+    "model": "clinic.workinghours",
+    "pk": 3,
+    "fields": {
+      "day_of_week": 2,
+      "open_time": "09:00:00",
+      "close_time": "18:00:00",
+      "is_closed": false
+    }
+  },
+  {
+    "model": "clinic.workinghours",
+    "pk": 4,
+    "fields": {
+      "day_of_week": 3,
+      "open_time": "09:00:00",
+      "close_time": "18:00:00",
+      "is_closed": false
+    }
+  },
+  {
+    "model": "clinic.workinghours",
+    "pk": 5,
+    "fields": {
+      "day_of_week": 4,
+      "open_time": "09:00:00",
+      "close_time": "18:00:00",
+      "is_closed": false
+    }
+  },
+  {
+    "model": "clinic.workinghours",
+    "pk": 6,
+    "fields": {
+      "day_of_week": 5,
+      "open_time": "09:00:00",
+      "close_time": "14:00:00",
+      "is_closed": false
+    }
+  },
+  {
+    "model": "clinic.workinghours",
+    "pk": 7,
+    "fields": {
+      "day_of_week": 6,
+      "open_time": null,
+      "close_time": null,
+      "is_closed": true
+    }
+  },
+  {
+    "model": "clinic.appointment",
+    "pk": 1,
+    "fields": {
+      "name": "test",
+      "phone": "+999999999999",
+      "email": "info@favorit-metal.com.ua",
+      "direction": 7,
+      "service": 15,
+      "doctor": null,
+      "preferred_date": "2026-07-08",
+      "preferred_time": "day",
+      "comment": "",
+      "status": "new",
+      "created_at": "2026-07-06T09:21:24.151Z",
+      "ip_address": "127.0.0.1"
+    }
+  },
+  {
+    "model": "clinic.appointment",
+    "pk": 2,
+    "fields": {
+      "name": "test",
+      "phone": "+38 (099) 999-99-99",
+      "email": "valeriakornienko.pl@gmail.com",
+      "direction": 7,
+      "service": 8,
+      "doctor": null,
+      "preferred_date": "2026-07-09",
+      "preferred_time": "morning",
+      "comment": "",
+      "status": "new",
+      "created_at": "2026-07-06T10:09:39.561Z",
+      "ip_address": "127.0.0.1"
+    }
+  },
+  {
+    "model": "clinic.sitesettings",
+    "pk": 1,
+    "fields": {
+      "site_name": "TEN clinic",
+      "tagline": "Medicine & Surgery",
+      "logo": "",
+      "about_text": "",
+      "address": "м. Київ, вул. Хрещатик, 1",
+      "phone_primary": "+38 (044) 123-45-67",
+      "phone_secondary": "",
+      "email": "info@tenclinic.ua",
+      "telegram_url": "",
+      "viber_url": "",
+      "map_lat": "50.447387",
+      "map_lng": "30.524876",
+      "map_embed_url": "https://maps.google.com/maps?q=50.447387,30.524876&hl=uk&z=16&output=embed",
+      "directions_text": "Клініка розташована в центрі міста. Парковка біля будівлі.",
+      "notification_email": "admin@tenclinic.ua",
+      "telegram_bot_token": "",
+      "telegram_chat_id": "",
+      "meta_description": "TEN clinic — новий стандарт медичної допомоги. Medicine & Surgery."
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 1,
+    "fields": {
+      "page": "home",
+      "key": "hero_section_visible",
+      "label": "Показувати головний екран (hero)",
+      "content_type": "text",
+      "text_html": "1",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 2,
+    "fields": {
+      "page": "home",
+      "key": "hero_title",
+      "label": "Заголовок головного екрану",
+      "content_type": "text",
+      "text_html": "TEN clinic — новий стандарт медичної допомоги",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 3,
+    "fields": {
+      "page": "home",
+      "key": "hero_lead",
+      "label": "Основний текст під заголовком",
+      "content_type": "text",
+      "text_html": "Місце, де сучасна медицина працює так, як вона повинна: професійно, чесно, доказово та з повагою до кожного пацієнта. Ми не просто лікуємо — ми формуємо новий стандарт медичної допомоги.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 4,
+    "fields": {
+      "page": "home",
+      "key": "about_section_visible",
+      "label": "Показувати секцію «Про клініку»",
+      "content_type": "text",
+      "text_html": "1",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 5,
+    "fields": {
+      "page": "home",
+      "key": "about_text",
+      "label": "Основний текст про клініку",
+      "content_type": "text",
+      "text_html": "Ми команда лікарів, які створили сучасний медичний центр, де пацієнт отримує достатньо часу для консультації, зрозумілі пояснення та індивідуальний підхід. Ми обʼєднали лікарів різних спеціальностей, сучасне діагностичне обладнання та принципи доказової медицини, щоб забезпечити якісну медичну допомогу для дітей і дорослих.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 6,
+    "fields": {
+      "page": "home",
+      "key": "advantage_1_title",
+      "label": "Перевага 1 — заголовок",
+      "content_type": "text",
+      "text_html": "Команда експертів",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 7,
+    "fields": {
+      "page": "home",
+      "key": "advantage_1_text",
+      "label": "Перевага 1 — текст",
+      "content_type": "text",
+      "text_html": "Досвідчені лікарі різних спеціальностей з індивідуальним підходом.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 8,
+    "fields": {
+      "page": "home",
+      "key": "advantage_2_title",
+      "label": "Перевага 2 — заголовок",
+      "content_type": "text",
+      "text_html": "Доказова медицина",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 9,
+    "fields": {
+      "page": "home",
+      "key": "advantage_2_text",
+      "label": "Перевага 2 — текст",
+      "content_type": "text",
+      "text_html": "Рішення на основі сучасних протоколів та клінічних досліджень.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 10,
+    "fields": {
+      "page": "home",
+      "key": "advantage_3_title",
+      "label": "Перевага 3 — заголовок",
+      "content_type": "text",
+      "text_html": "Технології точної діагностики",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 11,
+    "fields": {
+      "page": "home",
+      "key": "advantage_3_text",
+      "label": "Перевага 3 — текст",
+      "content_type": "text",
+      "text_html": "Сучасне обладнання для швидкої та точної діагностики на місці.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 12,
+    "fields": {
+      "page": "home",
+      "key": "advantage_4_title",
+      "label": "Перевага 4 — заголовок",
+      "content_type": "text",
+      "text_html": "Турбота без компромісів",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 13,
+    "fields": {
+      "page": "home",
+      "key": "advantage_4_text",
+      "label": "Перевага 4 — текст",
+      "content_type": "text",
+      "text_html": "Достатньо часу для консультації та зрозумілі пояснення кожному пацієнту.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 14,
+    "fields": {
+      "page": "home",
+      "key": "directions_section_visible",
+      "label": "Показувати напрямки на головній",
+      "content_type": "text",
+      "text_html": "1",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 15,
+    "fields": {
+      "page": "home",
+      "key": "doctors_section_visible",
+      "label": "Показувати лікарів на головній",
+      "content_type": "text",
+      "text_html": "1",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 16,
+    "fields": {
+      "page": "home",
+      "key": "cta_section_visible",
+      "label": "Показувати блок запису (CTA)",
+      "content_type": "text",
+      "text_html": "1",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 17,
+    "fields": {
+      "page": "home",
+      "key": "cta_title",
+      "label": "Заголовок CTA",
+      "content_type": "text",
+      "text_html": "Потрібна консультація?",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 18,
+    "fields": {
+      "page": "home",
+      "key": "cta_text",
+      "label": "Текст CTA",
+      "content_type": "text",
+      "text_html": "Залиште заявку — адміністратор передзвонить і підбере зручний час.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 19,
+    "fields": {
+      "page": "home",
+      "key": "contacts_section_visible",
+      "label": "Показувати контакти на головній",
+      "content_type": "text",
+      "text_html": "1",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 20,
+    "fields": {
+      "page": "site",
+      "key": "footer_text",
+      "label": "Текст footer",
+      "content_type": "text",
+      "text_html": "TEN clinic — Medicine & Surgery",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 21,
+    "fields": {
+      "page": "booking",
+      "key": "success_message",
+      "label": "Повідомлення після успішного запису",
+      "content_type": "text",
+      "text_html": "Дякуємо! Вашу заявку отримано. Адміністратор звʼяжеться з вами найближчим часом.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 22,
+    "fields": {
+      "page": "home",
+      "key": "hero_stat_label",
+      "label": "Підпис біля іконки ЄСОЗ",
+      "content_type": "text",
+      "text_html": "Занесення медичних висновків в ЕСОЗ",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 23,
+    "fields": {
+      "page": "home",
+      "key": "principles_title",
+      "label": "Заголовок блоку принципів",
+      "content_type": "text",
+      "text_html": "10 принципів TEN clinic",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 24,
+    "fields": {
+      "page": "home",
+      "key": "directions_title",
+      "label": "Заголовок секції напрямків",
+      "content_type": "text",
+      "text_html": "Від діагностики до хірургії",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 25,
+    "fields": {
+      "page": "home",
+      "key": "contacts_title",
+      "label": "Заголовок контактів на головній",
+      "content_type": "text",
+      "text_html": "Контакти",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 26,
+    "fields": {
+      "page": "home",
+      "key": "principle_1_title",
+      "label": "Принцип 01 — назва",
+      "content_type": "text",
+      "text_html": "Точність",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 27,
+    "fields": {
+      "page": "home",
+      "key": "principle_1_text",
+      "label": "Принцип 01 — опис",
+      "content_type": "text",
+      "text_html": "Кожне рішення ґрунтується на знаннях, досвіді та деталях.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 28,
+    "fields": {
+      "page": "home",
+      "key": "principle_2_title",
+      "label": "Принцип 02 — назва",
+      "content_type": "text",
+      "text_html": "Безпека",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 29,
+    "fields": {
+      "page": "home",
+      "key": "principle_2_text",
+      "label": "Принцип 02 — опис",
+      "content_type": "text",
+      "text_html": "Безпека пацієнта є нашим безумовним пріоритетом.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 30,
+    "fields": {
+      "page": "home",
+      "key": "principle_3_title",
+      "label": "Принцип 03 — назва",
+      "content_type": "text",
+      "text_html": "Доказовість",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 31,
+    "fields": {
+      "page": "home",
+      "key": "principle_3_text",
+      "label": "Принцип 03 — опис",
+      "content_type": "text",
+      "text_html": "Ми використовуємо лише сучасні міжнародні стандарти та протоколи.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 32,
+    "fields": {
+      "page": "home",
+      "key": "principle_4_title",
+      "label": "Принцип 04 — назва",
+      "content_type": "text",
+      "text_html": "Партнерство",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 33,
+    "fields": {
+      "page": "home",
+      "key": "principle_4_text",
+      "label": "Принцип 04 — опис",
+      "content_type": "text",
+      "text_html": "Лікар і пацієнт приймають рішення разом.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 34,
+    "fields": {
+      "page": "home",
+      "key": "principle_5_title",
+      "label": "Принцип 05 — назва",
+      "content_type": "text",
+      "text_html": "Індивідуальність",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 35,
+    "fields": {
+      "page": "home",
+      "key": "principle_5_text",
+      "label": "Принцип 05 — опис",
+      "content_type": "text",
+      "text_html": "Кожен пацієнт потребує персоналізованого підходу.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 36,
+    "fields": {
+      "page": "home",
+      "key": "principle_6_title",
+      "label": "Принцип 06 — назва",
+      "content_type": "text",
+      "text_html": "Інновації",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 37,
+    "fields": {
+      "page": "home",
+      "key": "principle_6_text",
+      "label": "Принцип 06 — опис",
+      "content_type": "text",
+      "text_html": "Ми впроваджуємо новітні медичні та хірургічні технології.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 38,
+    "fields": {
+      "page": "home",
+      "key": "principle_7_title",
+      "label": "Принцип 07 — назва",
+      "content_type": "text",
+      "text_html": "Турбота",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 39,
+    "fields": {
+      "page": "home",
+      "key": "principle_7_text",
+      "label": "Принцип 07 — опис",
+      "content_type": "text",
+      "text_html": "Повага, емпатія та людяність є невід'ємною частиною лікування.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 40,
+    "fields": {
+      "page": "home",
+      "key": "principle_8_title",
+      "label": "Принцип 08 — назва",
+      "content_type": "text",
+      "text_html": "Безперервний супровід",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 41,
+    "fields": {
+      "page": "home",
+      "key": "principle_8_text",
+      "label": "Принцип 08 — опис",
+      "content_type": "text",
+      "text_html": "Ми поруч із пацієнтом на кожному етапі лікування та відновлення.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 42,
+    "fields": {
+      "page": "home",
+      "key": "principle_9_title",
+      "label": "Принцип 09 — назва",
+      "content_type": "text",
+      "text_html": "Досконалість",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 43,
+    "fields": {
+      "page": "home",
+      "key": "principle_9_text",
+      "label": "Принцип 09 — опис",
+      "content_type": "text",
+      "text_html": "Ми прагнемо найкращого функціонального та естетичного результату.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 44,
+    "fields": {
+      "page": "home",
+      "key": "principle_10_title",
+      "label": "Принцип 10 — назва",
+      "content_type": "text",
+      "text_html": "Результат",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 45,
+    "fields": {
+      "page": "home",
+      "key": "principle_10_text",
+      "label": "Принцип 10 — опис",
+      "content_type": "text",
+      "text_html": "Якість лікування оцінюється результатом і якістю життя пацієнта.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 46,
+    "fields": {
+      "page": "home",
+      "key": "about_title",
+      "label": "Заголовок «Про клініку»",
+      "content_type": "text",
+      "text_html": "Медицина, якій довіряють",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 47,
+    "fields": {
+      "page": "home",
+      "key": "about_brand_note",
+      "label": "Підпис бренду",
+      "content_type": "text",
+      "text_html": "десять принципів, на яких тримається наша якість",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 48,
+    "fields": {
+      "page": "home",
+      "key": "doctors_title",
+      "label": "Заголовок секції лікарів",
+      "content_type": "text",
+      "text_html": "Команда, якій ви довіряєте здоровʼя",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 49,
+    "fields": {
+      "page": "site",
+      "key": "nav_contacts",
+      "label": "Пункт меню: Контакти",
+      "content_type": "text",
+      "text_html": "Контакти",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 50,
+    "fields": {
+      "page": "surgical",
+      "key": "filter_all",
+      "label": "Фільтр «Усі напрямки»",
+      "content_type": "text",
+      "text_html": "Усі напрямки",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 51,
+    "fields": {
+      "page": "home",
+      "key": "about_brand_mark",
+      "label": "Зображення знаку бренду",
+      "content_type": "image",
+      "text_html": "",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 52,
+    "fields": {
+      "page": "booking",
+      "key": "label_time",
+      "label": "Підпис «Час»",
+      "content_type": "text",
+      "text_html": "Бажаний час",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 53,
+    "fields": {
+      "page": "booking",
+      "key": "label_email",
+      "label": "Підпис «Email»",
+      "content_type": "text",
+      "text_html": "Email",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 54,
+    "fields": {
+      "page": "directions",
+      "key": "page_eyebrow",
+      "label": "Маленький заголовок над назвою сторінки",
+      "content_type": "text",
+      "text_html": "Напрямки",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 55,
+    "fields": {
+      "page": "services",
+      "key": "page_eyebrow",
+      "label": "Маленький заголовок над назвою сторінки",
+      "content_type": "text",
+      "text_html": "Послуги та ціни",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 56,
+    "fields": {
+      "page": "contacts",
+      "key": "label_messengers",
+      "label": "Підпис «Месенджери»",
+      "content_type": "text",
+      "text_html": "Месенджери",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 57,
+    "fields": {
+      "page": "direction",
+      "key": "detail_services_heading",
+      "label": "Заголовок «Наші послуги»",
+      "content_type": "text",
+      "text_html": "Наші послуги",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 58,
+    "fields": {
+      "page": "privacy",
+      "key": "page_title",
+      "label": "Заголовок сторінки",
+      "content_type": "text",
+      "text_html": "Політика конфіденційності",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 59,
+    "fields": {
+      "page": "surgical",
+      "key": "placeholder_text",
+      "label": "Текст-заглушка розділу",
+      "content_type": "text",
+      "text_html": "Розділ наповнюється. Незабаром тут зʼявиться каталог хірургічних операцій.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 60,
+    "fields": {
+      "page": "surgical",
+      "key": "page_lead",
+      "label": "Вступний текст сторінки",
+      "content_type": "text",
+      "text_html": "Амбулаторні та планові втручання з повним перед- та післяопераційним супроводом.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 61,
+    "fields": {
+      "page": "booking",
+      "key": "placeholder_direction",
+      "label": "Плейсхолдер вибору напрямку",
+      "content_type": "text",
+      "text_html": "Оберіть напрямок",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 62,
+    "fields": {
+      "page": "contacts",
+      "key": "schedule_title",
+      "label": "Заголовок «Графік роботи»",
+      "content_type": "text",
+      "text_html": "Графік роботи",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 63,
+    "fields": {
+      "page": "booking",
+      "key": "page_title",
+      "label": "Заголовок сторінки",
+      "content_type": "text",
+      "text_html": "Запис на прийом",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 64,
+    "fields": {
+      "page": "doctors",
+      "key": "page_eyebrow",
+      "label": "Маленький заголовок над назвою сторінки",
+      "content_type": "text",
+      "text_html": "Лікарі",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 65,
+    "fields": {
+      "page": "contacts",
+      "key": "map_title",
+      "label": "Заголовок блоку карти",
+      "content_type": "text",
+      "text_html": "Схема проїзду",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 66,
+    "fields": {
+      "page": "booking",
+      "key": "btn_submit",
+      "label": "Текст кнопки відправки форми",
+      "content_type": "text",
+      "text_html": "Надіслати заявку",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 67,
+    "fields": {
+      "page": "site",
+      "key": "nav_services_sub",
+      "label": "Пункт меню: та ціни (нижній рядок)",
+      "content_type": "text",
+      "text_html": "та ціни",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 68,
+    "fields": {
+      "page": "site",
+      "key": "nav_cta",
+      "label": "Кнопка «Записатися» в меню",
+      "content_type": "text",
+      "text_html": "Записатися",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 69,
+    "fields": {
+      "page": "home",
+      "key": "hero_eyebrow",
+      "label": "Рядок над заголовком (наприклад, місто)",
+      "content_type": "text",
+      "text_html": "Приватна клініка · Київ",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 70,
+    "fields": {
+      "page": "home",
+      "key": "trust_directions_label",
+      "label": "Підпис: кількість напрямків",
+      "content_type": "text",
+      "text_html": "медичних напрямків",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 71,
+    "fields": {
+      "page": "site",
+      "key": "nav_services",
+      "label": "Пункт меню: Послуги (верхній рядок)",
+      "content_type": "text",
+      "text_html": "Послуги",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 72,
+    "fields": {
+      "page": "direction",
+      "key": "detail_btn_surgery",
+      "label": "Кнопка хірургії",
+      "content_type": "text",
+      "text_html": "Хірургічна допомога",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 73,
+    "fields": {
+      "page": "direction",
+      "key": "detail_eyebrow",
+      "label": "Мітка «Напрямок»",
+      "content_type": "text",
+      "text_html": "Напрямок",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 74,
+    "fields": {
+      "page": "site",
+      "key": "nav_directions",
+      "label": "Пункт меню: Напрямки",
+      "content_type": "text",
+      "text_html": "Напрямки",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 75,
+    "fields": {
+      "page": "booking",
+      "key": "label_phone",
+      "label": "Підпис «Телефон»",
+      "content_type": "text",
+      "text_html": "Телефон",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 76,
+    "fields": {
+      "page": "site",
+      "key": "nav_home",
+      "label": "Пункт меню: Головна",
+      "content_type": "text",
+      "text_html": "Головна",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 77,
+    "fields": {
+      "page": "contacts",
+      "key": "label_email",
+      "label": "Підпис «Email»",
+      "content_type": "text",
+      "text_html": "Email",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 78,
+    "fields": {
+      "page": "doctors",
+      "key": "page_hint",
+      "label": "Підказка для користувача",
+      "content_type": "text",
+      "text_html": "Гортайте →",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 79,
+    "fields": {
+      "page": "home",
+      "key": "hero_btn_secondary",
+      "label": "Кнопка «Напрямки»",
+      "content_type": "text",
+      "text_html": "Напрямки лікування",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 80,
+    "fields": {
+      "page": "privacy",
+      "key": "heading_contact",
+      "label": "Заголовок: контакти",
+      "content_type": "text",
+      "text_html": "Контакти",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 81,
+    "fields": {
+      "page": "surgical",
+      "key": "page_eyebrow",
+      "label": "Маленький заголовок над назвою сторінки",
+      "content_type": "text",
+      "text_html": "Хірургія",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 82,
+    "fields": {
+      "page": "booking",
+      "key": "label_name",
+      "label": "Підпис «ПІБ»",
+      "content_type": "text",
+      "text_html": "ПІБ",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 83,
+    "fields": {
+      "page": "home",
+      "key": "trust_visits_label",
+      "label": "Підпис до візитів",
+      "content_type": "text",
+      "text_html": "візитів на рік",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 84,
+    "fields": {
+      "page": "booking",
+      "key": "label_direction",
+      "label": "Підпис «Напрямок»",
+      "content_type": "text",
+      "text_html": "Напрямок",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 85,
+    "fields": {
+      "page": "privacy",
+      "key": "heading_purpose",
+      "label": "Заголовок: мета обробки",
+      "content_type": "text",
+      "text_html": "Мета обробки",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 86,
+    "fields": {
+      "page": "contacts",
+      "key": "page_title",
+      "label": "Заголовок сторінки",
+      "content_type": "text",
+      "text_html": "Контакти",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 87,
+    "fields": {
+      "page": "booking",
+      "key": "label_service",
+      "label": "Підпис «Послуга»",
+      "content_type": "text",
+      "text_html": "Послуга",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 88,
+    "fields": {
+      "page": "contacts",
+      "key": "route_btn",
+      "label": "Текст кнопки маршруту",
+      "content_type": "text",
+      "text_html": "Прокласти маршрут",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 89,
+    "fields": {
+      "page": "privacy",
+      "key": "text_contact",
+      "label": "Текст: контакти",
+      "content_type": "text",
+      "text_html": "З питань обробки персональних даних звертайтеся:",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 90,
+    "fields": {
+      "page": "direction",
+      "key": "detail_desc_heading",
+      "label": "Заголовок «Опис»",
+      "content_type": "text",
+      "text_html": "Опис",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 91,
+    "fields": {
+      "page": "home",
+      "key": "hero_btn_primary",
+      "label": "Кнопка «Записатися»",
+      "content_type": "text",
+      "text_html": "Записатися",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 92,
+    "fields": {
+      "page": "site",
+      "key": "nav_surgery_title",
+      "label": "Підказка при наведенні на «Хірургія»",
+      "content_type": "text",
+      "text_html": "Хірургічні операції",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 93,
+    "fields": {
+      "page": "directions",
+      "key": "page_title",
+      "label": "Заголовок сторінки",
+      "content_type": "text",
+      "text_html": "Оберіть напрямок лікування",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 94,
+    "fields": {
+      "page": "booking",
+      "key": "page_lead",
+      "label": "Вступний текст сторінки",
+      "content_type": "text",
+      "text_html": "Заповніть форму — адміністратор підтвердить запис найближчим часом.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 95,
+    "fields": {
+      "page": "home",
+      "key": "trust_days_value",
+      "label": "Число днів роботи (наприклад, 7)",
+      "content_type": "text",
+      "text_html": "7",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 96,
+    "fields": {
+      "page": "services",
+      "key": "page_title",
+      "label": "Заголовок сторінки",
+      "content_type": "text",
+      "text_html": "Каталог послуг і цін",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 97,
+    "fields": {
+      "page": "direction",
+      "key": "detail_cta_btn",
+      "label": "Кнопка запису на сторінці напрямку",
+      "content_type": "text",
+      "text_html": "Записатися на прийом",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 98,
+    "fields": {
+      "page": "booking",
+      "key": "label_date",
+      "label": "Підпис «Дата»",
+      "content_type": "text",
+      "text_html": "Бажана дата",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 99,
+    "fields": {
+      "page": "contacts",
+      "key": "label_phone_secondary",
+      "label": "Підпис «Додатковий телефон»",
+      "content_type": "text",
+      "text_html": "Додатковий телефон",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 100,
+    "fields": {
+      "page": "services",
+      "key": "page_note",
+      "label": "Примітка під заголовком",
+      "content_type": "text",
+      "text_html": "Ціни вказані за прайсом клініки. Актуальну вартість уточнюйте при записі.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 101,
+    "fields": {
+      "page": "directions",
+      "key": "page_lead",
+      "label": "Вступний текст сторінки",
+      "content_type": "text",
+      "text_html": "Діагностика та лікування вуха, горла, носа та слуху для дітей і дорослих",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 102,
+    "fields": {
+      "page": "contacts",
+      "key": "label_phone",
+      "label": "Підпис «Телефон»",
+      "content_type": "text",
+      "text_html": "Телефон",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 103,
+    "fields": {
+      "page": "doctors",
+      "key": "page_title",
+      "label": "Заголовок сторінки",
+      "content_type": "text",
+      "text_html": "Команда, якій ви довіряєте здоровʼя",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 104,
+    "fields": {
+      "page": "home",
+      "key": "hero_brand_mark",
+      "label": "Зображення логотипу в заголовку",
+      "content_type": "image",
+      "text_html": "",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 105,
+    "fields": {
+      "page": "site",
+      "key": "footer_copyright",
+      "label": "Назва в копірайті підвалі",
+      "content_type": "text",
+      "text_html": "TEN clinic",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 106,
+    "fields": {
+      "page": "privacy",
+      "key": "text_data",
+      "label": "Текст: які дані збираємо",
+      "content_type": "text",
+      "text_html": "Під час запису на прийом ми можемо отримати ваше імʼя, номер телефону, email та інформацію про бажану послугу.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 107,
+    "fields": {
+      "page": "direction",
+      "key": "detail_when_heading",
+      "label": "Заголовок «Коли звернутися»",
+      "content_type": "text",
+      "text_html": "Коли варто звернутися?",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 108,
+    "fields": {
+      "page": "privacy",
+      "key": "heading_data",
+      "label": "Заголовок: які дані збираємо",
+      "content_type": "text",
+      "text_html": "Які дані ми збираємо",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 109,
+    "fields": {
+      "page": "contacts",
+      "key": "label_address",
+      "label": "Підпис поля «Адреса»",
+      "content_type": "text",
+      "text_html": "Адреса",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 110,
+    "fields": {
+      "page": "contacts",
+      "key": "today_label",
+      "label": "Підпис «Сьогодні»",
+      "content_type": "text",
+      "text_html": "Сьогодні:",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 111,
+    "fields": {
+      "page": "direction",
+      "key": "detail_doctors_heading",
+      "label": "Заголовок «Лікарі напрямку»",
+      "content_type": "text",
+      "text_html": "Лікарі напрямку",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 112,
+    "fields": {
+      "page": "privacy",
+      "key": "intro",
+      "label": "Вступний абзац",
+      "content_type": "text",
+      "text_html": "TEN clinic поважає вашу конфіденційність і обробляє персональні дані відповідно до чинного законодавства України.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 113,
+    "fields": {
+      "page": "home",
+      "key": "hero_bg_image",
+      "label": "Фонове фото hero",
+      "content_type": "image",
+      "text_html": "",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 114,
+    "fields": {
+      "page": "contacts",
+      "key": "page_eyebrow",
+      "label": "Маленький заголовок над назвою сторінки",
+      "content_type": "text",
+      "text_html": "Контакти",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 115,
+    "fields": {
+      "page": "surgical",
+      "key": "placeholder_btn",
+      "label": "Кнопка в заглушці",
+      "content_type": "text",
+      "text_html": "Записатися на консультацію",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 116,
+    "fields": {
+      "page": "home",
+      "key": "trust_doctors_label",
+      "label": "Підпис: кількість лікарів",
+      "content_type": "text",
+      "text_html": "лікарів-експертів",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 117,
+    "fields": {
+      "page": "home",
+      "key": "trust_days_label",
+      "label": "Підпис до днів роботи",
+      "content_type": "text",
+      "text_html": "днів на тиждень",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 118,
+    "fields": {
+      "page": "surgical",
+      "key": "page_title",
+      "label": "Заголовок сторінки",
+      "content_type": "text",
+      "text_html": "Хірургічні операції",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 119,
+    "fields": {
+      "page": "direction",
+      "key": "detail_btn_consultation",
+      "label": "Кнопка консультації",
+      "content_type": "text",
+      "text_html": "Консультативно-діагностичний прийом",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 120,
+    "fields": {
+      "page": "site",
+      "key": "nav_surgery",
+      "label": "Пункт меню: Хірургія (коротко)",
+      "content_type": "text",
+      "text_html": "Хірургія",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 121,
+    "fields": {
+      "page": "privacy",
+      "key": "heading_storage",
+      "label": "Заголовок: зберігання",
+      "content_type": "text",
+      "text_html": "Зберігання та захист",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 122,
+    "fields": {
+      "page": "direction",
+      "key": "detail_cta_text",
+      "label": "Текст бокового блоку запису",
+      "content_type": "text",
+      "text_html": "Запишіться на консультацію — підберемо зручний час прийому.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 123,
+    "fields": {
+      "page": "booking",
+      "key": "label_doctor",
+      "label": "Підпис «Лікар»",
+      "content_type": "text",
+      "text_html": "Лікар",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 124,
+    "fields": {
+      "page": "home",
+      "key": "trust_visits_value",
+      "label": "Число візитів (наприклад, 12k)",
+      "content_type": "text",
+      "text_html": "12k",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 125,
+    "fields": {
+      "page": "booking",
+      "key": "label_comment",
+      "label": "Підпис «Коментар»",
+      "content_type": "text",
+      "text_html": "Коментар",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 126,
+    "fields": {
+      "page": "home",
+      "key": "directions_feature_badge",
+      "label": "Бейдж на картці напрямку",
+      "content_type": "text",
+      "text_html": "Флагманський напрямок",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 127,
+    "fields": {
+      "page": "privacy",
+      "key": "text_purpose",
+      "label": "Текст: мета обробки",
+      "content_type": "text",
+      "text_html": "Дані використовуються для організації запису, звʼязку з вами та надання медичних послуг.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 128,
+    "fields": {
+      "page": "privacy",
+      "key": "text_storage",
+      "label": "Текст: зберігання",
+      "content_type": "text",
+      "text_html": "Ми застосовуємо організаційні та технічні заходи для захисту ваших персональних даних від несанкціонованого доступу.",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 129,
+    "fields": {
+      "page": "site",
+      "key": "nav_doctors",
+      "label": "Пункт меню: Лікарі",
+      "content_type": "text",
+      "text_html": "Лікарі",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 130,
+    "fields": {
+      "page": "home",
+      "key": "cta_eyebrow",
+      "label": "Мітка над CTA",
+      "content_type": "text",
+      "text_html": "Запис на консультацію",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 131,
+    "fields": {
+      "page": "home",
+      "key": "cta_btn_primary",
+      "label": "Кнопка CTA «Записатися онлайн»",
+      "content_type": "text",
+      "text_html": "Записатися онлайн",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 132,
+    "fields": {
+      "page": "home",
+      "key": "directions_all_link",
+      "label": "Посилання «Усі напрямки»",
+      "content_type": "text",
+      "text_html": "Усі напрямки →",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 133,
+    "fields": {
+      "page": "home",
+      "key": "contacts_eyebrow",
+      "label": "Мітка над контактами",
+      "content_type": "text",
+      "text_html": "Контакти",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 134,
+    "fields": {
+      "page": "home",
+      "key": "directions_eyebrow",
+      "label": "Мітка над заголовком напрямків",
+      "content_type": "text",
+      "text_html": "Напрямки",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 135,
+    "fields": {
+      "page": "home",
+      "key": "doctors_eyebrow",
+      "label": "Мітка над заголовком лікарів",
+      "content_type": "text",
+      "text_html": "Лікарі",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "clinic.siteblock",
+    "pk": 136,
+    "fields": {
+      "page": "home",
+      "key": "about_eyebrow",
+      "label": "Мітка над заголовком",
+      "content_type": "text",
+      "text_html": "Про клініку",
+      "image": "",
+      "sort_order": 0,
+      "is_active": true
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$bEACjstvPX6qmaVpQpJl2d$BpdivZkHDbZQT4nd4bVvHCe7v8ZN8xYCwoqdw1c+fYQ=",
+      "last_login": "2026-07-06T08:46:54.244Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "admin@tenclinic.ua",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2026-07-01T07:13:25.709Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$bPSILcmb2B1NS4MHtcpYdZ$tDdiVuWpVJ6TMqHOE+AqNmgFpIxEVKIHrg2MmVyx73w=",
+      "last_login": "2026-07-03T12:06:45.526Z",
+      "is_superuser": true,
+      "username": "admin_test",
+      "first_name": "",
+      "last_name": "",
+      "email": "admin@test.local",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2026-07-03T12:06:12.183Z",
+      "groups": [],
+      "user_permissions": []
+    }
   }
-},
-{
-  "model": "clinic.direction",
-  "pk": 2,
-  "fields": {
-    "name": "Черевна хірургія",
-    "slug": "cherevna-hirurgiya",
-    "description": "Сучасні малоінвазивні та відкриті операції з дотриманням протоколів безпеки.",
-    "short_description": "Лапароскопічні та відкриті операції на органах черевної порожнини.",
-    "when_to_visit": "",
-    "services_overview": "",
-    "image": "",
-    "order": 1,
-    "is_active": false
-  }
-},
-{
-  "model": "clinic.direction",
-  "pk": 3,
-  "fields": {
-    "name": "Терапія",
-    "slug": "terapiya",
-    "description": "Комплексний підхід до діагностики та лікування дорослих пацієнтів.",
-    "short_description": "Первинний прийом, ведення хронічних захворювань, направлення на обстеження.",
-    "when_to_visit": "",
-    "services_overview": "",
-    "image": "",
-    "order": 2,
-    "is_active": false
-  }
-},
-{
-  "model": "clinic.direction",
-  "pk": 4,
-  "fields": {
-    "name": "Діагностика",
-    "slug": "diagnostyka",
-    "description": "Точна діагностика на сучасному обладнанні.",
-    "short_description": "УЗД, лабораторні аналізи, інструментальні обстеження за призначенням лікаря.",
-    "when_to_visit": "",
-    "services_overview": "",
-    "image": "",
-    "order": 3,
-    "is_active": false
-  }
-},
-{
-  "model": "clinic.direction",
-  "pk": 5,
-  "fields": {
-    "name": "Пластична хірургія",
-    "slug": "plastychna-hirurgiya",
-    "description": "Естетичні та реконструктивні втручання після детальної консультації.",
-    "short_description": "Корекція рубців, невеликі естетичні втручання після консультації.",
-    "when_to_visit": "",
-    "services_overview": "",
-    "image": "",
-    "order": 4,
-    "is_active": false
-  }
-},
-{
-  "model": "clinic.direction",
-  "pk": 6,
-  "fields": {
-    "name": "Профілактика",
-    "slug": "profilaktyka",
-    "description": "Профілактичні огляди та чек-ап програми.",
-    "short_description": "Чек-ап, щорічні огляди, вакцинація за календарем.",
-    "when_to_visit": "",
-    "services_overview": "",
-    "image": "",
-    "order": 5,
-    "is_active": false
-  }
-},
-{
-  "model": "clinic.direction",
-  "pk": 7,
-  "fields": {
-    "name": "Дитяча отоларингологія",
-    "slug": "dytacha-otolaryngologiya",
-    "description": "Дитяча отоларингологія — це напрямок медицини, який займається діагностикою, лікуванням і профілактикою захворювань вуха, горла, носа та суміжних органів у дітей від народження до 18 років. ЛОР-захворювання в дитячому віці мають свої особливості, тому потребують своєчасної діагностики та лікування з урахуванням віку дитини.",
-    "short_description": "Діагностика, лікування та профілактика захворювань вуха, горла й носа у дітей від народження до 18 років. Делікатний підхід, сучасні методи обстеження та лікування з урахуванням вікових особливостей дитини.",
-    "when_to_visit": "утруднене носове дихання\nтривалий або частий нежить\nчасті отити\nбіль у вусі\nвиділення з вуха\nзниження слуху або підозра на його погіршення\nбіль у горлі\nчасті ангіни\nхропіння або зупинки дихання під час сну\nзбільшені аденоїди чи піднебінні мигдалики\nсторонні тіла вуха, носа або глотки\nносові кровотечі\nосиплість голосу",
-    "services_overview": "консультація дитячого лікаря-отоларинголога\nвідеоендоскопія ЛОР-органів\nтимпанометрія\nвидалення сірчаних пробок\nвидалення сторонніх тіл із вуха, носа та глотки\nпромивання лакун піднебінних мигдаликів\nпромивання порожнини носа методом переміщення\nлікувальні маніпуляції при захворюваннях ЛОР-органів\nспостереження дітей із частими ЛОР-захворюваннями\nпередопераційний та післяопераційний супровід",
-    "image": "",
-    "order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.direction",
-  "pk": 8,
-  "fields": {
-    "name": "Отоларингологія",
-    "slug": "otolaryngologiya",
-    "description": "Здоровʼя ЛОР-органів впливає на те, як ми дихаємо, чуємо, спимо, розмовляємо та почуваємося щодня. Саме тому важливо не лише усунути симптоми, а й зрозуміти їхню причину.\n\nМи поєднуємо сучасну діагностику, доказову медицину та уважне ставлення до кожного пацієнта.",
-    "short_description": "Діагностика, лікування та профілактика захворювань вуха, горла й носа на основі сучасних медичних стандартів.",
-    "when_to_visit": "утруднене носове дихання або тривала закладеність носа\nнежить, який не минає або часто повторюється\nбіль чи дискомфорт у горлі\nутруднене або болісне ковтання\nзахриплість голосу\nбіль у вусі\nвиділення з вуха\nзниження слуху\nшум або дзвін у вухах\nзапаморочення\nчасті синусити чи отити\nносові кровотечі\nхропіння та інші порушення дихання під час сну",
-    "services_overview": "консультація лікаря-отоларинголога\nвідеоендоскопія ЛОР-органів\nтимпанометрія\nаудіометрія\nвидалення сірчаних пробок\nвидалення сторонніх тіл із вуха, носа та глотки\nпромивання лакун піднебінних мигдаликів\nпромивання порожнини носа методом переміщення\nлікувальні маніпуляції при захворюваннях ЛОР-органів\nмалоінвазивні амбулаторні процедури\nпередопераційний огляд та післяопераційний супровід",
-    "image": "",
-    "order": 1,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.direction",
-  "pk": 9,
-  "fields": {
-    "name": "Сурдологія",
-    "slug": "surdologiya",
-    "description": "Сурдологія — це напрямок медицини, який займається діагностикою, лікуванням і реабілітацією порушень слуху у дітей і дорослих.\n\nМи проводимо комплексне обстеження слухової системи із застосуванням сучасного діагностичного обладнання дорослим та дітям з першого дня життя. За результатами обстеження лікар пояснює причину порушень, визначає подальшу тактику лікування або реабілітації та, за потреби, рекомендує слухопротезування новітніми слуховими апаратами.",
-    "short_description": "Повна діагностика, лікування та реабілітація порушень слуху у дітей і дорослих. Комплексне обстеження слухової системи із застосуванням сучасних методів діагностики та підбір слухових апаратів.",
-    "when_to_visit": "зниження слуху\nшум або дзвін у вухах\nутруднене розуміння мовлення, особливо в шумному середовищі\nвідчуття закладеності у вухах\nзапаморочення або порушення рівноваги\nпідозра на втрату слуху після перенесених захворювань чи травм\nконтроль слуху після лікування\nпідбір та налаштування слухових апаратів\nпрофілактична перевірка слуху у дітей і дорослих\nзатримка розвитку мовлення у дітей\nвідсутність реакції на звук у дитини",
-    "services_overview": "консультація лікаря-сурдолога\nкомплексна діагностика слуху\nтональна порогова аудіометрія\nімпедансометрія (тимпанометрія та дослідження акустичних рефлексів)\nотоакустична емісія (ОАЕ)\nслухові викликані потенціали (КСВП/ABR)\nскринінг слуху новонароджених\nпідбір, налаштування та супровід користувачів слухових апаратів\nконсультації щодо слухової реабілітації",
-    "image": "",
-    "order": 2,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.doctor",
-  "pk": 1,
-  "fields": {
-    "full_name": "Іваненко Олена Петрівна",
-    "slug": "ivanenko-olena",
-    "photo": "",
-    "specialization": "Хірург",
-    "direction": 1,
-    "bio": "Іваненко Олена Петрівна — лікар з 15-річним досвідом роботи в TEN clinic.",
-    "education": "Національний медичний університет",
-    "experience_years": 15,
-    "order": 0,
-    "is_active": false,
-    "services": [
-      1
-    ]
-  }
-},
-{
-  "model": "clinic.doctor",
-  "pk": 2,
-  "fields": {
-    "full_name": "Петренко Андрій Іванович",
-    "slug": "petrenko-andriy",
-    "photo": "",
-    "specialization": "Черевний хірург",
-    "direction": 2,
-    "bio": "Петренко Андрій Іванович — лікар з 12-річним досвідом роботи в TEN clinic.",
-    "education": "Національний медичний університет",
-    "experience_years": 12,
-    "order": 1,
-    "is_active": false,
-    "services": [
-      5
-    ]
-  }
-},
-{
-  "model": "clinic.doctor",
-  "pk": 3,
-  "fields": {
-    "full_name": "Коваленко Марія Сергіївна",
-    "slug": "kovalenko-maria",
-    "photo": "",
-    "specialization": "Терапевт",
-    "direction": 3,
-    "bio": "Коваленко Марія Сергіївна — лікар з 10-річним досвідом роботи в TEN clinic.",
-    "education": "Національний медичний університет",
-    "experience_years": 10,
-    "order": 2,
-    "is_active": false,
-    "services": [
-      2
-    ]
-  }
-},
-{
-  "model": "clinic.doctor",
-  "pk": 4,
-  "fields": {
-    "full_name": "Сидоренко Ігор Васильович",
-    "slug": "sydorenko-igor",
-    "photo": "",
-    "specialization": "Лікар УЗД",
-    "direction": 4,
-    "bio": "Сидоренко Ігор Васильович — лікар з 8-річним досвідом роботи в TEN clinic.",
-    "education": "Національний медичний університет",
-    "experience_years": 8,
-    "order": 3,
-    "is_active": false,
-    "services": [
-      3
-    ]
-  }
-},
-{
-  "model": "clinic.doctor",
-  "pk": 5,
-  "fields": {
-    "full_name": "Мельник Оксана Петрівна",
-    "slug": "melnyk-oksana",
-    "photo": "",
-    "specialization": "Пластичний хірург",
-    "direction": 5,
-    "bio": "Мельник Оксана Петрівна — лікар з 11-річним досвідом роботи в TEN clinic.",
-    "education": "Національний медичний університет",
-    "experience_years": 11,
-    "order": 4,
-    "is_active": false,
-    "services": [
-      6
-    ]
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 1,
-  "fields": {
-    "name": "Первинна консультація хірурга",
-    "slug": "konsultaciya-hirurga",
-    "direction": 1,
-    "description": "Первинна консультація хірурга — детальний опис процедури в TEN clinic.",
-    "short_description": "Первинна консультація хірурга",
-    "duration_minutes": null,
-    "price": "800.00",
-    "price_note": "",
-    "order": 0,
-    "is_active": false
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 2,
-  "fields": {
-    "name": "Повторний прийом",
-    "slug": "povtornyj-prijom",
-    "direction": 3,
-    "description": "Повторний прийом — детальний опис процедури в TEN clinic.",
-    "short_description": "Повторний прийом",
-    "duration_minutes": null,
-    "price": "600.00",
-    "price_note": "",
-    "order": 1,
-    "is_active": false
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 3,
-  "fields": {
-    "name": "УЗД органів черевної порожнини",
-    "slug": "uzd-organiv-cherevnoi",
-    "direction": 4,
-    "description": "УЗД органів черевної порожнини — детальний опис процедури в TEN clinic.",
-    "short_description": "УЗД органів черевної порожнини",
-    "duration_minutes": null,
-    "price": "950.00",
-    "price_note": "",
-    "order": 2,
-    "is_active": false
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 4,
-  "fields": {
-    "name": "Чек-ап базовий",
-    "slug": "check-up",
-    "direction": 6,
-    "description": "Чек-ап базовий — детальний опис процедури в TEN clinic.",
-    "short_description": "Чек-ап базовий",
-    "duration_minutes": null,
-    "price": "3500.00",
-    "price_note": "",
-    "order": 3,
-    "is_active": false
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 5,
-  "fields": {
-    "name": "Лапароскопічне обстеження",
-    "slug": "laparoskopiya",
-    "direction": 2,
-    "description": "Лапароскопічне обстеження — детальний опис процедури в TEN clinic.",
-    "short_description": "Лапароскопічне обстеження",
-    "duration_minutes": null,
-    "price": "4200.00",
-    "price_note": "",
-    "order": 4,
-    "is_active": false
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 6,
-  "fields": {
-    "name": "Корекція рубців",
-    "slug": "korekciya-rubciv",
-    "direction": 5,
-    "description": "Корекція рубців — детальний опис процедури в TEN clinic.",
-    "short_description": "Корекція рубців",
-    "duration_minutes": null,
-    "price": "2500.00",
-    "price_note": "",
-    "order": 5,
-    "is_active": false
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 7,
-  "fields": {
-    "name": "консультація дитячого лікаря-отоларинголога",
-    "slug": "dytacha-konsultaciya-lor",
-    "direction": 7,
-    "description": "консультація дитячого лікаря-отоларинголога — послуга TEN clinic.",
-    "short_description": "консультація дитячого лікаря-отоларинголога",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 8,
-  "fields": {
-    "name": "відеоендоскопія ЛОР-органів",
-    "slug": "dytacha-videoendoskopiya",
-    "direction": 7,
-    "description": "відеоендоскопія ЛОР-органів — послуга TEN clinic.",
-    "short_description": "відеоендоскопія ЛОР-органів",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 1,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 9,
-  "fields": {
-    "name": "тимпанометрія",
-    "slug": "dytacha-timpanometriya",
-    "direction": 7,
-    "description": "тимпанометрія — послуга TEN clinic.",
-    "short_description": "тимпанометрія",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 2,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 10,
-  "fields": {
-    "name": "видалення сірчаних пробок",
-    "slug": "dytacha-vydalennya-probok",
-    "direction": 7,
-    "description": "видалення сірчаних пробок — послуга TEN clinic.",
-    "short_description": "видалення сірчаних пробок",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 3,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 11,
-  "fields": {
-    "name": "видалення сторонніх тіл із вуха, носа та глотки",
-    "slug": "dytacha-vydalennya-til",
-    "direction": 7,
-    "description": "видалення сторонніх тіл із вуха, носа та глотки — послуга TEN clinic.",
-    "short_description": "видалення сторонніх тіл із вуха, носа та глотки",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 4,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 12,
-  "fields": {
-    "name": "промивання лакун піднебінних мигдаликів",
-    "slug": "dytacha-promyvannya-migdalikiv",
-    "direction": 7,
-    "description": "промивання лакун піднебінних мигдаликів — послуга TEN clinic.",
-    "short_description": "промивання лакун піднебінних мигдаликів",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 5,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 13,
-  "fields": {
-    "name": "промивання порожнини носа методом переміщення",
-    "slug": "dytacha-promyvannya-nosa",
-    "direction": 7,
-    "description": "промивання порожнини носа методом переміщення — послуга TEN clinic.",
-    "short_description": "промивання порожнини носа методом переміщення",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 6,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 14,
-  "fields": {
-    "name": "лікувальні маніпуляції при захворюваннях ЛОР-органів",
-    "slug": "dytacha-likuvalni-manipulyaciyi",
-    "direction": 7,
-    "description": "лікувальні маніпуляції при захворюваннях ЛОР-органів — послуга TEN clinic.",
-    "short_description": "лікувальні маніпуляції при захворюваннях ЛОР-органів",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 7,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 15,
-  "fields": {
-    "name": "спостереження дітей із частими ЛОР-захворюваннями",
-    "slug": "dytacha-sposterezhennya",
-    "direction": 7,
-    "description": "спостереження дітей із частими ЛОР-захворюваннями — послуга TEN clinic.",
-    "short_description": "спостереження дітей із частими ЛОР-захворюваннями",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 8,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 16,
-  "fields": {
-    "name": "передопераційний та післяопераційний супровід",
-    "slug": "dytacha-operacijnyj-suprovid",
-    "direction": 7,
-    "description": "передопераційний та післяопераційний супровід — послуга TEN clinic.",
-    "short_description": "передопераційний та післяопераційний супровід",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 9,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 17,
-  "fields": {
-    "name": "консультація лікаря-отоларинголога",
-    "slug": "lor-konsultaciya",
-    "direction": 8,
-    "description": "консультація лікаря-отоларинголога — послуга TEN clinic.",
-    "short_description": "консультація лікаря-отоларинголога",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 10,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 18,
-  "fields": {
-    "name": "відеоендоскопія ЛОР-органів",
-    "slug": "lor-videoendoskopiya",
-    "direction": 8,
-    "description": "відеоендоскопія ЛОР-органів — послуга TEN clinic.",
-    "short_description": "відеоендоскопія ЛОР-органів",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 11,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 19,
-  "fields": {
-    "name": "тимпанометрія",
-    "slug": "lor-timpanometriya",
-    "direction": 8,
-    "description": "тимпанометрія — послуга TEN clinic.",
-    "short_description": "тимпанометрія",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 12,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 20,
-  "fields": {
-    "name": "аудіометрія",
-    "slug": "lor-audiometriya",
-    "direction": 8,
-    "description": "аудіометрія — послуга TEN clinic.",
-    "short_description": "аудіометрія",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 13,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 21,
-  "fields": {
-    "name": "видалення сірчаних пробок",
-    "slug": "lor-vydalennya-probok",
-    "direction": 8,
-    "description": "видалення сірчаних пробок — послуга TEN clinic.",
-    "short_description": "видалення сірчаних пробок",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 14,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 22,
-  "fields": {
-    "name": "видалення сторонніх тіл із вуха, носа та глотки",
-    "slug": "lor-vydalennya-til",
-    "direction": 8,
-    "description": "видалення сторонніх тіл із вуха, носа та глотки — послуга TEN clinic.",
-    "short_description": "видалення сторонніх тіл із вуха, носа та глотки",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 15,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 23,
-  "fields": {
-    "name": "промивання лакун піднебінних мигдаликів",
-    "slug": "lor-promyvannya-migdalikiv",
-    "direction": 8,
-    "description": "промивання лакун піднебінних мигдаликів — послуга TEN clinic.",
-    "short_description": "промивання лакун піднебінних мигдаликів",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 16,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 24,
-  "fields": {
-    "name": "промивання порожнини носа методом переміщення",
-    "slug": "lor-promyvannya-nosa",
-    "direction": 8,
-    "description": "промивання порожнини носа методом переміщення — послуга TEN clinic.",
-    "short_description": "промивання порожнини носа методом переміщення",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 17,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 25,
-  "fields": {
-    "name": "лікувальні маніпуляції при захворюваннях ЛОР-органів",
-    "slug": "lor-likuvalni-manipulyaciyi",
-    "direction": 8,
-    "description": "лікувальні маніпуляції при захворюваннях ЛОР-органів — послуга TEN clinic.",
-    "short_description": "лікувальні маніпуляції при захворюваннях ЛОР-органів",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 18,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 26,
-  "fields": {
-    "name": "малоінвазивні амбулаторні процедури",
-    "slug": "lor-malo-invazyvni",
-    "direction": 8,
-    "description": "малоінвазивні амбулаторні процедури — послуга TEN clinic.",
-    "short_description": "малоінвазивні амбулаторні процедури",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 19,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 27,
-  "fields": {
-    "name": "передопераційний огляд та післяопераційний супровід",
-    "slug": "lor-operacijnyj-suprovid",
-    "direction": 8,
-    "description": "передопераційний огляд та післяопераційний супровід — послуга TEN clinic.",
-    "short_description": "передопераційний огляд та післяопераційний супровід",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 20,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 28,
-  "fields": {
-    "name": "консультація лікаря-сурдолога",
-    "slug": "surdolog-konsultaciya",
-    "direction": 9,
-    "description": "консультація лікаря-сурдолога — послуга TEN clinic.",
-    "short_description": "консультація лікаря-сурдолога",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 21,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 29,
-  "fields": {
-    "name": "комплексна діагностика слуху",
-    "slug": "surdolog-diahnostyka",
-    "direction": 9,
-    "description": "комплексна діагностика слуху — послуга TEN clinic.",
-    "short_description": "комплексна діагностика слуху",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 22,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 30,
-  "fields": {
-    "name": "тональна порогова аудіометрія",
-    "slug": "surdolog-tonalna-audiometriya",
-    "direction": 9,
-    "description": "тональна порогова аудіометрія — послуга TEN clinic.",
-    "short_description": "тональна порогова аудіометрія",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 23,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 31,
-  "fields": {
-    "name": "імпедансометрія (тимпанометрія та дослідження акустичних рефлексів)",
-    "slug": "surdolog-impedansometriya",
-    "direction": 9,
-    "description": "імпедансометрія (тимпанометрія та дослідження акустичних рефлексів) — послуга TEN clinic.",
-    "short_description": "імпедансометрія (тимпанометрія та дослідження акустичних рефлексів)",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 24,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 32,
-  "fields": {
-    "name": "отоакустична емісія (ОАЕ)",
-    "slug": "surdolog-oae",
-    "direction": 9,
-    "description": "отоакустична емісія (ОАЕ) — послуга TEN clinic.",
-    "short_description": "отоакустична емісія (ОАЕ)",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 25,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 33,
-  "fields": {
-    "name": "слухові викликані потенціали (КСВП/ABR)",
-    "slug": "surdolog-ksvp",
-    "direction": 9,
-    "description": "слухові викликані потенціали (КСВП/ABR) — послуга TEN clinic.",
-    "short_description": "слухові викликані потенціали (КСВП/ABR)",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 26,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 34,
-  "fields": {
-    "name": "скринінг слуху новонароджених",
-    "slug": "surdolog-skrining",
-    "direction": 9,
-    "description": "скринінг слуху новонароджених — послуга TEN clinic.",
-    "short_description": "скринінг слуху новонароджених",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 27,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 35,
-  "fields": {
-    "name": "підбір, налаштування та супровід користувачів слухових апаратів",
-    "slug": "surdolog-aparaty",
-    "direction": 9,
-    "description": "підбір, налаштування та супровід користувачів слухових апаратів — послуга TEN clinic.",
-    "short_description": "підбір, налаштування та супровід користувачів слухових апаратів",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 28,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.service",
-  "pk": 36,
-  "fields": {
-    "name": "консультації щодо слухової реабілітації",
-    "slug": "surdolog-reabilitaciya",
-    "direction": 9,
-    "description": "консультації щодо слухової реабілітації — послуга TEN clinic.",
-    "short_description": "консультації щодо слухової реабілітації",
-    "duration_minutes": null,
-    "price": null,
-    "price_note": "",
-    "order": 29,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.workinghours",
-  "pk": 1,
-  "fields": {
-    "day_of_week": 0,
-    "open_time": "09:00:00",
-    "close_time": "18:00:00",
-    "is_closed": false
-  }
-},
-{
-  "model": "clinic.workinghours",
-  "pk": 2,
-  "fields": {
-    "day_of_week": 1,
-    "open_time": "09:00:00",
-    "close_time": "18:00:00",
-    "is_closed": false
-  }
-},
-{
-  "model": "clinic.workinghours",
-  "pk": 3,
-  "fields": {
-    "day_of_week": 2,
-    "open_time": "09:00:00",
-    "close_time": "18:00:00",
-    "is_closed": false
-  }
-},
-{
-  "model": "clinic.workinghours",
-  "pk": 4,
-  "fields": {
-    "day_of_week": 3,
-    "open_time": "09:00:00",
-    "close_time": "18:00:00",
-    "is_closed": false
-  }
-},
-{
-  "model": "clinic.workinghours",
-  "pk": 5,
-  "fields": {
-    "day_of_week": 4,
-    "open_time": "09:00:00",
-    "close_time": "18:00:00",
-    "is_closed": false
-  }
-},
-{
-  "model": "clinic.workinghours",
-  "pk": 6,
-  "fields": {
-    "day_of_week": 5,
-    "open_time": "09:00:00",
-    "close_time": "14:00:00",
-    "is_closed": false
-  }
-},
-{
-  "model": "clinic.workinghours",
-  "pk": 7,
-  "fields": {
-    "day_of_week": 6,
-    "open_time": null,
-    "close_time": null,
-    "is_closed": true
-  }
-},
-{
-  "model": "clinic.appointment",
-  "pk": 1,
-  "fields": {
-    "name": "test",
-    "phone": "+999999999999",
-    "email": "info@favorit-metal.com.ua",
-    "direction": 7,
-    "service": 15,
-    "doctor": null,
-    "preferred_date": "2026-07-08",
-    "preferred_time": "day",
-    "comment": "",
-    "status": "new",
-    "created_at": "2026-07-06T09:21:24.151Z",
-    "ip_address": "127.0.0.1"
-  }
-},
-{
-  "model": "clinic.appointment",
-  "pk": 2,
-  "fields": {
-    "name": "test",
-    "phone": "+38 (099) 999-99-99",
-    "email": "valeriakornienko.pl@gmail.com",
-    "direction": 7,
-    "service": 8,
-    "doctor": null,
-    "preferred_date": "2026-07-09",
-    "preferred_time": "morning",
-    "comment": "",
-    "status": "new",
-    "created_at": "2026-07-06T10:09:39.561Z",
-    "ip_address": "127.0.0.1"
-  }
-},
-{
-  "model": "clinic.sitesettings",
-  "pk": 1,
-  "fields": {
-    "site_name": "TEN clinic",
-    "tagline": "Medicine & Surgery",
-    "logo": "",
-    "about_text": "",
-    "address": "м. Київ, вул. Хрещатик, 1",
-    "phone_primary": "+38 (044) 123-45-67",
-    "phone_secondary": "",
-    "email": "info@tenclinic.ua",
-    "telegram_url": "",
-    "viber_url": "",
-    "map_lat": "50.447387",
-    "map_lng": "30.524876",
-    "map_embed_url": "https://maps.google.com/maps?q=50.447387,30.524876&hl=uk&z=16&output=embed",
-    "directions_text": "Клініка розташована в центрі міста. Парковка біля будівлі.",
-    "notification_email": "admin@tenclinic.ua",
-    "telegram_bot_token": "",
-    "telegram_chat_id": "",
-    "meta_description": "TEN clinic — новий стандарт медичної допомоги. Medicine & Surgery."
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 1,
-  "fields": {
-    "page": "home",
-    "key": "hero_section_visible",
-    "label": "Показувати головний екран (hero)",
-    "content_type": "text",
-    "text_html": "1",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 2,
-  "fields": {
-    "page": "home",
-    "key": "hero_title",
-    "label": "Заголовок головного екрану",
-    "content_type": "text",
-    "text_html": "TEN clinic — новий стандарт медичної допомоги",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 3,
-  "fields": {
-    "page": "home",
-    "key": "hero_lead",
-    "label": "Основний текст під заголовком",
-    "content_type": "text",
-    "text_html": "Місце, де сучасна медицина працює так, як вона повинна: професійно, чесно, доказово та з повагою до кожного пацієнта. Ми не просто лікуємо — ми формуємо новий стандарт медичної допомоги.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 4,
-  "fields": {
-    "page": "home",
-    "key": "about_section_visible",
-    "label": "Показувати секцію «Про клініку»",
-    "content_type": "text",
-    "text_html": "1",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 5,
-  "fields": {
-    "page": "home",
-    "key": "about_text",
-    "label": "Основний текст про клініку",
-    "content_type": "text",
-    "text_html": "Ми команда лікарів, які створили сучасний медичний центр, де пацієнт отримує достатньо часу для консультації, зрозумілі пояснення та індивідуальний підхід. Ми обʼєднали лікарів різних спеціальностей, сучасне діагностичне обладнання та принципи доказової медицини, щоб забезпечити якісну медичну допомогу для дітей і дорослих.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 6,
-  "fields": {
-    "page": "home",
-    "key": "advantage_1_title",
-    "label": "Перевага 1 — заголовок",
-    "content_type": "text",
-    "text_html": "Команда експертів",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 7,
-  "fields": {
-    "page": "home",
-    "key": "advantage_1_text",
-    "label": "Перевага 1 — текст",
-    "content_type": "text",
-    "text_html": "Досвідчені лікарі різних спеціальностей з індивідуальним підходом.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 8,
-  "fields": {
-    "page": "home",
-    "key": "advantage_2_title",
-    "label": "Перевага 2 — заголовок",
-    "content_type": "text",
-    "text_html": "Доказова медицина",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 9,
-  "fields": {
-    "page": "home",
-    "key": "advantage_2_text",
-    "label": "Перевага 2 — текст",
-    "content_type": "text",
-    "text_html": "Рішення на основі сучасних протоколів та клінічних досліджень.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 10,
-  "fields": {
-    "page": "home",
-    "key": "advantage_3_title",
-    "label": "Перевага 3 — заголовок",
-    "content_type": "text",
-    "text_html": "Технології точної діагностики",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 11,
-  "fields": {
-    "page": "home",
-    "key": "advantage_3_text",
-    "label": "Перевага 3 — текст",
-    "content_type": "text",
-    "text_html": "Сучасне обладнання для швидкої та точної діагностики на місці.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 12,
-  "fields": {
-    "page": "home",
-    "key": "advantage_4_title",
-    "label": "Перевага 4 — заголовок",
-    "content_type": "text",
-    "text_html": "Турбота без компромісів",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 13,
-  "fields": {
-    "page": "home",
-    "key": "advantage_4_text",
-    "label": "Перевага 4 — текст",
-    "content_type": "text",
-    "text_html": "Достатньо часу для консультації та зрозумілі пояснення кожному пацієнту.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 14,
-  "fields": {
-    "page": "home",
-    "key": "directions_section_visible",
-    "label": "Показувати напрямки на головній",
-    "content_type": "text",
-    "text_html": "1",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 15,
-  "fields": {
-    "page": "home",
-    "key": "doctors_section_visible",
-    "label": "Показувати лікарів на головній",
-    "content_type": "text",
-    "text_html": "1",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 16,
-  "fields": {
-    "page": "home",
-    "key": "cta_section_visible",
-    "label": "Показувати блок запису (CTA)",
-    "content_type": "text",
-    "text_html": "1",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 17,
-  "fields": {
-    "page": "home",
-    "key": "cta_title",
-    "label": "Заголовок CTA",
-    "content_type": "text",
-    "text_html": "Потрібна консультація?",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 18,
-  "fields": {
-    "page": "home",
-    "key": "cta_text",
-    "label": "Текст CTA",
-    "content_type": "text",
-    "text_html": "Залиште заявку — адміністратор передзвонить і підбере зручний час.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 19,
-  "fields": {
-    "page": "home",
-    "key": "contacts_section_visible",
-    "label": "Показувати контакти на головній",
-    "content_type": "text",
-    "text_html": "1",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 20,
-  "fields": {
-    "page": "site",
-    "key": "footer_text",
-    "label": "Текст footer",
-    "content_type": "text",
-    "text_html": "TEN clinic — Medicine & Surgery",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 21,
-  "fields": {
-    "page": "booking",
-    "key": "success_message",
-    "label": "Повідомлення після успішного запису",
-    "content_type": "text",
-    "text_html": "Дякуємо! Вашу заявку отримано. Адміністратор звʼяжеться з вами найближчим часом.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 22,
-  "fields": {
-    "page": "home",
-    "key": "hero_stat_label",
-    "label": "Підпис біля іконки ЄСОЗ",
-    "content_type": "text",
-    "text_html": "Занесення медичних висновків в ЕСОЗ",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 23,
-  "fields": {
-    "page": "home",
-    "key": "principles_title",
-    "label": "Заголовок блоку принципів",
-    "content_type": "text",
-    "text_html": "10 принципів TEN clinic",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 24,
-  "fields": {
-    "page": "home",
-    "key": "directions_title",
-    "label": "Заголовок секції напрямків",
-    "content_type": "text",
-    "text_html": "Від діагностики до хірургії",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 25,
-  "fields": {
-    "page": "home",
-    "key": "contacts_title",
-    "label": "Заголовок контактів на головній",
-    "content_type": "text",
-    "text_html": "Контакти",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 26,
-  "fields": {
-    "page": "home",
-    "key": "principle_1_title",
-    "label": "Принцип 01 — назва",
-    "content_type": "text",
-    "text_html": "Точність",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 27,
-  "fields": {
-    "page": "home",
-    "key": "principle_1_text",
-    "label": "Принцип 01 — опис",
-    "content_type": "text",
-    "text_html": "Кожне рішення ґрунтується на знаннях, досвіді та деталях.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 28,
-  "fields": {
-    "page": "home",
-    "key": "principle_2_title",
-    "label": "Принцип 02 — назва",
-    "content_type": "text",
-    "text_html": "Безпека",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 29,
-  "fields": {
-    "page": "home",
-    "key": "principle_2_text",
-    "label": "Принцип 02 — опис",
-    "content_type": "text",
-    "text_html": "Безпека пацієнта є нашим безумовним пріоритетом.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 30,
-  "fields": {
-    "page": "home",
-    "key": "principle_3_title",
-    "label": "Принцип 03 — назва",
-    "content_type": "text",
-    "text_html": "Доказовість",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 31,
-  "fields": {
-    "page": "home",
-    "key": "principle_3_text",
-    "label": "Принцип 03 — опис",
-    "content_type": "text",
-    "text_html": "Ми використовуємо лише сучасні міжнародні стандарти та протоколи.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 32,
-  "fields": {
-    "page": "home",
-    "key": "principle_4_title",
-    "label": "Принцип 04 — назва",
-    "content_type": "text",
-    "text_html": "Партнерство",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 33,
-  "fields": {
-    "page": "home",
-    "key": "principle_4_text",
-    "label": "Принцип 04 — опис",
-    "content_type": "text",
-    "text_html": "Лікар і пацієнт приймають рішення разом.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 34,
-  "fields": {
-    "page": "home",
-    "key": "principle_5_title",
-    "label": "Принцип 05 — назва",
-    "content_type": "text",
-    "text_html": "Індивідуальність",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 35,
-  "fields": {
-    "page": "home",
-    "key": "principle_5_text",
-    "label": "Принцип 05 — опис",
-    "content_type": "text",
-    "text_html": "Кожен пацієнт потребує персоналізованого підходу.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 36,
-  "fields": {
-    "page": "home",
-    "key": "principle_6_title",
-    "label": "Принцип 06 — назва",
-    "content_type": "text",
-    "text_html": "Інновації",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 37,
-  "fields": {
-    "page": "home",
-    "key": "principle_6_text",
-    "label": "Принцип 06 — опис",
-    "content_type": "text",
-    "text_html": "Ми впроваджуємо новітні медичні та хірургічні технології.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 38,
-  "fields": {
-    "page": "home",
-    "key": "principle_7_title",
-    "label": "Принцип 07 — назва",
-    "content_type": "text",
-    "text_html": "Турбота",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 39,
-  "fields": {
-    "page": "home",
-    "key": "principle_7_text",
-    "label": "Принцип 07 — опис",
-    "content_type": "text",
-    "text_html": "Повага, емпатія та людяність є невід'ємною частиною лікування.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 40,
-  "fields": {
-    "page": "home",
-    "key": "principle_8_title",
-    "label": "Принцип 08 — назва",
-    "content_type": "text",
-    "text_html": "Безперервний супровід",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 41,
-  "fields": {
-    "page": "home",
-    "key": "principle_8_text",
-    "label": "Принцип 08 — опис",
-    "content_type": "text",
-    "text_html": "Ми поруч із пацієнтом на кожному етапі лікування та відновлення.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 42,
-  "fields": {
-    "page": "home",
-    "key": "principle_9_title",
-    "label": "Принцип 09 — назва",
-    "content_type": "text",
-    "text_html": "Досконалість",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 43,
-  "fields": {
-    "page": "home",
-    "key": "principle_9_text",
-    "label": "Принцип 09 — опис",
-    "content_type": "text",
-    "text_html": "Ми прагнемо найкращого функціонального та естетичного результату.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 44,
-  "fields": {
-    "page": "home",
-    "key": "principle_10_title",
-    "label": "Принцип 10 — назва",
-    "content_type": "text",
-    "text_html": "Результат",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 45,
-  "fields": {
-    "page": "home",
-    "key": "principle_10_text",
-    "label": "Принцип 10 — опис",
-    "content_type": "text",
-    "text_html": "Якість лікування оцінюється результатом і якістю життя пацієнта.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 46,
-  "fields": {
-    "page": "home",
-    "key": "about_title",
-    "label": "Заголовок «Про клініку»",
-    "content_type": "text",
-    "text_html": "Медицина, якій довіряють",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 47,
-  "fields": {
-    "page": "home",
-    "key": "about_brand_note",
-    "label": "Підпис бренду",
-    "content_type": "text",
-    "text_html": "десять принципів, на яких тримається наша якість",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 48,
-  "fields": {
-    "page": "home",
-    "key": "doctors_title",
-    "label": "Заголовок секції лікарів",
-    "content_type": "text",
-    "text_html": "Команда, якій ви довіряєте здоровʼя",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 49,
-  "fields": {
-    "page": "site",
-    "key": "nav_contacts",
-    "label": "Пункт меню: Контакти",
-    "content_type": "text",
-    "text_html": "Контакти",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 50,
-  "fields": {
-    "page": "surgical",
-    "key": "filter_all",
-    "label": "Фільтр «Усі напрямки»",
-    "content_type": "text",
-    "text_html": "Усі напрямки",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 51,
-  "fields": {
-    "page": "home",
-    "key": "about_brand_mark",
-    "label": "Зображення знаку бренду",
-    "content_type": "image",
-    "text_html": "",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 52,
-  "fields": {
-    "page": "booking",
-    "key": "label_time",
-    "label": "Підпис «Час»",
-    "content_type": "text",
-    "text_html": "Бажаний час",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 53,
-  "fields": {
-    "page": "booking",
-    "key": "label_email",
-    "label": "Підпис «Email»",
-    "content_type": "text",
-    "text_html": "Email",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 54,
-  "fields": {
-    "page": "directions",
-    "key": "page_eyebrow",
-    "label": "Маленький заголовок над назвою сторінки",
-    "content_type": "text",
-    "text_html": "Напрямки",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 55,
-  "fields": {
-    "page": "services",
-    "key": "page_eyebrow",
-    "label": "Маленький заголовок над назвою сторінки",
-    "content_type": "text",
-    "text_html": "Послуги та ціни",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 56,
-  "fields": {
-    "page": "contacts",
-    "key": "label_messengers",
-    "label": "Підпис «Месенджери»",
-    "content_type": "text",
-    "text_html": "Месенджери",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 57,
-  "fields": {
-    "page": "direction",
-    "key": "detail_services_heading",
-    "label": "Заголовок «Наші послуги»",
-    "content_type": "text",
-    "text_html": "Наші послуги",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 58,
-  "fields": {
-    "page": "privacy",
-    "key": "page_title",
-    "label": "Заголовок сторінки",
-    "content_type": "text",
-    "text_html": "Політика конфіденційності",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 59,
-  "fields": {
-    "page": "surgical",
-    "key": "placeholder_text",
-    "label": "Текст-заглушка розділу",
-    "content_type": "text",
-    "text_html": "Розділ наповнюється. Незабаром тут зʼявиться каталог хірургічних операцій.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 60,
-  "fields": {
-    "page": "surgical",
-    "key": "page_lead",
-    "label": "Вступний текст сторінки",
-    "content_type": "text",
-    "text_html": "Амбулаторні та планові втручання з повним перед- та післяопераційним супроводом.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 61,
-  "fields": {
-    "page": "booking",
-    "key": "placeholder_direction",
-    "label": "Плейсхолдер вибору напрямку",
-    "content_type": "text",
-    "text_html": "Оберіть напрямок",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 62,
-  "fields": {
-    "page": "contacts",
-    "key": "schedule_title",
-    "label": "Заголовок «Графік роботи»",
-    "content_type": "text",
-    "text_html": "Графік роботи",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 63,
-  "fields": {
-    "page": "booking",
-    "key": "page_title",
-    "label": "Заголовок сторінки",
-    "content_type": "text",
-    "text_html": "Запис на прийом",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 64,
-  "fields": {
-    "page": "doctors",
-    "key": "page_eyebrow",
-    "label": "Маленький заголовок над назвою сторінки",
-    "content_type": "text",
-    "text_html": "Лікарі",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 65,
-  "fields": {
-    "page": "contacts",
-    "key": "map_title",
-    "label": "Заголовок блоку карти",
-    "content_type": "text",
-    "text_html": "Схема проїзду",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 66,
-  "fields": {
-    "page": "booking",
-    "key": "btn_submit",
-    "label": "Текст кнопки відправки форми",
-    "content_type": "text",
-    "text_html": "Надіслати заявку",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 67,
-  "fields": {
-    "page": "site",
-    "key": "nav_services_sub",
-    "label": "Пункт меню: та ціни (нижній рядок)",
-    "content_type": "text",
-    "text_html": "та ціни",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 68,
-  "fields": {
-    "page": "site",
-    "key": "nav_cta",
-    "label": "Кнопка «Записатися» в меню",
-    "content_type": "text",
-    "text_html": "Записатися",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 69,
-  "fields": {
-    "page": "home",
-    "key": "hero_eyebrow",
-    "label": "Рядок над заголовком (наприклад, місто)",
-    "content_type": "text",
-    "text_html": "Приватна клініка · Київ",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 70,
-  "fields": {
-    "page": "home",
-    "key": "trust_directions_label",
-    "label": "Підпис: кількість напрямків",
-    "content_type": "text",
-    "text_html": "медичних напрямків",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 71,
-  "fields": {
-    "page": "site",
-    "key": "nav_services",
-    "label": "Пункт меню: Послуги (верхній рядок)",
-    "content_type": "text",
-    "text_html": "Послуги",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 72,
-  "fields": {
-    "page": "direction",
-    "key": "detail_btn_surgery",
-    "label": "Кнопка хірургії",
-    "content_type": "text",
-    "text_html": "Хірургічна допомога",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 73,
-  "fields": {
-    "page": "direction",
-    "key": "detail_eyebrow",
-    "label": "Мітка «Напрямок»",
-    "content_type": "text",
-    "text_html": "Напрямок",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 74,
-  "fields": {
-    "page": "site",
-    "key": "nav_directions",
-    "label": "Пункт меню: Напрямки",
-    "content_type": "text",
-    "text_html": "Напрямки",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 75,
-  "fields": {
-    "page": "booking",
-    "key": "label_phone",
-    "label": "Підпис «Телефон»",
-    "content_type": "text",
-    "text_html": "Телефон",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 76,
-  "fields": {
-    "page": "site",
-    "key": "nav_home",
-    "label": "Пункт меню: Головна",
-    "content_type": "text",
-    "text_html": "Головна",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 77,
-  "fields": {
-    "page": "contacts",
-    "key": "label_email",
-    "label": "Підпис «Email»",
-    "content_type": "text",
-    "text_html": "Email",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 78,
-  "fields": {
-    "page": "doctors",
-    "key": "page_hint",
-    "label": "Підказка для користувача",
-    "content_type": "text",
-    "text_html": "Гортайте →",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 79,
-  "fields": {
-    "page": "home",
-    "key": "hero_btn_secondary",
-    "label": "Кнопка «Напрямки»",
-    "content_type": "text",
-    "text_html": "Напрямки лікування",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 80,
-  "fields": {
-    "page": "privacy",
-    "key": "heading_contact",
-    "label": "Заголовок: контакти",
-    "content_type": "text",
-    "text_html": "Контакти",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 81,
-  "fields": {
-    "page": "surgical",
-    "key": "page_eyebrow",
-    "label": "Маленький заголовок над назвою сторінки",
-    "content_type": "text",
-    "text_html": "Хірургія",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 82,
-  "fields": {
-    "page": "booking",
-    "key": "label_name",
-    "label": "Підпис «ПІБ»",
-    "content_type": "text",
-    "text_html": "ПІБ",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 83,
-  "fields": {
-    "page": "home",
-    "key": "trust_visits_label",
-    "label": "Підпис до візитів",
-    "content_type": "text",
-    "text_html": "візитів на рік",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 84,
-  "fields": {
-    "page": "booking",
-    "key": "label_direction",
-    "label": "Підпис «Напрямок»",
-    "content_type": "text",
-    "text_html": "Напрямок",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 85,
-  "fields": {
-    "page": "privacy",
-    "key": "heading_purpose",
-    "label": "Заголовок: мета обробки",
-    "content_type": "text",
-    "text_html": "Мета обробки",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 86,
-  "fields": {
-    "page": "contacts",
-    "key": "page_title",
-    "label": "Заголовок сторінки",
-    "content_type": "text",
-    "text_html": "Контакти",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 87,
-  "fields": {
-    "page": "booking",
-    "key": "label_service",
-    "label": "Підпис «Послуга»",
-    "content_type": "text",
-    "text_html": "Послуга",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 88,
-  "fields": {
-    "page": "contacts",
-    "key": "route_btn",
-    "label": "Текст кнопки маршруту",
-    "content_type": "text",
-    "text_html": "Прокласти маршрут",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 89,
-  "fields": {
-    "page": "privacy",
-    "key": "text_contact",
-    "label": "Текст: контакти",
-    "content_type": "text",
-    "text_html": "З питань обробки персональних даних звертайтеся:",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 90,
-  "fields": {
-    "page": "direction",
-    "key": "detail_desc_heading",
-    "label": "Заголовок «Опис»",
-    "content_type": "text",
-    "text_html": "Опис",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 91,
-  "fields": {
-    "page": "home",
-    "key": "hero_btn_primary",
-    "label": "Кнопка «Записатися»",
-    "content_type": "text",
-    "text_html": "Записатися",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 92,
-  "fields": {
-    "page": "site",
-    "key": "nav_surgery_title",
-    "label": "Підказка при наведенні на «Хірургія»",
-    "content_type": "text",
-    "text_html": "Хірургічні операції",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 93,
-  "fields": {
-    "page": "directions",
-    "key": "page_title",
-    "label": "Заголовок сторінки",
-    "content_type": "text",
-    "text_html": "Оберіть напрямок лікування",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 94,
-  "fields": {
-    "page": "booking",
-    "key": "page_lead",
-    "label": "Вступний текст сторінки",
-    "content_type": "text",
-    "text_html": "Заповніть форму — адміністратор підтвердить запис найближчим часом.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 95,
-  "fields": {
-    "page": "home",
-    "key": "trust_days_value",
-    "label": "Число днів роботи (наприклад, 7)",
-    "content_type": "text",
-    "text_html": "7",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 96,
-  "fields": {
-    "page": "services",
-    "key": "page_title",
-    "label": "Заголовок сторінки",
-    "content_type": "text",
-    "text_html": "Каталог послуг і цін",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 97,
-  "fields": {
-    "page": "direction",
-    "key": "detail_cta_btn",
-    "label": "Кнопка запису на сторінці напрямку",
-    "content_type": "text",
-    "text_html": "Записатися на прийом",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 98,
-  "fields": {
-    "page": "booking",
-    "key": "label_date",
-    "label": "Підпис «Дата»",
-    "content_type": "text",
-    "text_html": "Бажана дата",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 99,
-  "fields": {
-    "page": "contacts",
-    "key": "label_phone_secondary",
-    "label": "Підпис «Додатковий телефон»",
-    "content_type": "text",
-    "text_html": "Додатковий телефон",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 100,
-  "fields": {
-    "page": "services",
-    "key": "page_note",
-    "label": "Примітка під заголовком",
-    "content_type": "text",
-    "text_html": "Ціни вказані за прайсом клініки. Актуальну вартість уточнюйте при записі.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 101,
-  "fields": {
-    "page": "directions",
-    "key": "page_lead",
-    "label": "Вступний текст сторінки",
-    "content_type": "text",
-    "text_html": "Діагностика та лікування вуха, горла, носа та слуху для дітей і дорослих",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 102,
-  "fields": {
-    "page": "contacts",
-    "key": "label_phone",
-    "label": "Підпис «Телефон»",
-    "content_type": "text",
-    "text_html": "Телефон",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 103,
-  "fields": {
-    "page": "doctors",
-    "key": "page_title",
-    "label": "Заголовок сторінки",
-    "content_type": "text",
-    "text_html": "Команда, якій ви довіряєте здоровʼя",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 104,
-  "fields": {
-    "page": "home",
-    "key": "hero_brand_mark",
-    "label": "Зображення логотипу в заголовку",
-    "content_type": "image",
-    "text_html": "",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 105,
-  "fields": {
-    "page": "site",
-    "key": "footer_copyright",
-    "label": "Назва в копірайті підвалі",
-    "content_type": "text",
-    "text_html": "TEN clinic",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 106,
-  "fields": {
-    "page": "privacy",
-    "key": "text_data",
-    "label": "Текст: які дані збираємо",
-    "content_type": "text",
-    "text_html": "Під час запису на прийом ми можемо отримати ваше імʼя, номер телефону, email та інформацію про бажану послугу.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 107,
-  "fields": {
-    "page": "direction",
-    "key": "detail_when_heading",
-    "label": "Заголовок «Коли звернутися»",
-    "content_type": "text",
-    "text_html": "Коли варто звернутися?",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 108,
-  "fields": {
-    "page": "privacy",
-    "key": "heading_data",
-    "label": "Заголовок: які дані збираємо",
-    "content_type": "text",
-    "text_html": "Які дані ми збираємо",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 109,
-  "fields": {
-    "page": "contacts",
-    "key": "label_address",
-    "label": "Підпис поля «Адреса»",
-    "content_type": "text",
-    "text_html": "Адреса",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 110,
-  "fields": {
-    "page": "contacts",
-    "key": "today_label",
-    "label": "Підпис «Сьогодні»",
-    "content_type": "text",
-    "text_html": "Сьогодні:",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 111,
-  "fields": {
-    "page": "direction",
-    "key": "detail_doctors_heading",
-    "label": "Заголовок «Лікарі напрямку»",
-    "content_type": "text",
-    "text_html": "Лікарі напрямку",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 112,
-  "fields": {
-    "page": "privacy",
-    "key": "intro",
-    "label": "Вступний абзац",
-    "content_type": "text",
-    "text_html": "TEN clinic поважає вашу конфіденційність і обробляє персональні дані відповідно до чинного законодавства України.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 113,
-  "fields": {
-    "page": "home",
-    "key": "hero_bg_image",
-    "label": "Фонове фото hero",
-    "content_type": "image",
-    "text_html": "",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 114,
-  "fields": {
-    "page": "contacts",
-    "key": "page_eyebrow",
-    "label": "Маленький заголовок над назвою сторінки",
-    "content_type": "text",
-    "text_html": "Контакти",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 115,
-  "fields": {
-    "page": "surgical",
-    "key": "placeholder_btn",
-    "label": "Кнопка в заглушці",
-    "content_type": "text",
-    "text_html": "Записатися на консультацію",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 116,
-  "fields": {
-    "page": "home",
-    "key": "trust_doctors_label",
-    "label": "Підпис: кількість лікарів",
-    "content_type": "text",
-    "text_html": "лікарів-експертів",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 117,
-  "fields": {
-    "page": "home",
-    "key": "trust_days_label",
-    "label": "Підпис до днів роботи",
-    "content_type": "text",
-    "text_html": "днів на тиждень",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 118,
-  "fields": {
-    "page": "surgical",
-    "key": "page_title",
-    "label": "Заголовок сторінки",
-    "content_type": "text",
-    "text_html": "Хірургічні операції",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 119,
-  "fields": {
-    "page": "direction",
-    "key": "detail_btn_consultation",
-    "label": "Кнопка консультації",
-    "content_type": "text",
-    "text_html": "Консультативно-діагностичний прийом",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 120,
-  "fields": {
-    "page": "site",
-    "key": "nav_surgery",
-    "label": "Пункт меню: Хірургія (коротко)",
-    "content_type": "text",
-    "text_html": "Хірургія",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 121,
-  "fields": {
-    "page": "privacy",
-    "key": "heading_storage",
-    "label": "Заголовок: зберігання",
-    "content_type": "text",
-    "text_html": "Зберігання та захист",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 122,
-  "fields": {
-    "page": "direction",
-    "key": "detail_cta_text",
-    "label": "Текст бокового блоку запису",
-    "content_type": "text",
-    "text_html": "Запишіться на консультацію — підберемо зручний час прийому.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 123,
-  "fields": {
-    "page": "booking",
-    "key": "label_doctor",
-    "label": "Підпис «Лікар»",
-    "content_type": "text",
-    "text_html": "Лікар",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 124,
-  "fields": {
-    "page": "home",
-    "key": "trust_visits_value",
-    "label": "Число візитів (наприклад, 12k)",
-    "content_type": "text",
-    "text_html": "12k",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 125,
-  "fields": {
-    "page": "booking",
-    "key": "label_comment",
-    "label": "Підпис «Коментар»",
-    "content_type": "text",
-    "text_html": "Коментар",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 126,
-  "fields": {
-    "page": "home",
-    "key": "directions_feature_badge",
-    "label": "Бейдж на картці напрямку",
-    "content_type": "text",
-    "text_html": "Флагманський напрямок",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 127,
-  "fields": {
-    "page": "privacy",
-    "key": "text_purpose",
-    "label": "Текст: мета обробки",
-    "content_type": "text",
-    "text_html": "Дані використовуються для організації запису, звʼязку з вами та надання медичних послуг.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 128,
-  "fields": {
-    "page": "privacy",
-    "key": "text_storage",
-    "label": "Текст: зберігання",
-    "content_type": "text",
-    "text_html": "Ми застосовуємо організаційні та технічні заходи для захисту ваших персональних даних від несанкціонованого доступу.",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 129,
-  "fields": {
-    "page": "site",
-    "key": "nav_doctors",
-    "label": "Пункт меню: Лікарі",
-    "content_type": "text",
-    "text_html": "Лікарі",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 130,
-  "fields": {
-    "page": "home",
-    "key": "cta_eyebrow",
-    "label": "Мітка над CTA",
-    "content_type": "text",
-    "text_html": "Запис на консультацію",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 131,
-  "fields": {
-    "page": "home",
-    "key": "cta_btn_primary",
-    "label": "Кнопка CTA «Записатися онлайн»",
-    "content_type": "text",
-    "text_html": "Записатися онлайн",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 132,
-  "fields": {
-    "page": "home",
-    "key": "directions_all_link",
-    "label": "Посилання «Усі напрямки»",
-    "content_type": "text",
-    "text_html": "Усі напрямки →",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 133,
-  "fields": {
-    "page": "home",
-    "key": "contacts_eyebrow",
-    "label": "Мітка над контактами",
-    "content_type": "text",
-    "text_html": "Контакти",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 134,
-  "fields": {
-    "page": "home",
-    "key": "directions_eyebrow",
-    "label": "Мітка над заголовком напрямків",
-    "content_type": "text",
-    "text_html": "Напрямки",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 135,
-  "fields": {
-    "page": "home",
-    "key": "doctors_eyebrow",
-    "label": "Мітка над заголовком лікарів",
-    "content_type": "text",
-    "text_html": "Лікарі",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "clinic.siteblock",
-  "pk": 136,
-  "fields": {
-    "page": "home",
-    "key": "about_eyebrow",
-    "label": "Мітка над заголовком",
-    "content_type": "text",
-    "text_html": "Про клініку",
-    "image": "",
-    "sort_order": 0,
-    "is_active": true
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 1,
-  "fields": {
-    "password": "pbkdf2_sha256$1200000$bEACjstvPX6qmaVpQpJl2d$BpdivZkHDbZQT4nd4bVvHCe7v8ZN8xYCwoqdw1c+fYQ=",
-    "last_login": "2026-07-06T08:46:54.244Z",
-    "is_superuser": true,
-    "username": "admin",
-    "first_name": "",
-    "last_name": "",
-    "email": "admin@tenclinic.ua",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2026-07-01T07:13:25.709Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 2,
-  "fields": {
-    "password": "pbkdf2_sha256$1200000$bPSILcmb2B1NS4MHtcpYdZ$tDdiVuWpVJ6TMqHOE+AqNmgFpIxEVKIHrg2MmVyx73w=",
-    "last_login": "2026-07-03T12:06:45.526Z",
-    "is_superuser": true,
-    "username": "admin_test",
-    "first_name": "",
-    "last_name": "",
-    "email": "admin@test.local",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2026-07-03T12:06:12.183Z",
-    "groups": [],
-    "user_permissions": []
-  }
-}
 ]

@@ -1,11 +1,10 @@
 import { initPhoneInputs } from './phone-input.js?v=20260706i';
 import { initCustomSelects } from './custom-select.js?v=20260706i';
-import { initDateInputs, cleanupOrphanDatePortals } from './date-input.js?v=20260706i';
 import { initBookingValidation } from './booking-validation.js?v=20260706i';
 
-function showBookingSuccess(swapRoot) {
-  cleanupOrphanDatePortals();
+const DIRECTION_UNDECIDED = 'undecided';
 
+function showBookingSuccess(swapRoot) {
   const success = swapRoot.querySelector('.booking-success');
   if (!success) {
     return;
@@ -20,7 +19,6 @@ function showBookingSuccess(swapRoot) {
 export function initBooking() {
   initBookingValidation();
   initPhoneInputs();
-  initDateInputs();
 
   if (!document.body.dataset.bookingHtmxBound) {
     document.body.dataset.bookingHtmxBound = 'true';
@@ -35,7 +33,6 @@ export function initBooking() {
 
         initPhoneInputs(swapRoot);
         initCustomSelects(swapRoot);
-        initDateInputs(swapRoot);
       }
     });
 
@@ -56,39 +53,23 @@ export function initBooking() {
 
   wrapper.addEventListener('change', (event) => {
     const target = event.target;
-    if (!(target instanceof HTMLSelectElement) || !window.htmx) {
+    if (!(target instanceof HTMLSelectElement) || target.id !== 'id_direction' || !window.htmx) {
       return;
     }
 
-    if (target.id === 'id_direction' && target.dataset.servicesUrl) {
-      const value = target.value;
-      window.htmx.ajax('GET', `${target.dataset.servicesUrl}?direction=${value}`, {
-        target: '#service-select-wrapper',
-        swap: 'innerHTML',
-      }).then(() => {
-        initCustomSelects(document.querySelector('#service-select-wrapper'));
-      });
-
-      const doctorsUrl = target.dataset.doctorsUrl
-        || wrapper.querySelector('#id_service')?.dataset.doctorsUrl;
-      if (doctorsUrl) {
-        window.htmx.ajax('GET', `${doctorsUrl}?direction=${value}`, {
-          target: '#doctor-select-wrapper',
-          swap: 'innerHTML',
-        }).then(() => {
-          initCustomSelects(document.querySelector('#doctor-select-wrapper'));
-        });
-      }
+    const doctorsUrl = target.dataset.doctorsUrl;
+    if (!doctorsUrl) {
       return;
     }
 
-    if (target.id === 'id_service' && target.dataset.doctorsUrl) {
-      window.htmx.ajax('GET', `${target.dataset.doctorsUrl}?service=${target.value}`, {
-        target: '#doctor-select-wrapper',
-        swap: 'innerHTML',
-      }).then(() => {
-        initCustomSelects(document.querySelector('#doctor-select-wrapper'));
-      });
-    }
+    const value = target.value;
+    const query = value && value !== DIRECTION_UNDECIDED ? `?direction=${encodeURIComponent(value)}` : '';
+
+    window.htmx.ajax('GET', `${doctorsUrl}${query}`, {
+      target: '#doctor-select-wrapper',
+      swap: 'innerHTML',
+    }).then(() => {
+      initCustomSelects(document.querySelector('#doctor-select-wrapper'));
+    });
   });
 }

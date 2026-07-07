@@ -33,24 +33,28 @@ class DirectionAdmin(OrderOnCreateMixin, ImagePreviewMixin, ModelAdmin):
 class DoctorAdmin(OrderOnCreateMixin, DoctorImagePreviewMixin, ModelAdmin):
     ordering_field = 'order'
     hide_ordering_field = True
-    list_display = ('full_name', 'photo_thumb', 'specialization', 'direction', 'is_active')
-    list_filter = ('direction', 'is_active')
+    list_display = ('full_name', 'photo_thumb', 'specialization', 'directions_display', 'is_active')
+    list_filter = ('directions', 'is_active')
     prepopulated_fields = {'slug': ('full_name',)}
     search_fields = ('full_name', 'specialization')
-    autocomplete_fields = ('direction',)
-    filter_horizontal = ('services',)
+    filter_horizontal = ('directions', 'services')
     readonly_fields = ('get_image_preview',)
     fieldsets = (
         (None, {
             'fields': (
                 'full_name', 'slug', 'photo', 'get_image_preview',
-                'specialization', 'direction', 'is_active',
+                'specialization', 'directions', 'is_active',
             ),
         }),
         ('Профіль', {
             'fields': ('bio', 'education', 'experience_years', 'services'),
         }),
     )
+
+    def directions_display(self, obj):
+        return ', '.join(obj.directions.values_list('name', flat=True))
+
+    directions_display.short_description = 'Напрямки'
 
     def photo_thumb(self, obj):
         return self.get_image_preview(obj)
@@ -121,8 +125,8 @@ class WorkingHoursAdmin(ModelAdmin):
 
 
 class AppointmentAdmin(ModelAdmin):
-    list_display = ('name', 'phone', 'direction', 'service', 'preferred_date', 'status', 'created_at')
-    list_filter = ('status', 'direction', 'created_at')
+    list_display = ('name', 'phone', 'direction', 'contact_method', 'status', 'created_at')
+    list_filter = ('status', 'direction', 'contact_method', 'created_at')
     search_fields = ('name', 'phone', 'email')
     readonly_fields = ('created_at', 'ip_address')
     autocomplete_fields = ('direction', 'service', 'doctor')

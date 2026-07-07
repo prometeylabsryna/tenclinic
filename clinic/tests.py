@@ -1,5 +1,5 @@
 from django.core.exceptions import ValidationError
-from django.test import SimpleTestCase
+from django.test import SimpleTestCase, TestCase
 
 from clinic.forms import AppointmentForm
 from clinic.utils.map_embed import is_allowed_map_embed_url, normalize_map_embed, resolve_map_embed_src
@@ -32,7 +32,7 @@ class PhoneValidationUtilsTests(SimpleTestCase):
         self.assertFalse(is_valid_ua_phone('0171234567'))
 
 
-class AppointmentFormPhoneTests(SimpleTestCase):
+class AppointmentFormPhoneTests(TestCase):
     def test_form_normalizes_phone(self):
         form = AppointmentForm()
         form.cleaned_data = {'phone': '0671234567'}

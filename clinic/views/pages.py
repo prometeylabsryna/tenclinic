@@ -12,17 +12,16 @@ from clinic.utils.block_render import get_block_text
 
 def home(request):
     directions = Direction.objects.filter(is_active=True)
-    doctors = Doctor.objects.filter(is_active=True).select_related('direction')[:4]
+    doctors = (
+        Doctor.objects.filter(is_active=True)
+        .prefetch_related('directions')
+        .order_by('order', 'full_name')[:4]
+    )
     today_hours = _today_hours()
-    trust_stats = {
-        'directions': Direction.objects.filter(is_active=True).count(),
-        'doctors': Doctor.objects.filter(is_active=True).count(),
-    }
     return render(request, 'pages/home.html', {
         'directions': directions,
         'doctors': doctors,
         'today_hours': today_hours,
-        'trust_stats': trust_stats,
     })
 
 
@@ -51,7 +50,12 @@ def directions_list(request):
 def direction_detail(request, slug):
     direction = get_object_or_404(Direction, slug=slug, is_active=True)
     services = direction.services.filter(is_active=True)
-    doctors = direction.doctors.filter(is_active=True)
+    doctors = (
+        direction.doctors.filter(is_active=True)
+        .prefetch_related('directions')
+        .distinct()
+        .order_by('order', 'full_name')
+    )
     return render(request, 'pages/directions/detail.html', {
         'direction': direction,
         'services': services,
@@ -65,9 +69,13 @@ def direction_detail(request, slug):
 
 def doctors_list(request):
     direction_slug = request.GET.get('direction', '')
-    doctors = Doctor.objects.filter(is_active=True).select_related('direction')
+    doctors = (
+        Doctor.objects.filter(is_active=True)
+        .prefetch_related('directions')
+        .order_by('order', 'full_name')
+    )
     if direction_slug:
-        doctors = doctors.filter(direction__slug=direction_slug)
+        doctors = doctors.filter(directions__slug=direction_slug).distinct()
     directions = Direction.objects.filter(is_active=True)
     if request.htmx:
         return render(request, 'partials/doctors_grid.html', {
@@ -81,7 +89,11 @@ def doctors_list(request):
 
 
 def doctor_detail(request, slug):
-    doctor = get_object_or_404(Doctor, slug=slug, is_active=True)
+    doctor = get_object_or_404(
+        Doctor.objects.prefetch_related('directions'),
+        slug=slug,
+        is_active=True,
+    )
     services = doctor.services.filter(is_active=True)
     return render(request, 'pages/doctors/detail.html', {
         'doctor': doctor,
@@ -192,11 +204,12 @@ def booking(request):
         doctor = Doctor.objects.filter(slug=doctor_slug, is_active=True).first()
         if doctor:
             initial['doctor'] = doctor
-            initial['direction'] = doctor.direction
+            primary_direction = doctor.primary_direction
+            if primary_direction:
+                initial['direction'] = primary_direction
     if service_slug:
         service = Service.objects.filter(slug=service_slug, is_active=True).first()
         if service:
-            initial['service'] = service
             initial['direction'] = service.direction
     if direction_slug and 'direction' not in initial:
         direction = Direction.objects.filter(slug=direction_slug, is_active=True).first()
@@ -246,7 +259,10 @@ def booking_doctors(request):
     if service_id:
         doctors = Doctor.objects.filter(services__id=service_id, is_active=True).distinct()
     elif direction_id:
-        doctors = Doctor.objects.filter(direction_id=direction_id, is_active=True)
+        doctors = Doctor.objects.filter(
+            directions__id=direction_id,
+            is_active=True,
+        ).distinct()
     return render(request, 'partials/doctor_options.html', {'doctors': doctors})
 
 
