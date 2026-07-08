@@ -1,8 +1,7 @@
 {% load site_content %}
 <section{% if section_id %} id="{{ section_id }}"{% endif %} class="about-us-section{% if section_modifier %} {{ section_modifier }}{% endif %}">
   <div class="container about-us-section__layout">
-    {% about_us_has_gallery_photos 'side' content_page|default:'home' as has_side_photos %}
-    <div class="about-us-section__top{% if has_side_photos %} about-us-section__top--with-media{% endif %}">
+    <div class="about-us-section__top about-us-section__top--with-media">
       <div class="about-us-section__intro{% if use_reveal %} reveal{% endif %}">
         {% if show_heading %}
         <p class="section-eyebrow section-eyebrow--plain">{% block_plain content_page|default:'home' 'about_us_eyebrow' 'TEN Clinic' %}</p>
@@ -21,17 +20,12 @@
           >
         </div>
       </div>
-      {% if has_side_photos %}
       <ul class="about-us-section__gallery about-us-section__gallery--side" role="list" aria-label="Фото клініки — праворуч">
         {% about_us_gallery_side page=content_page|default:'home' %}
       </ul>
-      {% endif %}
     </div>
-    {% about_us_has_gallery_photos 'bottom' content_page|default:'home' as has_bottom_photos %}
-    {% if has_bottom_photos %}
     <ul class="about-us-section__gallery about-us-section__gallery--bottom{% if use_reveal %} reveal{% endif %}" role="list" aria-label="Фото клініки — знизу">
       {% about_us_gallery_bottom page=content_page|default:'home' %}
     </ul>
-    {% endif %}
   </div>
 </section>

@@ -201,7 +201,7 @@ def about_us_has_gallery_photos(context, position='side', page=''):
 
 
 @register.inclusion_tag('partials/about_us_gallery_items.html', takes_context=True)
-def about_us_gallery_side(context, page='', hide_empty=True):
+def about_us_gallery_side(context, page='', hide_empty=False):
     page = _about_us_page(context, page)
     items = _about_us_gallery_items(context.get('site_blocks'), page=page)[:2]
     if hide_empty:
@@ -210,7 +210,7 @@ def about_us_gallery_side(context, page='', hide_empty=True):
 
 
 @register.inclusion_tag('partials/about_us_gallery_items.html', takes_context=True)
-def about_us_gallery_bottom(context, page='', hide_empty=True):
+def about_us_gallery_bottom(context, page='', hide_empty=False):
     page = _about_us_page(context, page)
     items = _about_us_gallery_items(context.get('site_blocks'), page=page)[2:]
     if hide_empty:
