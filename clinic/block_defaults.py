@@ -93,6 +93,13 @@ BLOCK_DEFAULTS = {
     ('about_us', 'page_eyebrow'): 'TEN Clinic',
     ('about_us', 'page_title'): 'Про нас',
     ('about_us', 'page_lead'): '',
+    ('about_us', 'about_us_text'): (
+        'TEN Clinic — це сучасний медичний центр, де поєднуються доказова медицина, '
+        'високоточна діагностика та хірургія експертного рівня. Ми надаємо допомогу '
+        'дітям і дорослим, використовуючи сучасні методи лікування та індивідуальний '
+        'підхід до кожного пацієнта. Наша мета — досягати найкращих результатів, '
+        'забезпечуючи безпеку, комфорт і довіру на кожному етапі лікування.'
+    ),
     ('contacts', 'schedule_title'): 'Графік роботи',
     ('contacts', 'today_label'): 'Сьогодні:',
     ('contacts', 'map_title'): 'Схема проїзду',
@@ -194,11 +201,11 @@ BLOCK_FIELD_LABELS = {
     'about_text': 'Основний текст про клініку',
     'about_brand_mark': 'Зображення знаку бренду',
     'principles_title': 'Заголовок блоку принципів',
-    'about_us_section_visible': 'Показувати секцію «Про нас»',
-    'about_us_eyebrow': 'Мітка над заголовком «Про нас»',
-    'about_us_title': 'Заголовок «Про нас»',
-    'about_us_text': 'Основний текст секції «Про нас»',
-    'about_us_brand_mark': 'Логотип у секції «Про нас»',
+    'about_us_section_visible': 'Показувати секцію «Про нас» на головній',
+    'about_us_eyebrow': 'Мітка над заголовком секції на головній',
+    'about_us_title': 'Заголовок секції на головній',
+    'about_us_text': 'Основний текст',
+    'about_us_brand_mark': 'Логотип',
     'directions_title': 'Заголовок секції напрямків',
     'directions_eyebrow': 'Мітка над заголовком напрямків',
     'directions_feature_badge': 'Бейдж на картці напрямку',
@@ -279,10 +286,40 @@ for index in PRINCIPLE_DEFAULTS:
 
 for index in range(1, 11):
     if index <= 2:
-        BLOCK_FIELD_LABELS[f'about_us_photo_{index}'] = f'Фото справа {index:02d} (слот {index:02d} на сайті)'
+        label = f'Фото справа {index:02d}'
     else:
-        slot = index - 2
-        BLOCK_FIELD_LABELS[f'about_us_photo_{index}'] = f'Фото знизу {slot:02d} (слот {slot:02d} у нижній сітці)'
+        label = f'Фото знизу {index - 2:02d}'
+    BLOCK_FIELD_LABELS[f'about_us_photo_{index}'] = label
+
+PAGE_BLOCK_FIELD_LABELS = {
+    ('home', 'about_us_eyebrow'): 'Мітка над заголовком секції на головній',
+    ('home', 'about_us_title'): 'Заголовок секції на головній',
+    ('home', 'about_us_text'): 'Основний текст секції на головній',
+    ('home', 'about_us_brand_mark'): 'Логотип секції на головній',
+    ('about_us', 'about_us_text'): 'Основний текст сторінки /about/',
+    ('about_us', 'about_us_brand_mark'): 'Логотип сторінки /about/',
+    **{
+        ('home', f'about_us_photo_{index}'): (
+            f'Фото справа {index:02d} (головна)' if index <= 2
+            else f'Фото знизу {index - 2:02d} (головна)'
+        )
+        for index in range(1, 11)
+    },
+    **{
+        ('about_us', f'about_us_photo_{index}'): (
+            f'Фото справа {index:02d} (сторінка)' if index <= 2
+            else f'Фото знизу {index - 2:02d} (сторінка)'
+        )
+        for index in range(1, 11)
+    },
+}
+
+
+def block_field_label(page: str, key: str) -> str:
+    return PAGE_BLOCK_FIELD_LABELS.get(
+        (page, key),
+        BLOCK_FIELD_LABELS.get(key, key.replace('_', ' ').title()),
+    )
 
 INLINE_KEYS = frozenset({
     'hero_title', 'hero_eyebrow', 'hero_btn_primary', 'hero_btn_secondary',
@@ -320,8 +357,13 @@ BLOCK_CONTENT_TYPES = {
     ('home', 'hero_bg_image'): SiteBlock.ContentType.IMAGE,
     ('home', 'about_brand_mark'): SiteBlock.ContentType.IMAGE,
     ('home', 'about_us_brand_mark'): SiteBlock.ContentType.IMAGE,
+    ('about_us', 'about_us_brand_mark'): SiteBlock.ContentType.IMAGE,
     **{
         ('home', f'about_us_photo_{index}'): SiteBlock.ContentType.IMAGE
+        for index in range(1, 11)
+    },
+    **{
+        ('about_us', f'about_us_photo_{index}'): SiteBlock.ContentType.IMAGE
         for index in range(1, 11)
     },
 }

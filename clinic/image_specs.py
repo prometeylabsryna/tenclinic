@@ -97,8 +97,13 @@ BLOCK_IMAGE_SPECS = {
     ('home', 'hero_bg_image'): HERO_BG,
     ('home', 'about_brand_mark'): ABOUT_BRAND_MARK,
     ('home', 'about_us_brand_mark'): ABOUT_US_BRAND_MARK,
+    ('about_us', 'about_us_brand_mark'): ABOUT_US_BRAND_MARK,
     **{
         ('home', f'about_us_photo_{index}'): ABOUT_US_GALLERY_PHOTO
+        for index in range(1, 11)
+    },
+    **{
+        ('about_us', f'about_us_photo_{index}'): ABOUT_US_GALLERY_PHOTO
         for index in range(1, 11)
     },
 }

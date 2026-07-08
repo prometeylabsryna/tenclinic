@@ -19,6 +19,7 @@ from clinic.block_defaults import (
     BLOCK_FIELD_LABELS,
     INLINE_KEYS,
     MULTILINE_KEYS,
+    block_field_label,
     is_image_block,
     is_visibility_key,
 )
@@ -29,7 +30,7 @@ from clinic.site_content_registry import CONTENT_SECTIONS, ContentSection, get_s
 
 def ensure_block(page, key):
     default = BLOCK_DEFAULTS.get((page, key), '')
-    label = BLOCK_FIELD_LABELS.get(key, key.replace('_', ' ').title())
+    label = block_field_label(page, key)
     content_type = BLOCK_CONTENT_TYPES.get((page, key), SiteBlock.ContentType.TEXT)
     block, _ = SiteBlock.objects.get_or_create(
         page=page,
@@ -71,7 +72,7 @@ class SitePageContentForm(forms.Form):
             if is_visibility_key(key):
                 self.fields[_field_name_for_block(page, key)] = forms.BooleanField(
                     required=False,
-                    label=BLOCK_FIELD_LABELS.get(key, key),
+                    label=block_field_label(page, key),
                     initial=block.text_html == '1',
                     widget=UnfoldBooleanWidget,
                 )
@@ -82,7 +83,7 @@ class SitePageContentForm(forms.Form):
                     help_text = f'Поточне фото завантажено. {help_text}'
                 self.fields[_field_name_for_block(page, key)] = forms.ImageField(
                     required=False,
-                    label=BLOCK_FIELD_LABELS.get(key, key),
+                    label=block_field_label(page, key),
                     help_text=help_text,
                     widget=UnfoldAdminImageFieldWidget,
                 )
@@ -98,7 +99,7 @@ class SitePageContentForm(forms.Form):
                 widget = UnfoldAdminTextareaWidget
             self.fields[field_name] = forms.CharField(
                 required=False,
-                label=BLOCK_FIELD_LABELS.get(key, key),
+                label=block_field_label(page, key),
                 initial=block.text_html,
                 widget=widget(attrs={'rows': 4 if key in MULTILINE_KEYS else 2}),
             )

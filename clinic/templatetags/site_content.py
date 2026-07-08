@@ -170,11 +170,11 @@ def block_image(
     return mark_safe(f'<img {" ".join(attrs)}>')
 
 
-def _about_us_gallery_items(site_blocks):
+def _about_us_gallery_items(site_blocks, page='home'):
     items = []
     for index in range(1, ABOUT_GALLERY_SIZE + 1):
         key = f'about_us_photo_{index}'
-        url = get_block_image_url('home', key, site_blocks=site_blocks)
+        url = get_block_image_url(page, key, site_blocks=site_blocks)
         if index <= 2:
             label = f'{index:02d}'
         else:
@@ -183,15 +183,21 @@ def _about_us_gallery_items(site_blocks):
     return items
 
 
+def _about_us_content_page(context):
+    return context.get('content_page', 'home')
+
+
 @register.inclusion_tag('partials/about_us_gallery_items.html', takes_context=True)
 def about_us_gallery_side(context):
-    items = _about_us_gallery_items(context.get('site_blocks'))
+    page = _about_us_content_page(context)
+    items = _about_us_gallery_items(context.get('site_blocks'), page=page)
     return {'items': items[:2]}
 
 
 @register.inclusion_tag('partials/about_us_gallery_items.html', takes_context=True)
 def about_us_gallery_bottom(context):
-    items = _about_us_gallery_items(context.get('site_blocks'))
+    page = _about_us_content_page(context)
+    items = _about_us_gallery_items(context.get('site_blocks'), page=page)
     return {'items': items[2:]}
 
 
