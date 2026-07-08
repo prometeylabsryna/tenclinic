@@ -57,15 +57,33 @@ ABOUT_US_BRAND_MARK = ImageSpec(
     width=560,
     height=170,
     ratio='≈3:1',
-    hint='Логотип у світлому блоці «Про нас».',
+    hint='Чорний логотип TEN без фону на сторінці /about/.',
 )
 
-ABOUT_US_GALLERY_PHOTO = ImageSpec(
-    label='Фото галереї «Про нас»',
-    width=480,
-    height=360,
+# Справа: слот розтягується на висоту текстової колонки, фото кадриться cover.
+ABOUT_US_SIDE_PHOTO = ImageSpec(
+    label='Фото справа «Про нас»',
+    width=960,
+    height=720,
+    ratio='≈4:3',
+    hint=(
+        'Права колонка: слот підлаштовується під висоту тексту, '
+        'фото обрізається по центру (object-fit: cover). '
+        'Горизонтальне фото інтерʼєру/команда; важливий сюжет тримайте в центрі кадру. '
+        'Не завантажуйте логотипи й широкі банери.'
+    ),
+)
+
+# Знизу: фіксований CSS aspect-ratio 4/3.
+ABOUT_US_BOTTOM_PHOTO = ImageSpec(
+    label='Фото знизу «Про нас»',
+    width=800,
+    height=600,
     ratio='4:3',
-    hint='Горизонтальне фото клініки у форматі 4:3 (480×360). Уникайте логотипів і широких банерів — краще інтерʼєр або команда.',
+    hint=(
+        'Нижня сітка показує фото у фіксованому форматі 4:3. '
+        'Горизонтальне фото інтерʼєру/команда; уникайте логотипів і широких банерів.'
+    ),
 )
 
 DOCTOR_PHOTO = ImageSpec(
@@ -97,9 +115,11 @@ BLOCK_IMAGE_SPECS = {
     ('home', 'hero_bg_image'): HERO_BG,
     ('home', 'about_brand_mark'): ABOUT_BRAND_MARK,
     ('about_us', 'about_us_brand_mark'): ABOUT_US_BRAND_MARK,
+    ('about_us', 'about_us_photo_1'): ABOUT_US_SIDE_PHOTO,
+    ('about_us', 'about_us_photo_2'): ABOUT_US_SIDE_PHOTO,
     **{
-        ('about_us', f'about_us_photo_{index}'): ABOUT_US_GALLERY_PHOTO
-        for index in range(1, 11)
+        ('about_us', f'about_us_photo_{index}'): ABOUT_US_BOTTOM_PHOTO
+        for index in range(3, 11)
     },
 }
 
