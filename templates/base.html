@@ -7,7 +7,7 @@
   <title>{% block title %}{{ site_settings.site_name|default:'TEN clinic' }}{% if site_settings.tagline %} — {{ site_settings.tagline }}{% else %} — Medicine & Surgery{% endif %}{% endblock %}</title>
   <meta name="description" content="{% block meta_description %}{{ site_settings.meta_description|default:'TEN clinic — новий стандарт медичної допомоги. Medicine & Surgery.' }}{% endblock %}">
   <link rel="icon" href="{% static 'images/favicon.svg' %}" type="image/svg+xml">
-  {% with cssv='20260708o' %}
+  {% with cssv='20260708r' %}
   <link rel="stylesheet" href="{% static 'css/variables.css' %}?v={{ cssv }}">
   <link rel="stylesheet" href="{% static 'css/base.css' %}?v={{ cssv }}">
   <link rel="stylesheet" href="{% static 'css/layout.css' %}?v={{ cssv }}">
@@ -24,7 +24,6 @@
   <link rel="stylesheet" href="{% static 'css/footer.css' %}?v={{ cssv }}">
   <link rel="stylesheet" href="{% static 'css/logo-surface.css' %}?v={{ cssv }}">
   <link rel="stylesheet" href="{% static 'css/about-section.css' %}?v={{ cssv }}">
-  <link rel="stylesheet" href="{% static 'css/about-us-section.css' %}?v={{ cssv }}">
   <link rel="stylesheet" href="{% static 'css/directions-section.css' %}?v={{ cssv }}">
   <link rel="stylesheet" href="{% static 'css/doctors-section.css' %}?v={{ cssv }}">
   <link rel="stylesheet" href="{% static 'css/cta-section.css' %}?v={{ cssv }}">

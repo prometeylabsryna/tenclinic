@@ -170,7 +170,7 @@ def block_image(
     return mark_safe(f'<img {" ".join(attrs)}>')
 
 
-def _about_us_gallery_items(site_blocks, page='home'):
+def _about_us_gallery_items(site_blocks, page='home', hide_empty=False):
     items = []
     for index in range(1, ABOUT_GALLERY_SIZE + 1):
         key = f'about_us_photo_{index}'
@@ -180,25 +180,42 @@ def _about_us_gallery_items(site_blocks, page='home'):
         else:
             label = f'{index - 2:02d}'
         items.append({'index': index, 'url': url, 'label': label})
+    if hide_empty:
+        return [item for item in items if item['url']]
     return items
 
 
-def _about_us_content_page(context):
-    return context.get('content_page', 'home')
+def _about_us_page(context, page=''):
+    return page or context.get('content_page', 'home')
+
+
+@register.simple_tag(takes_context=True)
+def about_us_has_gallery_photos(context, position='side', page=''):
+    page = _about_us_page(context, page)
+    items = _about_us_gallery_items(context.get('site_blocks'), page=page)
+    if position == 'side':
+        items = items[:2]
+    else:
+        items = items[2:]
+    return any(item['url'] for item in items)
 
 
 @register.inclusion_tag('partials/about_us_gallery_items.html', takes_context=True)
-def about_us_gallery_side(context, page=''):
-    page = page or context.get('content_page', 'home')
-    items = _about_us_gallery_items(context.get('site_blocks'), page=page)
-    return {'items': items[:2]}
+def about_us_gallery_side(context, page='', hide_empty=True):
+    page = _about_us_page(context, page)
+    items = _about_us_gallery_items(context.get('site_blocks'), page=page)[:2]
+    if hide_empty:
+        items = [item for item in items if item['url']]
+    return {'items': items}
 
 
 @register.inclusion_tag('partials/about_us_gallery_items.html', takes_context=True)
-def about_us_gallery_bottom(context, page=''):
-    page = page or context.get('content_page', 'home')
-    items = _about_us_gallery_items(context.get('site_blocks'), page=page)
-    return {'items': items[2:]}
+def about_us_gallery_bottom(context, page='', hide_empty=True):
+    page = _about_us_page(context, page)
+    items = _about_us_gallery_items(context.get('site_blocks'), page=page)[2:]
+    if hide_empty:
+        items = [item for item in items if item['url']]
+    return {'items': items}
 
 
 @register.simple_tag(takes_context=True)

@@ -34,7 +34,6 @@ _PRINCIPLE_KEYS = tuple(
 _PRINCIPLE_BLOCKS = tuple(('home', key) for key in _PRINCIPLE_KEYS)
 
 _ABOUT_US_GALLERY_KEYS = tuple(f'about_us_photo_{index}' for index in range(1, 11))
-_ABOUT_US_GALLERY_BLOCKS = tuple(('home', key) for key in _ABOUT_US_GALLERY_KEYS)
 _ABOUT_PAGE_GALLERY_BLOCKS = tuple(('about_us', key) for key in _ABOUT_US_GALLERY_KEYS)
 
 
@@ -107,34 +106,6 @@ CONTENT_SECTIONS: tuple[ContentSection, ...] = (
             ('home', 'about_brand_mark'),
             ('home', 'principles_title'),
             *_PRINCIPLE_BLOCKS,
-        ),
-    ),
-    ContentSection(
-        slug='about_us',
-        page_slug='home',
-        title='Головна — Про нас',
-        sidebar_title='Про нас (головна)',
-        sidebar_icon='photo_library',
-        preview_url='/#about-us',
-        description='Тексти, логотип і фотогалерея секції «Про нас» на головній сторінці.',
-        visibility_key='about_us_section_visible',
-        admin_model_name='homeaboutussettings',
-        field_groups=(
-            FieldGroup('Відображення', ('about_us_section_visible',)),
-            FieldGroup('Заголовки та текст', (
-                'about_us_eyebrow', 'about_us_title', 'about_us_text',
-            )),
-            FieldGroup('Логотип', ('about_us_brand_mark',)),
-            FieldGroup('Фото справа (2)', _ABOUT_US_GALLERY_KEYS[:2]),
-            FieldGroup('Фото знизу (8)', _ABOUT_US_GALLERY_KEYS[2:]),
-        ),
-        blocks=(
-            ('home', 'about_us_section_visible'),
-            ('home', 'about_us_eyebrow'),
-            ('home', 'about_us_title'),
-            ('home', 'about_us_text'),
-            ('home', 'about_us_brand_mark'),
-            *_ABOUT_US_GALLERY_BLOCKS,
         ),
     ),
     ContentSection(
@@ -386,7 +357,7 @@ CONTENT_SECTIONS: tuple[ContentSection, ...] = (
         sidebar_title='Сторінка «Про нас»',
         sidebar_icon='info',
         preview_url='/about/',
-        description='Повний контент окремої сторінки /about/. Не впливає на секцію «Про нас (головна)».',
+        description='Повний контент окремої сторінки /about/.',
         admin_model_name='aboutuspagesettings',
         field_groups=(
             FieldGroup('Заголовки сторінки', (

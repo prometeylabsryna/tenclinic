@@ -15,7 +15,7 @@
 }
 
 .about-us-page__body .about-us-section__layout {
-  gap: clamp(1.25rem, 3vw, 2rem);
+  gap: clamp(1.5rem, 3.5vw, 2.5rem);
 }
 
 @media (max-width: 767px) {
@@ -23,19 +23,13 @@
     grid-template-columns: 1fr;
   }
 
-  .about-us-page__body .about-us-section__gallery--side {
-    min-height: 0;
-  }
-
-  .about-us-page__body .about-us-section__gallery--side .about-us-section__photo-image,
-  .about-us-page__body .about-us-section__gallery--side .about-us-section__photo-placeholder {
-    aspect-ratio: 4 / 3;
-    height: auto;
+  .about-us-page__body .about-us-section__gallery--side .about-us-section__photo-frame {
+    aspect-ratio: 16 / 10;
   }
 }
 
-@supports (-webkit-touch-callout: none) {
-  .about-us-page__body .about-us-section__gallery--side {
-    height: auto;
+@media (min-width: 768px) and (max-width: 1023px) {
+  .about-us-page__body .about-us-section__top--with-media {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 18rem);
   }
 }

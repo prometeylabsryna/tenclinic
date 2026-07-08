@@ -65,7 +65,7 @@ ABOUT_US_GALLERY_PHOTO = ImageSpec(
     width=480,
     height=360,
     ratio='4:3',
-    hint='Зображення у фотогалереї секції «Про нас».',
+    hint='Горизонтальне фото клініки у форматі 4:3 (480×360). Уникайте логотипів і широких банерів — краще інтерʼєр або команда.',
 )
 
 DOCTOR_PHOTO = ImageSpec(
@@ -96,12 +96,7 @@ BLOCK_IMAGE_SPECS = {
     ('home', 'hero_brand_mark'): HERO_BRAND_MARK,
     ('home', 'hero_bg_image'): HERO_BG,
     ('home', 'about_brand_mark'): ABOUT_BRAND_MARK,
-    ('home', 'about_us_brand_mark'): ABOUT_US_BRAND_MARK,
     ('about_us', 'about_us_brand_mark'): ABOUT_US_BRAND_MARK,
-    **{
-        ('home', f'about_us_photo_{index}'): ABOUT_US_GALLERY_PHOTO
-        for index in range(1, 11)
-    },
     **{
         ('about_us', f'about_us_photo_{index}'): ABOUT_US_GALLERY_PHOTO
         for index in range(1, 11)

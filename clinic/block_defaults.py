@@ -42,16 +42,6 @@ BLOCK_DEFAULTS = {
         'принципи доказової медицини, щоб забезпечити якісну медичну допомогу для дітей і дорослих.'
     ),
     ('home', 'principles_title'): '10 принципів TEN clinic',
-    ('home', 'about_us_section_visible'): '1',
-    ('home', 'about_us_eyebrow'): 'TEN Clinic',
-    ('home', 'about_us_title'): 'Про нас',
-    ('home', 'about_us_text'): (
-        'TEN Clinic — це сучасний медичний центр, де поєднуються доказова медицина, '
-        'високоточна діагностика та хірургія експертного рівня. Ми надаємо допомогу '
-        'дітям і дорослим, використовуючи сучасні методи лікування та індивідуальний '
-        'підхід до кожного пацієнта. Наша мета — досягати найкращих результатів, '
-        'забезпечуючи безпеку, комфорт і довіру на кожному етапі лікування.'
-    ),
     ('home', 'directions_title'): 'Від діагностики до хірургії',
     ('home', 'directions_eyebrow'): 'Напрямки',
     ('home', 'directions_feature_badge'): 'Флагманський напрямок',
@@ -201,11 +191,6 @@ BLOCK_FIELD_LABELS = {
     'about_text': 'Основний текст про клініку',
     'about_brand_mark': 'Зображення знаку бренду',
     'principles_title': 'Заголовок блоку принципів',
-    'about_us_section_visible': 'Показувати секцію «Про нас» на головній',
-    'about_us_eyebrow': 'Мітка над заголовком секції на головній',
-    'about_us_title': 'Заголовок секції на головній',
-    'about_us_text': 'Основний текст',
-    'about_us_brand_mark': 'Логотип',
     'directions_title': 'Заголовок секції напрямків',
     'directions_eyebrow': 'Мітка над заголовком напрямків',
     'directions_feature_badge': 'Бейдж на картці напрямку',
@@ -292,19 +277,8 @@ for index in range(1, 11):
     BLOCK_FIELD_LABELS[f'about_us_photo_{index}'] = label
 
 PAGE_BLOCK_FIELD_LABELS = {
-    ('home', 'about_us_eyebrow'): 'Мітка над заголовком секції на головній',
-    ('home', 'about_us_title'): 'Заголовок секції на головній',
-    ('home', 'about_us_text'): 'Основний текст секції на головній',
-    ('home', 'about_us_brand_mark'): 'Логотип секції на головній',
     ('about_us', 'about_us_text'): 'Основний текст сторінки /about/',
     ('about_us', 'about_us_brand_mark'): 'Логотип сторінки /about/',
-    **{
-        ('home', f'about_us_photo_{index}'): (
-            f'Фото справа {index:02d} (головна)' if index <= 2
-            else f'Фото знизу {index - 2:02d} (головна)'
-        )
-        for index in range(1, 11)
-    },
     **{
         ('about_us', f'about_us_photo_{index}'): (
             f'Фото справа {index:02d} (сторінка)' if index <= 2
@@ -324,7 +298,6 @@ def block_field_label(page: str, key: str) -> str:
 INLINE_KEYS = frozenset({
     'hero_title', 'hero_eyebrow', 'hero_btn_primary', 'hero_btn_secondary',
     'cta_title', 'cta_eyebrow', 'cta_btn_primary', 'about_title', 'about_eyebrow', 'about_brand_note', 'principles_title',
-    'about_us_title', 'about_us_eyebrow',
     'directions_title', 'directions_eyebrow', 'directions_feature_badge', 'directions_all_link',
     'doctors_title', 'doctors_eyebrow', 'contacts_title', 'contacts_eyebrow',
     'trust_directions_label', 'trust_doctors_label', 'trust_visits_value',
@@ -356,12 +329,7 @@ BLOCK_CONTENT_TYPES = {
     ('home', 'hero_brand_mark'): SiteBlock.ContentType.IMAGE,
     ('home', 'hero_bg_image'): SiteBlock.ContentType.IMAGE,
     ('home', 'about_brand_mark'): SiteBlock.ContentType.IMAGE,
-    ('home', 'about_us_brand_mark'): SiteBlock.ContentType.IMAGE,
     ('about_us', 'about_us_brand_mark'): SiteBlock.ContentType.IMAGE,
-    **{
-        ('home', f'about_us_photo_{index}'): SiteBlock.ContentType.IMAGE
-        for index in range(1, 11)
-    },
     **{
         ('about_us', f'about_us_photo_{index}'): SiteBlock.ContentType.IMAGE
         for index in range(1, 11)
@@ -369,7 +337,7 @@ BLOCK_CONTENT_TYPES = {
 }
 
 VISIBILITY_KEYS = frozenset({
-    'hero_section_visible', 'about_section_visible', 'about_us_section_visible',
+    'hero_section_visible', 'about_section_visible',
     'directions_section_visible',
     'doctors_section_visible', 'cta_section_visible', 'contacts_section_visible',
 })
