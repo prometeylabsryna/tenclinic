@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static site_content %}
+
+{% block title %}{% block_plain 'about_us' 'page_title' 'Про нас' %} — {{ site_settings.site_name|default:'TEN clinic' }}{% endblock %}
+
+{% block page_class %}page--inner{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about-us-section.css' %}?v=20260708p">
+<link rel="stylesheet" href="{% static 'css/about-us-page.css' %}?v=20260708p">
+{% endblock %}
+
+{% block content %}
+{% include 'includes/breadcrumbs.html' %}
+
+<section class="about-us-page section section--page-top">
+  <div class="container">
+    <div class="inner-page-head reveal">
+      <p class="section-eyebrow section-eyebrow--plain">{% block_plain 'about_us' 'page_eyebrow' 'TEN Clinic' %}</p>
+      <h1 class="section-heading">{% block_plain 'about_us' 'page_title' 'Про нас' %}</h1>
+      {% block_plain 'about_us' 'page_lead' '' as about_page_lead %}
+      {% if about_page_lead %}
+      <p class="about-us-page__lead">{{ about_page_lead }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+  {% include 'partials/about_us_section.html' with section_modifier='about-us-page__body' show_heading=False %}
+</section>
+{% endblock %}

@@ -19,6 +19,7 @@
           </span>
         </a>
         <a href="{% url 'clinic:surgical_operations' %}" class="site-nav__link {% if request.resolver_match.url_name == 'surgical_operations' %}is-active{% endif %}" title="{% block_plain 'site' 'nav_surgery_title' 'Хірургічні операції' %}">{% block_plain 'site' 'nav_surgery' 'Хірургія' %}</a>
+        <a href="{% url 'clinic:about_us' %}" class="site-nav__link {% if request.resolver_match.url_name == 'about_us' %}is-active{% endif %}">{% block_plain 'site' 'nav_about_us' 'Про нас' %}</a>
         <a href="{% url 'clinic:contacts' %}" class="site-nav__link {% if request.resolver_match.url_name == 'contacts' %}is-active{% endif %}">{% block_plain 'site' 'nav_contacts' 'Контакти' %}</a>
       </nav>
     </div>

@@ -216,7 +216,7 @@ CONTENT_SECTIONS: tuple[ContentSection, ...] = (
             FieldGroup('Пункти меню', (
                 'nav_home', 'nav_directions', 'nav_doctors',
                 'nav_services', 'nav_services_sub', 'nav_surgery',
-                'nav_surgery_title', 'nav_contacts',
+                'nav_surgery_title', 'nav_about_us', 'nav_contacts',
             )),
             FieldGroup('Кнопки', ('nav_cta', 'footer_copyright')),
         ),
@@ -228,6 +228,7 @@ CONTENT_SECTIONS: tuple[ContentSection, ...] = (
             ('site', 'nav_services_sub'),
             ('site', 'nav_surgery'),
             ('site', 'nav_surgery_title'),
+            ('site', 'nav_about_us'),
             ('site', 'nav_contacts'),
             ('site', 'nav_cta'),
             ('site', 'footer_copyright'),
@@ -375,6 +376,21 @@ CONTENT_SECTIONS: tuple[ContentSection, ...] = (
             ('surgical', 'filter_all'),
             ('surgical', 'placeholder_text'),
             ('surgical', 'placeholder_btn'),
+        ),
+    ),
+    ContentSection(
+        slug='about_us_page',
+        page_slug='about_us',
+        title='Сторінка «Про нас»',
+        sidebar_title='Сторінка «Про нас»',
+        sidebar_icon='info',
+        preview_url='/about/',
+        description='Заголовки окремої сторінки. Текст, логотип і фото — у «Головна — Про нас».',
+        admin_model_name='aboutuspagesettings',
+        blocks=(
+            ('about_us', 'page_eyebrow'),
+            ('about_us', 'page_title'),
+            ('about_us', 'page_lead'),
         ),
     ),
     ContentSection(

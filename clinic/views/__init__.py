@@ -15,6 +15,7 @@ from clinic.views.pages import (
     service_detail,
     services_list,
     surgical_operations_list,
+    about_us,
     hearing_aids_list,
 )
 
@@ -28,6 +29,7 @@ __all__ = [
     'service_detail',
     'price_list',
     'surgical_operations_list',
+    'about_us',
     'hearing_aids_list',
     'contacts',
     'privacy',

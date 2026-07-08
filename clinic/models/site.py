@@ -103,6 +103,7 @@ class SiteBlock(models.Model):
         PRIVACY = 'privacy', 'Конфіденційність'
         SURGICAL = 'surgical', 'Хірургія'
         HEARING_AIDS = 'hearing_aids', 'Слухові апарати'
+        ABOUT_US = 'about_us', 'Про нас'
         DIRECTION = 'direction', 'Сторінка напрямку'
 
     class ContentType(models.TextChoices):

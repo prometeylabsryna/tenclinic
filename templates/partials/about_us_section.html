@@ -1,0 +1,31 @@
+{% load site_content %}
+<section{% if section_id %} id="{{ section_id }}"{% endif %} class="about-us-section{% if section_modifier %} {{ section_modifier }}{% endif %}">
+  <div class="container about-us-section__layout">
+    <div class="about-us-section__top reveal about-us-section__top--with-media">
+      <div class="about-us-section__intro">
+        {% if show_heading %}
+        <p class="section-eyebrow section-eyebrow--plain">{% block_plain 'home' 'about_us_eyebrow' 'TEN Clinic' %}</p>
+        <h2 class="section-heading">{% block_plain 'home' 'about_us_title' 'Про нас' %}</h2>
+        {% endif %}
+        <p class="section-lead about-us-section__text">{% block_plain 'home' 'about_us_text' 'TEN Clinic — це сучасний медичний центр, де поєднуються доказова медицина, високоточна діагностика та хірургія експертного рівня. Ми надаємо допомогу дітям і дорослим, використовуючи сучасні методи лікування та індивідуальний підхід до кожного пацієнта. Наша мета — досягати найкращих результатів, забезпечуючи безпеку, комфорт і довіру на кожному етапі лікування.' %}</p>
+        <div class="about-us-section__brand">
+          <img
+            src="{% block_image_url 'home' 'about_us_brand_mark' 'images/ten-brand-mark-black.png' %}"
+            alt="TEN Clinic"
+            class="about-us-section__brand-mark"
+            width="649"
+            height="214"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+      </div>
+      <ul class="about-us-section__gallery about-us-section__gallery--side" role="list" aria-label="Фото клініки — праворуч">
+        {% about_us_gallery_side %}
+      </ul>
+    </div>
+    <ul class="about-us-section__gallery about-us-section__gallery--bottom reveal" role="list" aria-label="Фото клініки — знизу">
+      {% about_us_gallery_bottom %}
+    </ul>
+  </div>
+</section>

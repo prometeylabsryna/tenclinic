@@ -170,6 +170,12 @@ def surgical_operations_list(request):
     })
 
 
+def about_us(request):
+    return render(request, 'pages/about_us.html', {
+        'breadcrumbs': [{'title': 'Про нас'}],
+    })
+
+
 def hearing_aids_list(request):
     surdology = Direction.objects.filter(slug=SURDOLOGY_SLUG, is_active=True).first()
     queryset = HearingAid.objects.filter(is_active=True)
