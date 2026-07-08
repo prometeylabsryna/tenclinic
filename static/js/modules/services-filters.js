@@ -18,6 +18,8 @@ export function initServicesFilters() {
     return;
   }
 
+  syncServicesFilterChips();
+
   document.body.addEventListener('htmx:afterSwap', (event) => {
     if (event.detail.target?.id !== 'services-grid') {
       return;
@@ -25,4 +27,6 @@ export function initServicesFilters() {
 
     syncServicesFilterChips();
   });
+
+  window.addEventListener('popstate', syncServicesFilterChips);
 }

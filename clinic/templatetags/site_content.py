@@ -5,8 +5,16 @@ from django.utils.safestring import mark_safe
 import re
 
 from clinic.utils.block_render import get_block_image_url, get_block_text, is_section_visible
+from clinic.utils.phone_validation import phone_tel_uri
+
+ABOUT_GALLERY_SIZE = 10
 
 register = template.Library()
+
+
+@register.filter
+def phone_tel(value):
+    return phone_tel_uri(value)
 
 
 @register.filter
@@ -160,6 +168,31 @@ def block_image(
     if decoding:
         attrs.append(f'decoding="{escape(decoding)}"')
     return mark_safe(f'<img {" ".join(attrs)}>')
+
+
+def _about_us_gallery_items(site_blocks):
+    items = []
+    for index in range(1, ABOUT_GALLERY_SIZE + 1):
+        key = f'about_us_photo_{index}'
+        url = get_block_image_url('home', key, site_blocks=site_blocks)
+        if index <= 2:
+            label = f'{index:02d}'
+        else:
+            label = f'{index - 2:02d}'
+        items.append({'index': index, 'url': url, 'label': label})
+    return items
+
+
+@register.inclusion_tag('partials/about_us_gallery_items.html', takes_context=True)
+def about_us_gallery_side(context):
+    items = _about_us_gallery_items(context.get('site_blocks'))
+    return {'items': items[:2]}
+
+
+@register.inclusion_tag('partials/about_us_gallery_items.html', takes_context=True)
+def about_us_gallery_bottom(context):
+    items = _about_us_gallery_items(context.get('site_blocks'))
+    return {'items': items[2:]}
 
 
 @register.simple_tag(takes_context=True)

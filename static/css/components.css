@@ -442,8 +442,8 @@ main.page--no-bottom-cta ~ .bottom-cta {
 }
 
 .filter-chip.is-active {
-  background: var(--color-sage-dark);
-  border-color: var(--color-sage-dark);
+  background: var(--color-sage-deep);
+  border-color: var(--color-sage-deep);
   color: var(--color-white);
 }
 

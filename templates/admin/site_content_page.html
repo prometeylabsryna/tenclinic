@@ -17,3 +17,14 @@
 <p class="leading-relaxed max-w-4xl text-subtle mb-4">{{ section.description }}</p>
 {% endif %}
 {% endblock %}
+
+{% block form_after %}
+<script>
+(function () {
+  var form = document.getElementById('{{ opts.model_name }}_form');
+  if (form) {
+    form.setAttribute('enctype', 'multipart/form-data');
+  }
+})();
+</script>
+{% endblock %}

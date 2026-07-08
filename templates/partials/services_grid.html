@@ -14,7 +14,11 @@
     <li class="services-catalog-item">
       <div class="services-catalog-item__service">
         <div class="services-catalog-item__title-row">
+          {% if service.is_price_item %}
+          <span class="services-catalog-item__name">{{ service.name }}</span>
+          {% else %}
           <a href="{% url 'clinic:service_detail' service.slug %}" class="services-catalog-item__name">{{ service.name }}</a>
+          {% endif %}
           <span class="services-catalog-item__price services-catalog-item__price--inline">{{ service.price_display }}</span>
         </div>
         {% if service.short_description and service.short_description|lower != service.name|lower %}
@@ -32,7 +36,9 @@
         {{ service.price_display }}
       </div>
       <div class="services-catalog-item__action">
+        {% if not service.is_price_item %}
         <a href="{% url 'clinic:service_detail' service.slug %}" class="services-catalog-item__link">Детальніше →</a>
+        {% endif %}
       </div>
     </li>
     {% endfor %}

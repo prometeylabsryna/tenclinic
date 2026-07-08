@@ -1,0 +1,24 @@
+{% for item in items %}
+<li class="about-us-section__photo{% if not item.url %} about-us-section__photo--empty{% endif %}">
+  {% if item.url %}
+  <img
+    class="about-us-section__photo-image"
+    src="{{ item.url }}"
+    alt="TEN Clinic — фото {{ item.index }}"
+    width="480"
+    height="360"
+    loading="lazy"
+    decoding="async"
+  >
+  {% else %}
+  <div class="about-us-section__photo-placeholder" aria-hidden="true">
+    <svg class="about-us-section__photo-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="9" cy="10" r="1.75" fill="currentColor"/>
+      <path d="M7 16l3.5-3.5 2.5 2.5L15 13l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="about-us-section__photo-label">{{ item.label }}</span>
+  </div>
+  {% endif %}
+</li>
+{% endfor %}

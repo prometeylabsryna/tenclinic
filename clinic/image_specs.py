@@ -52,6 +52,22 @@ ABOUT_BRAND_MARK = ImageSpec(
     hint='Декоративний логотип у темному блоці «Про клініку».',
 )
 
+ABOUT_US_BRAND_MARK = ImageSpec(
+    label='Логотип у секції «Про нас»',
+    width=560,
+    height=170,
+    ratio='≈3:1',
+    hint='Логотип у світлому блоці «Про нас».',
+)
+
+ABOUT_US_GALLERY_PHOTO = ImageSpec(
+    label='Фото галереї «Про нас»',
+    width=480,
+    height=360,
+    ratio='4:3',
+    hint='Зображення у фотогалереї секції «Про нас».',
+)
+
 DOCTOR_PHOTO = ImageSpec(
     label='Фото лікаря',
     width=360,
@@ -80,6 +96,11 @@ BLOCK_IMAGE_SPECS = {
     ('home', 'hero_brand_mark'): HERO_BRAND_MARK,
     ('home', 'hero_bg_image'): HERO_BG,
     ('home', 'about_brand_mark'): ABOUT_BRAND_MARK,
+    ('home', 'about_us_brand_mark'): ABOUT_US_BRAND_MARK,
+    **{
+        ('home', f'about_us_photo_{index}'): ABOUT_US_GALLERY_PHOTO
+        for index in range(1, 11)
+    },
 }
 
 MODEL_IMAGE_SPECS = {

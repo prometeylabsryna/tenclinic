@@ -1,12 +1,13 @@
 from datetime import datetime
 
 from django.core.paginator import Paginator
-from django.db.models import Count, Q
-from django.shortcuts import get_object_or_404, redirect, render
+from django.db.models import Count, Prefetch, Q
+from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_GET, require_http_methods
 
 from clinic.forms import AppointmentForm, increment_rate_limit, is_rate_limited
 from clinic.models import Direction, Doctor, HearingAid, Service, WorkingHours
+from clinic.price_items import PRICE_SLUG_PREFIX, catalog_services_filter, public_services_queryset
 from clinic.utils.block_render import get_block_text
 
 
@@ -31,7 +32,7 @@ def directions_list(request):
         .annotate(
             services_count=Count(
                 'services',
-                filter=Q(services__is_active=True),
+                filter=Q(services__is_active=True) & ~Q(services__slug__startswith=PRICE_SLUG_PREFIX),
                 distinct=True,
             ),
             doctors_count=Count(
@@ -49,7 +50,7 @@ def directions_list(request):
 
 def direction_detail(request, slug):
     direction = get_object_or_404(Direction, slug=slug, is_active=True)
-    services = direction.services.filter(is_active=True)
+    services = direction.services.filter(is_active=True).exclude(**catalog_services_filter())
     doctors = (
         direction.doctors.filter(is_active=True)
         .prefetch_related('directions')
@@ -107,13 +108,7 @@ def doctor_detail(request, slug):
 
 def services_list(request):
     direction_slug = request.GET.get('direction', '')
-    services = (
-        Service.objects.filter(is_active=True)
-        .select_related('direction')
-        .order_by('direction__order', 'direction__name', 'order', 'name')
-    )
-    if direction_slug:
-        services = services.filter(direction__slug=direction_slug)
+    services = public_services_queryset(direction_slug=direction_slug)
     directions = Direction.objects.filter(is_active=True).order_by('order', 'name')
     if request.htmx:
         return render(request, 'partials/services_grid.html', {'services': services})
@@ -138,7 +133,23 @@ def service_detail(request, slug):
 
 
 def price_list(request):
-    return redirect('clinic:services')
+    price_services = Service.objects.filter(
+        is_active=True,
+        slug__startswith=PRICE_SLUG_PREFIX,
+    ).order_by('order', 'name')
+    directions = (
+        Direction.objects.filter(is_active=True)
+        .filter(services__in=price_services)
+        .distinct()
+        .prefetch_related(
+            Prefetch('services', queryset=price_services),
+        )
+        .order_by('order', 'name')
+    )
+    return render(request, 'pages/price.html', {
+        'directions': directions,
+        'breadcrumbs': [{'title': 'Прайс'}],
+    })
 
 
 SURDOLOGY_SLUG = 'surdologiya'
@@ -247,7 +258,9 @@ def booking(request):
 @require_GET
 def booking_services(request):
     direction_id = request.GET.get('direction')
-    services = Service.objects.filter(direction_id=direction_id, is_active=True) if direction_id else Service.objects.none()
+    services = Service.objects.filter(direction_id=direction_id, is_active=True).exclude(
+        **catalog_services_filter(),
+    ) if direction_id else Service.objects.none()
     return render(request, 'partials/service_options.html', {'services': services})
 
 

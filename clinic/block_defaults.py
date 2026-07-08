@@ -42,6 +42,16 @@ BLOCK_DEFAULTS = {
         'принципи доказової медицини, щоб забезпечити якісну медичну допомогу для дітей і дорослих.'
     ),
     ('home', 'principles_title'): '10 принципів TEN clinic',
+    ('home', 'about_us_section_visible'): '1',
+    ('home', 'about_us_eyebrow'): 'TEN Clinic',
+    ('home', 'about_us_title'): 'Про нас',
+    ('home', 'about_us_text'): (
+        'TEN Clinic — це сучасний медичний центр, де поєднуються доказова медицина, '
+        'високоточна діагностика та хірургія експертного рівня. Ми надаємо допомогу '
+        'дітям і дорослим, використовуючи сучасні методи лікування та індивідуальний '
+        'підхід до кожного пацієнта. Наша мета — досягати найкращих результатів, '
+        'забезпечуючи безпеку, комфорт і довіру на кожному етапі лікування.'
+    ),
     ('home', 'directions_title'): 'Від діагностики до хірургії',
     ('home', 'directions_eyebrow'): 'Напрямки',
     ('home', 'directions_feature_badge'): 'Флагманський напрямок',
@@ -180,6 +190,11 @@ BLOCK_FIELD_LABELS = {
     'about_text': 'Основний текст про клініку',
     'about_brand_mark': 'Зображення знаку бренду',
     'principles_title': 'Заголовок блоку принципів',
+    'about_us_section_visible': 'Показувати секцію «Про нас»',
+    'about_us_eyebrow': 'Мітка над заголовком «Про нас»',
+    'about_us_title': 'Заголовок «Про нас»',
+    'about_us_text': 'Основний текст секції «Про нас»',
+    'about_us_brand_mark': 'Логотип у секції «Про нас»',
     'directions_title': 'Заголовок секції напрямків',
     'directions_eyebrow': 'Мітка над заголовком напрямків',
     'directions_feature_badge': 'Бейдж на картці напрямку',
@@ -257,9 +272,17 @@ for index in PRINCIPLE_DEFAULTS:
     BLOCK_FIELD_LABELS[f'principle_{index}_title'] = f'Принцип {index:02d} — назва'
     BLOCK_FIELD_LABELS[f'principle_{index}_text'] = f'Принцип {index:02d} — опис'
 
+for index in range(1, 11):
+    if index <= 2:
+        BLOCK_FIELD_LABELS[f'about_us_photo_{index}'] = f'Фото справа {index:02d} (слот {index:02d} на сайті)'
+    else:
+        slot = index - 2
+        BLOCK_FIELD_LABELS[f'about_us_photo_{index}'] = f'Фото знизу {slot:02d} (слот {slot:02d} у нижній сітці)'
+
 INLINE_KEYS = frozenset({
     'hero_title', 'hero_eyebrow', 'hero_btn_primary', 'hero_btn_secondary',
     'cta_title', 'cta_eyebrow', 'cta_btn_primary', 'about_title', 'about_eyebrow', 'about_brand_note', 'principles_title',
+    'about_us_title', 'about_us_eyebrow',
     'directions_title', 'directions_eyebrow', 'directions_feature_badge', 'directions_all_link',
     'doctors_title', 'doctors_eyebrow', 'contacts_title', 'contacts_eyebrow',
     'trust_directions_label', 'trust_doctors_label', 'trust_visits_value',
@@ -281,7 +304,7 @@ INLINE_KEYS = frozenset({
 })
 
 MULTILINE_KEYS = frozenset({
-    'hero_lead', 'about_text', 'cta_text', 'success_message', 'hero_stat_label',
+    'hero_lead', 'about_text', 'about_us_text', 'cta_text', 'success_message', 'hero_stat_label',
     'page_lead', 'page_note', 'intro', 'text_data', 'text_purpose', 'text_storage',
     'text_contact', 'placeholder_text', 'detail_cta_text', 'empty_text',
     *(f'principle_{index}_text' for index in PRINCIPLE_DEFAULTS),
@@ -291,10 +314,16 @@ BLOCK_CONTENT_TYPES = {
     ('home', 'hero_brand_mark'): SiteBlock.ContentType.IMAGE,
     ('home', 'hero_bg_image'): SiteBlock.ContentType.IMAGE,
     ('home', 'about_brand_mark'): SiteBlock.ContentType.IMAGE,
+    ('home', 'about_us_brand_mark'): SiteBlock.ContentType.IMAGE,
+    **{
+        ('home', f'about_us_photo_{index}'): SiteBlock.ContentType.IMAGE
+        for index in range(1, 11)
+    },
 }
 
 VISIBILITY_KEYS = frozenset({
-    'hero_section_visible', 'about_section_visible', 'directions_section_visible',
+    'hero_section_visible', 'about_section_visible', 'about_us_section_visible',
+    'directions_section_visible',
     'doctors_section_visible', 'cta_section_visible', 'contacts_section_visible',
 })
 

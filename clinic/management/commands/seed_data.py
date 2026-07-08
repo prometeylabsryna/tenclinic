@@ -6,6 +6,7 @@ from django.conf import settings
 
 from clinic.block_defaults import BLOCK_DEFAULTS, BLOCK_FIELD_LABELS, is_visibility_key
 from clinic.models import Direction, Doctor, HearingAid, Service, SiteBlock, SiteSettings, WorkingHours
+from clinic.price_items import seed_price_items
 
 
 class Command(BaseCommand):
@@ -28,6 +29,7 @@ class Command(BaseCommand):
         self._seed_working_hours(force=force)
         directions = self._seed_directions(force=force)
         self._seed_services(directions, force=force)
+        self._seed_price_items(directions)
         self._seed_hearing_aids(force=force)
         self._seed_doctors(directions, force=force)
         cache.delete(settings.SITE_BLOCKS_CACHE_KEY)
@@ -357,6 +359,9 @@ class Command(BaseCommand):
                     'is_active': True,
                 },
             )
+
+    def _seed_price_items(self, directions):
+        seed_price_items(directions_by_slug={d.slug: d for d in directions})
 
     def _seed_hearing_aids(self, *, force=False):
         aids_data = [

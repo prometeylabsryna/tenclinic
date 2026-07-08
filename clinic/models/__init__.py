@@ -1,4 +1,13 @@
-from clinic.models.crm import Appointment, Direction, Doctor, HearingAid, Service, WorkingHours
+from clinic.models.crm import (
+    Appointment,
+    CatalogService,
+    Direction,
+    Doctor,
+    HearingAid,
+    PriceListItem,
+    Service,
+    WorkingHours,
+)
 from clinic.models.site import SiteBlock, SiteSettings
 
 __all__ = [
@@ -8,6 +17,8 @@ __all__ = [
     'Doctor',
     'HearingAid',
     'Service',
+    'CatalogService',
+    'PriceListItem',
     'WorkingHours',
     'Appointment',
 ]

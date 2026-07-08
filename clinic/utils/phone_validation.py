@@ -28,3 +28,19 @@ def normalize_ua_phone(phone: str) -> str:
         f'+38 ({national[:3]}) {national[3:6]}-'
         f'{national[6:8]}-{national[8:10]}'
     )
+
+
+def phone_tel_uri(phone: str) -> str:
+    national = extract_national_digits(phone)
+    if UA_NATIONAL_PHONE_RE.match(national):
+        return f'tel:+380{national[1:]}'
+    digits = re.sub(r'\D', '', phone or '')
+    if not digits:
+        return ''
+    if digits.startswith('380'):
+        return f'tel:+{digits}'
+    if digits.startswith('38'):
+        return f'tel:+{digits}'
+    if digits.startswith('0'):
+        return f'tel:+38{digits[1:]}'
+    return f'tel:+{digits}'

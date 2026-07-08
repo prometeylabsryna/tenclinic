@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib import admin
+from django.contrib import admin, messages
 from django.contrib.admin.helpers import AdminForm
 from django.core.cache import cache
 from django.shortcuts import redirect, render
@@ -242,6 +242,7 @@ def build_content_admin_context(request, admin_instance, section, form, field_gr
         'has_view_permission': admin_instance.has_change_permission(request),
         'has_delete_permission': False,
         'has_editable_inline_admin_formsets': False,
+        'has_file_field': form.is_multipart(),
         'adminform': adminform,
         'errors': adminform.errors,
         'inline_admin_formsets': [],
@@ -268,6 +269,11 @@ class SiteContentSectionAdmin(SingletonModelAdminMixin, ReadableUnfoldFieldsMixi
                 form.save()
                 self.message_user(request, 'Зміни збережено.')
                 return redirect(request.path)
+            self.message_user(
+                request,
+                'Не вдалося зберегти. Перевірте формат файлів і розмір зображень.',
+                level=messages.ERROR,
+            )
         else:
             form = SitePageContentForm(section)
         field_groups = build_form_field_groups(section, form)

@@ -131,12 +131,32 @@ class Service(models.Model):
         return self.name
 
     @property
+    def is_price_item(self):
+        from clinic.price_items import is_price_item_slug
+
+        return is_price_item_slug(self.slug)
+
+    @property
     def price_display(self):
         if self.price is not None:
             prefix = f'{self.price_note} ' if self.price_note else ''
             amount = f'{int(self.price):,}'.replace(',', '\u00a0')
             return f'{prefix}{amount} ₴'
         return self.price_note or 'За прайсом'
+
+
+class CatalogService(Service):
+    class Meta:
+        proxy = True
+        verbose_name = 'Послуга каталогу'
+        verbose_name_plural = 'Послуги каталогу'
+
+
+class PriceListItem(Service):
+    class Meta:
+        proxy = True
+        verbose_name = 'Позиція прайсу'
+        verbose_name_plural = 'Прайс'
 
 
 class WorkingHours(models.Model):
