@@ -386,7 +386,7 @@ CONTENT_SECTIONS: tuple[ContentSection, ...] = (
         sidebar_title='Сторінка «Про нас»',
         sidebar_icon='info',
         preview_url='/about/',
-        description='Повний контент окремої сторінки /about/. Не впливає на секцію на головній.',
+        description='Повний контент окремої сторінки /about/. Не впливає на секцію «Про нас (головна)».',
         admin_model_name='aboutuspagesettings',
         field_groups=(
             FieldGroup('Заголовки сторінки', (

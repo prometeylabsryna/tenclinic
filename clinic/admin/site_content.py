@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib import admin, messages
+from django.core.files.uploadedfile import UploadedFile
 from django.contrib.admin.helpers import AdminForm
 from django.core.cache import cache
 from django.shortcuts import redirect, render
@@ -128,10 +129,12 @@ class SitePageContentForm(forms.Form):
                     if block.image:
                         block.image.delete(save=False)
                     block.image = None
-                elif value:
+                    block.content_type = SiteBlock.ContentType.IMAGE
+                    block.save()
+                elif isinstance(value, UploadedFile):
                     block.image = value
-                block.content_type = SiteBlock.ContentType.IMAGE
-                block.save()
+                    block.content_type = SiteBlock.ContentType.IMAGE
+                    block.save()
             elif name.endswith('__text_html'):
                 block = ensure_block(page, key)
                 block.text_html = value

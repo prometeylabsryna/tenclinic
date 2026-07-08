@@ -6,7 +6,7 @@
 {% block page_class %}page--inner{% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/about-us-section.css' %}?v=20260708p">
+<link rel="stylesheet" href="{% static 'css/about-us-section.css' %}?v=20260708q">
 <link rel="stylesheet" href="{% static 'css/about-us-page.css' %}?v=20260708p">
 {% endblock %}
 
@@ -25,6 +25,6 @@
     </div>
   </div>
 
-  {% include 'partials/about_us_section.html' with section_modifier='about-us-page__body' content_page='about_us' show_heading=False %}
+  {% include 'partials/about_us_section.html' with section_modifier='about-us-page__body' content_page='about_us' show_heading=False use_reveal=False %}
 </section>
 {% endblock %}

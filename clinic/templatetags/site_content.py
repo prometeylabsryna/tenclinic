@@ -188,15 +188,15 @@ def _about_us_content_page(context):
 
 
 @register.inclusion_tag('partials/about_us_gallery_items.html', takes_context=True)
-def about_us_gallery_side(context):
-    page = _about_us_content_page(context)
+def about_us_gallery_side(context, page=''):
+    page = page or context.get('content_page', 'home')
     items = _about_us_gallery_items(context.get('site_blocks'), page=page)
     return {'items': items[:2]}
 
 
 @register.inclusion_tag('partials/about_us_gallery_items.html', takes_context=True)
-def about_us_gallery_bottom(context):
-    page = _about_us_content_page(context)
+def about_us_gallery_bottom(context, page=''):
+    page = page or context.get('content_page', 'home')
     items = _about_us_gallery_items(context.get('site_blocks'), page=page)
     return {'items': items[2:]}
 

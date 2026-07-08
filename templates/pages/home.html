@@ -170,7 +170,7 @@
 
 {% section_visible 'home' 'about_us_section_visible' as show_about_us %}
 {% if show_about_us %}
-{% include 'partials/about_us_section.html' with section_id='about-us' section_modifier='section-shell' content_page='home' show_heading=True %}
+{% include 'partials/about_us_section.html' with section_id='about-us' section_modifier='section-shell' content_page='home' show_heading=True use_reveal=True %}
 {% endif %}
 
 {% section_visible 'home' 'doctors_section_visible' as show_doctors %}
