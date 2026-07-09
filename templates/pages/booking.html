@@ -6,16 +6,32 @@
 {% block page_class %}page--inner page--no-bottom-cta{% endblock %}
 
 {% block extra_css %}
-  <link rel="stylesheet" href="{% static 'css/booking-form.css' %}?v=20260707b">
+  <link rel="stylesheet" href="{% static 'css/booking-form.css' %}?v=20260709j">
   <link rel="stylesheet" href="{% static 'css/booking-success.css' %}?v=20260707b">
 {% endblock %}
 
 {% block content %}
 <section class="section section--page-top">
   <div class="container container--narrow">
-    <div class="inner-page-head reveal">
+    <div class="inner-page-head inner-page-head--booking reveal">
       <h1 class="section-heading">{% block_plain 'booking' 'page_title' 'Запис на прийом' %}</h1>
-      <p class="section-lead">{% block_plain 'booking' 'page_lead' 'Заповніть форму — адміністратор підтвердить запис найближчим часом.' %}</p>
+      <div class="booking-page__lead-row">
+        <p class="section-lead">{% block_plain 'booking' 'page_lead' 'Заповніть форму — адміністратор підтвердить запис найближчим часом.' %}</p>
+        {% if site_settings.phone_primary %}
+        <a
+          href="{{ site_settings.phone_primary|phone_tel }}"
+          class="btn btn--sage booking-page__call"
+          aria-label="Зателефонувати: {{ site_settings.phone_primary }}"
+        >
+          <span class="booking-page__call-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M6.5 3.5h2l1 3-2 1.2a9 9 0 004.8 4.8L13.5 11l3 1v2a1.5 1.5 0 01-1.4 1.5C9.2 16.8 3.2 10.8 3.5 5.9A1.5 1.5 0 015 4.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="booking-page__call-label">Зателефонувати</span>
+        </a>
+        {% endif %}
+      </div>
     </div>
     <div id="booking-form-wrapper" class="reveal">
       {% if success %}

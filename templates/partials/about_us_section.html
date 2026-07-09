@@ -8,17 +8,6 @@
         <h2 class="section-heading">{% block_plain content_page|default:'home' 'about_us_title' 'Про нас' %}</h2>
         {% endif %}
         <p class="section-lead about-us-section__text">{% block_plain content_page|default:'home' 'about_us_text' 'TEN Clinic — це сучасний медичний центр, де поєднуються доказова медицина, високоточна діагностика та хірургія експертного рівня. Ми надаємо допомогу дітям і дорослим, використовуючи сучасні методи лікування та індивідуальний підхід до кожного пацієнта. Наша мета — досягати найкращих результатів, забезпечуючи безпеку, комфорт і довіру на кожному етапі лікування.' %}</p>
-        <div class="about-us-section__brand">
-          <img
-            src="{% block_image_url content_page|default:'home' 'about_us_brand_mark' 'images/ten-brand-mark-black.png' %}"
-            alt="TEN Clinic"
-            class="about-us-section__brand-mark"
-            width="649"
-            height="214"
-            loading="lazy"
-            decoding="async"
-          >
-        </div>
       </div>
       <ul class="about-us-section__gallery about-us-section__gallery--side" role="list" aria-label="Фото клініки — праворуч">
         {% about_us_gallery_side page=content_page|default:'home' %}

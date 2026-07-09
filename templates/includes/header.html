@@ -24,20 +24,7 @@
       </nav>
     </div>
 
-    <div class="site-header__actions">
-      <a href="{% url 'clinic:booking' %}" class="btn btn--cta btn--sm site-header__cta">{% block_plain 'site' 'nav_cta' 'Записатися' %}</a>
-      {% if site_settings.phone_primary %}
-      <a
-        href="{{ site_settings.phone_primary|phone_tel }}"
-        class="btn btn--sage site-header__call"
-        aria-label="Зателефонувати: {{ site_settings.phone_primary }}"
-      >
-        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-          <path d="M6.5 3.5h2l1 3-2 1.2a9 9 0 004.8 4.8L13.5 11l3 1v2a1.5 1.5 0 01-1.4 1.5C9.2 16.8 3.2 10.8 3.5 5.9A1.5 1.5 0 015 4.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-        </svg>
-      </a>
-      {% endif %}
-    </div>
+    <a href="{% url 'clinic:booking' %}" class="btn btn--cta btn--sm site-header__cta">{% block_plain 'site' 'nav_cta' 'Записатися' %}</a>
 
     <button class="burger" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobile-nav">
       <span class="burger__line"></span>

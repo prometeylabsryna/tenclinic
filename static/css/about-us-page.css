@@ -14,6 +14,21 @@
   background: var(--color-bg-accent);
 }
 
+@media (min-width: 768px) {
+  .about-us-page__body .about-us-section__top--with-media {
+    align-items: start;
+  }
+
+  .about-us-page__body .about-us-section__text {
+    max-width: none;
+    width: 100%;
+  }
+
+  .about-us-page__body .about-us-section__gallery--side {
+    min-height: clamp(20rem, 34vw, 24.125rem);
+  }
+}
+
 @media (max-width: 767px) {
   .about-us-page__body .about-us-section__gallery--side .about-us-section__photo-frame {
     aspect-ratio: 16 / 10;

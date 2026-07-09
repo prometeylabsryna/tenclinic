@@ -101,6 +101,13 @@
   }
 }
 
+@media (orientation: landscape) and (max-height: 31.25rem) {
+  .brand-logo {
+    height: var(--brand-logo-h-header);
+    max-width: var(--brand-logo-max-w-header);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .site-header {
     transition: none;

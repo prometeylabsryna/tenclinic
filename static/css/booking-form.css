@@ -1,3 +1,135 @@
+/* Сторінка запису — шапка з кнопкою дзвінка */
+
+.inner-page-head--booking {
+  margin-bottom: var(--space-lg);
+}
+
+.inner-page-head--booking .section-heading {
+  margin: 0.875rem 0 var(--space-sm);
+}
+
+.booking-page__lead-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+}
+
+.booking-page__lead-row .section-lead {
+  flex: 0 1 auto;
+  max-width: 32rem;
+  margin: 0;
+}
+
+.booking-page__call.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5625rem;
+  box-sizing: border-box;
+  width: auto;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0.5625rem 0.875rem;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow:
+    var(--shadow-btn-sage),
+    0 0 0 1px rgba(115, 152, 144, 0.18);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition:
+    background-color var(--duration-ui) var(--ease-out),
+    border-color var(--duration-ui) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-ui) var(--ease-out);
+}
+
+.booking-page__call-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.booking-page__call-icon svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.booking-page__call-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .booking-page__call.btn:hover {
+    background: var(--color-sage-dark);
+    border-color: rgba(255, 255, 255, 0.36);
+    transform: translateY(-2px);
+    box-shadow:
+      var(--shadow-btn-sage-hover),
+      0 0 0 1px rgba(115, 152, 144, 0.28);
+  }
+}
+
+.booking-page__call.btn:active {
+  background: var(--color-sage-deep);
+  transform: scale(0.98);
+}
+
+.booking-page__call.btn:focus-visible {
+  outline: 2px solid var(--color-navy);
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .booking-page__lead-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .booking-page__lead-row .section-lead {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .inner-page-head--booking .section-heading {
+    margin-top: 0;
+  }
+
+  .booking-page__lead-row {
+    gap: var(--space-3xl);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .booking-page__call.btn {
+    transition: none;
+  }
+
+  .booking-page__call.btn:hover,
+  .booking-page__call.btn:active {
+    transform: none;
+  }
+}
+
 /* Форма запису — спосіб звʼязку */
 
 .form-hint {
